@@ -82,5 +82,59 @@ class CollectionPopularVM: CollectionBaseVM {
         })
         
     }
+    
+//    override func setFavImage(favImageView: UIImageView, targetImageData: NCMBObject) {
+//        print("setFavImageを実装しろやCollectionPoplarVM")
+//        if (NCMBUser.currentUser() == nil) {
+//            favImageView.image = UIImage(named: "heart_unlike.png")
+//            return
+//        }
+//        
+//        let objectIdOfImageInfo = targetImageData.objectForKey("objectId")
+//        
+//        // nifty_cloudのFavテーブルオブジェクトを取得。
+//        let queryFav: NCMBQuery = NCMBQuery(className: "Fav")
+//        // imageのobjectIdとFavのimageObjectIdが一致するものを抽出
+//        // つまり、タップしたimageに対応するレコードがFavにあるかどうか。
+//        queryFav.whereKey("imageObjectId", equalTo: objectIdOfImageInfo)
+//        // ログイン中のユーザーの取得
+//        let carrentUser = NCMBUser.currentUser()
+//        if(carrentUser != nil) {
+//            let userName = carrentUser.userName
+//            queryFav.whereKey("myName", equalTo: userName)
+//        }
+//        queryFav.findObjectsInBackgroundWithBlock({(items, error) in
+//            
+//            if error == nil {
+//                //                print("登録件数：\(items.count)")
+//                // items.countは1か0しかない。
+//                if items.count > 0 {
+//                    let favFlg: Bool = ((items[0].objectForKey("favFlg") as? Bool))!
+//                    
+//                    if (favFlg) {
+//                        
+//                        favImageView.image = UIImage(named: "heart_like.png")
+//                        
+//                        
+//                    } else {
+//                        
+//                        favImageView.image = UIImage(named: "heart_unlike.png")
+//                        
+//                    }
+//                    
+//                    // いいねおしてない場合
+//                } else {
+//                    
+//                    favImageView.image = UIImage(named: "heart_unlike.png")
+//                    
+//                }
+//            }
+//            
+//            
+//        })
+//
+//        
+//        
+//    }
 
 }

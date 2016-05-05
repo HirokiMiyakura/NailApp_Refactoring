@@ -8,6 +8,12 @@
 
 import UIKit
 
+extension NSMutableData {
+    func appendString(string: String) {
+        let data = string.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)
+        appendData(data!)
+    }
+}
 class HomeTabVC: UIViewController {
 
     
@@ -24,11 +30,13 @@ class HomeTabVC: UIViewController {
         print(self.view.bounds)
         let pageController:UIPageViewController = UIPageViewController(transitionStyle: UIPageViewControllerTransitionStyle.Scroll, navigationOrientation: UIPageViewControllerNavigationOrientation.Horizontal, options: nil)
         let navigationController:SwipeVC = SwipeVC(rootViewController: pageController)
-        let CollectionVC1 = self.storyboard!.instantiateViewControllerWithIdentifier( "collectionVC" ) as! CollectionVC
-        CollectionVC1.tabKind = "1"
-        let CollectionVC2 = self.storyboard!.instantiateViewControllerWithIdentifier( "collectionVC" ) as! CollectionVC
-        CollectionVC2.tabKind = "2"
-        navigationController.viewControllerArray = [CollectionVC1,CollectionVC2]
+        let CollectionNewVC = self.storyboard!.instantiateViewControllerWithIdentifier( "collectionVC" ) as! CollectionVC
+        CollectionNewVC.tabKind = "1"
+        let CollectionPopularVC = self.storyboard!.instantiateViewControllerWithIdentifier( "collectionVC" ) as! CollectionVC
+        CollectionPopularVC.tabKind = "2"
+        let CollectionFavVC = self.storyboard!.instantiateViewControllerWithIdentifier( "collectionVC" ) as! CollectionVC
+        CollectionFavVC.tabKind = "6"
+        navigationController.viewControllerArray = [CollectionNewVC,CollectionPopularVC,CollectionFavVC]
         self.addChildViewController(navigationController)
         navigationView.addSubview(navigationController.view)
         

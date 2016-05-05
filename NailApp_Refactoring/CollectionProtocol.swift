@@ -13,5 +13,8 @@ protocol CollectionProtocol:  UICollectionViewDataSource {
     func loadImageData()
     func addObserver(observer: NSObject, forKeyPath keyPath: String, options: NSKeyValueObservingOptions, context: UnsafeMutablePointer<Void>)
     func removeObserver(observer: NSObject, forKeyPath keyPath: String)
+    var imageInfo: NSArray {get}
+    var userName: String {get}
+    func setFavImage(favImageView: UIImageView, targetImageData: NCMBObject)
 
 }

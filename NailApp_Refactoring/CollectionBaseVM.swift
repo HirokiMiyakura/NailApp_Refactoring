@@ -10,14 +10,14 @@ import UIKit
 
 class CollectionBaseVM: NSObject, UICollectionViewDataSource, CollectionProtocol {
     dynamic var imageInfo = []
-    
+    var userName: String = ""
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.imageInfo.count
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         print("collectionViewの設定開始")
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("CollectionViewCell", forIndexPath: indexPath) as! CollectionViewCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! MyCollectionViewCell
         let targetImageData = self.imageInfo[indexPath.row]
         let url = NSURL(string: (targetImageData.objectForKey("imagePath") as? String)!)
         
@@ -25,6 +25,15 @@ class CollectionBaseVM: NSObject, UICollectionViewDataSource, CollectionProtocol
         let imageView = UIImageView()
         //        imageView.frame = self.cellRect!
         imageView.frame = CGRect(x: 0,y: 0,width: 132,height: 132) // The size of one cell
+        
+        let rect:CGRect = CGRectMake(imageView.frame.width/3*2, imageView.frame.height/3*2, imageView.frame.width/3, imageView.frame.height/3)
+        let favImageView = UIImageView()
+        favImageView.frame = rect
+        favImageView.image = UIImage(named: "heart_unlike.png")
+        imageView.addSubview(favImageView)
+        
+        setFavImage(favImageView, targetImageData: targetImageData as! NCMBObject)
+
         cell.addSubview(imageView)
         imageView.setImageWithURL(url, placeholderImage: placeholder)
         return cell
@@ -101,5 +110,56 @@ class CollectionBaseVM: NSObject, UICollectionViewDataSource, CollectionProtocol
             }
         })
         
+    }
+    
+    func setFavImage(favImageView: UIImageView, targetImageData: NCMBObject) {
+        print("setFavImageを実装しろや")
+        if (NCMBUser.currentUser() == nil) {
+            favImageView.image = UIImage(named: "heart_unlike.png")
+            return
+        }
+        let objectIdOfImageInfo = targetImageData.objectForKey("objectId")
+        
+        // nifty_cloudのFavテーブルオブジェクトを取得。
+        let queryFav: NCMBQuery = NCMBQuery(className: "Fav")
+        // imageのobjectIdとFavのimageObjectIdが一致するものを抽出
+        // つまり、タップしたimageに対応するレコードがFavにあるかどうか。
+        queryFav.whereKey("imageObjectId", equalTo: objectIdOfImageInfo)
+        // ログイン中のユーザーの取得
+        let carrentUser = NCMBUser.currentUser()
+        if(carrentUser != nil) {
+            let userName = carrentUser.userName
+            queryFav.whereKey("myName", equalTo: userName)
+        }
+        queryFav.findObjectsInBackgroundWithBlock({(items, error) in
+            
+            if error == nil {
+                //                print("登録件数：\(items.count)")
+                // items.countは1か0しかない。
+                if items.count > 0 {
+                    let favFlg: Bool = ((items[0].objectForKey("favFlg") as? Bool))!
+                    
+                    if (favFlg) {
+                        
+                        favImageView.image = UIImage(named: "heart_like.png")
+                        
+                        
+                    } else {
+                        
+                        favImageView.image = UIImage(named: "heart_unlike.png")
+                        
+                    }
+                    
+                    // いいねおしてない場合
+                } else {
+                    
+                    favImageView.image = UIImage(named: "heart_unlike.png")
+                    
+                }
+            }
+            
+            
+        })
+
     }
 }

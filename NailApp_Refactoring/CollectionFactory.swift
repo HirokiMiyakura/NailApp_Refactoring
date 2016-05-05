@@ -17,8 +17,14 @@ class CollectionFactory: NSObject {
             return CollectionPopularVM()
         } else if (tabKind == "3") {
             return CollectionNewVM()
-        } else {
-            return CollectionNewVM()
+        } else if (tabKind == "4"){
+            return CollectionUsersVM()
+        } else if (tabKind == "5") {
+            return CollectionOwnVM()
+        } else if (tabKind == "6") {
+            return CollectionFavVM()
+        }else {
+            return CollectionBaseVM()
         }
     }
 }

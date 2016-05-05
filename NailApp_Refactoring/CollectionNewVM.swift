@@ -82,5 +82,13 @@ class CollectionNewVM: CollectionBaseVM {
         })
     }
     
+//    override func setFavImage(favImageView: UIImageView, targetImageData: NCMBObject) {
+//        print("setFavImageを実装しろやCollectionNewVM")
+//        if (NCMBUser.currentUser() == nil) {
+//            favImageView.image = UIImage(named: "heart_unlike.png")
+//            return
+//        }
+//    }
+    
         
 }

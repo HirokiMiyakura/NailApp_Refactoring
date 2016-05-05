@@ -1,29 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5Sd-F6-TMi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5Sd-F6-TMi">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
-        <scene sceneID="Rpg-WL-Ji6">
-            <objects>
-                <viewController id="fLt-Nx-hyl" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Da0-ra-QQo"/>
-                        <viewControllerLayoutGuide type="bottom" id="MXh-Hz-JaN"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="2oC-zi-ubu">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="m1X-hR-tfN"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9Cb-Cf-Kg9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="583" y="1515"/>
-        </scene>
         <!--HOME-->
         <scene sceneID="90q-Vv-qtL">
             <objects>
@@ -78,7 +60,7 @@
                         <viewControllerLayoutGuide type="bottom" id="MXm-oH-dtN"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="KZz-Uh-t7t">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="292"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="krH-oq-Qmj">
@@ -91,7 +73,7 @@
                                     <inset key="sectionInset" minX="8" minY="8" maxX="8" maxY="8"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="hbR-ds-jpZ">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="hbR-ds-jpZ" customClass="MyCollectionViewCell" customModule="NailApp_Refactoring" customModuleProvider="target">
                                         <rect key="frame" x="8" y="8" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -99,6 +81,9 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <connections>
+                                            <segue destination="col-b6-Nod" kind="show" id="DPV-7P-xtc"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -113,6 +98,103 @@
             </objects>
             <point key="canvasLocation" x="2057" y="306"/>
         </scene>
+        <!--Page View ManagerVC-->
+        <scene sceneID="20u-8q-GeM">
+            <objects>
+                <viewController storyboardIdentifier="pageViewManagerVC" id="col-b6-Nod" customClass="PageViewManagerVC" customModule="NailApp_Refactoring" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ubS-xO-M4F"/>
+                        <viewControllerLayoutGuide type="bottom" id="l0H-Xf-gdH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fpH-Na-0H6">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="292"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h21-l5-pQp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2804" y="306"/>
+        </scene>
+        <!--DetailVC-->
+        <scene sceneID="ieA-LN-lcx">
+            <objects>
+                <viewController storyboardIdentifier="DetailVC" id="nAM-BG-d6q" customClass="DetailVC" customModule="NailApp_Refactoring" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NqR-MM-7Tc"/>
+                        <viewControllerLayoutGuide type="bottom" id="g7y-Mi-lmz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tfs-2Q-vCv">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ohv-cp-kvk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3441" y="306"/>
+        </scene>
+        <!--Detail UserVC-->
+        <scene sceneID="A0y-Vj-OdW">
+            <objects>
+                <viewController storyboardIdentifier="detailUserVC" id="piJ-fK-RbA" customClass="DetailUserVC" customModule="NailApp_Refactoring" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VuQ-DG-XjW"/>
+                        <viewControllerLayoutGuide type="bottom" id="Au9-jE-Ckm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Jvm-SF-iSE">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v6o-Bl-dD6">
+                                <rect key="frame" x="0.0" y="308" width="600" height="292"/>
+                                <connections>
+                                    <segue destination="wE2-I7-uiS" kind="embed" identifier="segueToCollectionView" id="6KX-Bt-0IJ"/>
+                                </connections>
+                            </containerView>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n4u-3N-Ehc">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
+                                <color key="backgroundColor" red="1" green="0.85417972659999997" blue="0.985100788" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="Bit-Gi-Uxh"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="n4u-3N-Ehc" firstAttribute="width" secondItem="Jvm-SF-iSE" secondAttribute="width" id="6GI-Gy-WgW"/>
+                            <constraint firstItem="v6o-Bl-dD6" firstAttribute="width" secondItem="Jvm-SF-iSE" secondAttribute="width" id="s8W-0Z-iOG"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <connections>
+                        <outlet property="topView" destination="n4u-3N-Ehc" id="yYi-Zh-ceF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Ku-ig-wJk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3441" y="1055"/>
+        </scene>
+        <!--Edit ProfileVC-->
+        <scene sceneID="BlC-6h-d3I">
+            <objects>
+                <viewController storyboardIdentifier="editProfileVC" id="SMO-f2-NIy" customClass="EditProfileVC" customModule="NailApp_Refactoring" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6Rb-z7-mew"/>
+                        <viewControllerLayoutGuide type="bottom" id="d4d-UT-MXh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RoV-Pi-29r">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tmi-My-KRV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4129" y="1055"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="NYU-aw-kVj">
             <objects>
@@ -124,12 +206,160 @@
                     </tabBar>
                     <connections>
                         <segue destination="8i7-at-nrt" kind="relationship" relationship="viewControllers" id="3zp-ps-wDe"/>
-                        <segue destination="fLt-Nx-hyl" kind="relationship" relationship="viewControllers" id="AN4-b4-yoN"/>
+                        <segue destination="C9j-lG-wbz" kind="relationship" relationship="viewControllers" id="l49-aq-sJD"/>
+                        <segue destination="1go-Cl-9vc" kind="relationship" relationship="viewControllers" id="bgP-y7-Mi7"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tAa-sU-rxx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-226" y="774"/>
+        </scene>
+        <!--Setting-->
+        <scene sceneID="JY3-D9-fGt">
+            <objects>
+                <navigationController id="C9j-lG-wbz" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Setting" id="Pgk-3S-e3E"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="a99-u0-rgh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="RNX-Ro-mdx" kind="relationship" relationship="rootViewController" id="WbZ-a0-p2g"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iRd-CU-QWq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-153" y="1476"/>
+        </scene>
+        <!--P画像投稿-->
+        <scene sceneID="YW5-LJ-lNi">
+            <objects>
+                <viewController id="1go-Cl-9vc" customClass="UploadImageVC" customModule="NailApp_Refactoring" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="g9X-PS-wYh"/>
+                        <viewControllerLayoutGuide type="bottom" id="p2P-vJ-kCm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3DA-1k-lEU">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="j4r-9J-e8W">
+                                <rect key="frame" x="20" y="50" width="134" height="134"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="134" id="LRN-ib-yGM"/>
+                                    <constraint firstAttribute="height" constant="134" id="g1g-Sl-tpa"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fEg-eI-opg">
+                                <rect key="frame" x="278" y="50" width="45" height="30"/>
+                                <state key="normal" title="カメラ"/>
+                                <connections>
+                                    <action selector="chooseImageButton:" destination="1go-Cl-9vc" eventType="touchUpInside" id="O6T-Xb-i0Q"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="写真に対するコメントを入力してください。" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="p5x-q1-Twi">
+                                <rect key="frame" x="180" y="236" width="240" height="128"/>
+                                <color key="backgroundColor" red="1" green="0.6847301938" blue="0.01666546948" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="Hsc-9y-xyZ"/>
+                                    <constraint firstAttribute="height" constant="128" id="emo-cb-QV8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5TX-9K-snP">
+                                <rect key="frame" x="218" y="513" width="165" height="30"/>
+                                <state key="normal" title="この内容でアップロード"/>
+                                <connections>
+                                    <action selector="uploadButton:" destination="1go-Cl-9vc" eventType="touchUpInside" id="MJe-H2-8hj"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="j4r-9J-e8W" firstAttribute="leading" secondItem="3DA-1k-lEU" secondAttribute="leadingMargin" id="5Ma-sN-e93"/>
+                            <constraint firstItem="p5x-q1-Twi" firstAttribute="top" secondItem="fEg-eI-opg" secondAttribute="bottom" constant="156" id="8yd-9d-tMH"/>
+                            <constraint firstItem="fEg-eI-opg" firstAttribute="top" secondItem="g9X-PS-wYh" secondAttribute="bottom" constant="30" id="UWG-fC-ssv"/>
+                            <constraint firstItem="fEg-eI-opg" firstAttribute="centerX" secondItem="3DA-1k-lEU" secondAttribute="centerX" id="aVM-qe-HRh"/>
+                            <constraint firstItem="5TX-9K-snP" firstAttribute="centerX" secondItem="3DA-1k-lEU" secondAttribute="centerX" id="bnl-HS-cur"/>
+                            <constraint firstItem="p5x-q1-Twi" firstAttribute="centerX" secondItem="3DA-1k-lEU" secondAttribute="centerX" id="hEs-Q8-CIH"/>
+                            <constraint firstItem="j4r-9J-e8W" firstAttribute="top" secondItem="g9X-PS-wYh" secondAttribute="bottom" constant="30" id="jz4-X9-GHJ"/>
+                            <constraint firstItem="p2P-vJ-kCm" firstAttribute="top" secondItem="5TX-9K-snP" secondAttribute="bottom" constant="8" id="v3M-zV-ucj"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="P画像投稿" id="lf3-KJ-D1j"/>
+                    <connections>
+                        <outlet property="uploadImageView" destination="j4r-9J-e8W" id="Ebq-XR-PrX"/>
+                        <outlet property="uploadTextView" destination="p5x-q1-Twi" id="qb1-zF-2dK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HZx-Le-Jb7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="874" y="1205"/>
+        </scene>
+        <!--SettingVC-->
+        <scene sceneID="vYJ-Gg-Kbn">
+            <objects>
+                <viewController id="RNX-Ro-mdx" customClass="SettingVC" customModule="NailApp_Refactoring" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="j5a-og-jss"/>
+                        <viewControllerLayoutGuide type="bottom" id="cBZ-9v-QDc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jfy-9R-qkH">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oeo-BW-fB4">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tableCell" id="05P-uE-Vpe">
+                                        <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="05P-uE-Vpe" id="CNP-5s-J6D">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tIj-1T-MJ2">
+                                                    <rect key="frame" x="8" y="14" width="214" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="PsR-fR-Thc"/>
+                    <connections>
+                        <outlet property="tableView" destination="oeo-BW-fB4" id="52g-Uu-Sfo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yx1-62-gnc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="699" y="2056"/>
+        </scene>
+        <!--LoginVC-->
+        <scene sceneID="AQD-H4-4DN">
+            <objects>
+                <viewController id="WIA-BD-P6j" customClass="LoginVC" customModule="NailApp_Refactoring" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SPB-At-TZM"/>
+                        <viewControllerLayoutGuide type="bottom" id="jey-vw-2f6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2aD-U3-Z29">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GMZ-Ww-i8k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1540" y="2056"/>
         </scene>
     </scenes>
 </document>

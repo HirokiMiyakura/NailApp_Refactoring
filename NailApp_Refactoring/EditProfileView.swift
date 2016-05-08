@@ -16,6 +16,8 @@ class EditProfileView: UIView {
     @IBOutlet weak var cancelButton: UIBarButtonItem!
     @IBOutlet weak var nickNameTextField: UITextField!
     @IBOutlet weak var commentTextView: UITextView!
+    @IBOutlet weak var nailistSwitch: UISwitch!
+    @IBOutlet weak var viewForNailist: UIView!
     
 //    func init() {
 //        cancelButton.

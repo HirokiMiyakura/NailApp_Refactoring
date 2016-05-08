@@ -30,6 +30,7 @@ class EditProfileVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
         view!.cancelButton.action = #selector(EditProfileVC.cancelButtonTapped(_:))
         view!.saveButton.action = #selector(EditProfileVC.saveButtonTapped(_:))
         view!.changeImageButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(EditProfileVC.changeImage(_:))))
+        view!.nailistSwitch.addTarget(self, action: Selector("switchChanged:"), forControlEvents: UIControlEvents.ValueChanged)
         
     }
 
@@ -113,6 +114,17 @@ class EditProfileVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
         picker.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    
+    func switchChanged(sender: UISwitch) {
+        print("switched")
+        let view = self.view as? EditProfileView
+        // スイッチのon/off
+        if sender.on {
+            view!.viewForNailist.hidden = false
+        } else {
+            view!.viewForNailist.hidden = true
+        }
+        
+        
+    }
 
 }

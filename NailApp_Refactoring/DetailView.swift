@@ -13,7 +13,9 @@ class DetailView: UIView {
 
     @IBOutlet weak var nailistBtn: UIButton!
     @IBOutlet weak var commentLabel: UILabel!
+    @IBOutlet weak var shareImage: UIImageView!
 
+    @IBOutlet weak var clipImage: UIImageView!
     @IBOutlet weak var kawaiineCountLabel: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
     

@@ -16,5 +16,6 @@ protocol CollectionProtocol:  UICollectionViewDataSource {
     var imageInfo: NSArray {get}
     var userName: String {get}
     func setFavImage(favImageView: UIImageView, targetImageData: NCMBObject)
+    func updateFavData(imageView: UIImageView)
 
 }

@@ -68,8 +68,10 @@ class CollectionNewVM: CollectionBaseVM {
             if error == nil {
                 
                 if objects.count > 0 {
+//                    print(objects)
                     
                     self.imageInfo = objects
+//                    self.favInfo = [Bool]
                     
                     //コレクションビューをリロードする
                     //                    self.collectionView!.reloadData()
@@ -90,5 +92,8 @@ class CollectionNewVM: CollectionBaseVM {
 //        }
 //    }
     
-        
+    
+    override func didClickImageView2(recognizer: UIGestureRecognizer) {
+        print("didclick")
+    }
 }

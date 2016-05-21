@@ -14,6 +14,7 @@ class PageViewManagerVC: UIViewController, UIPageViewControllerDelegate {
     var _PageViewManagerM: PageViewManagerM? = nil
     var indexPath: NSIndexPath = NSIndexPath()
     var imageInfo = []
+    var favDic: [Int:Bool] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,7 +62,7 @@ class PageViewManagerVC: UIViewController, UIPageViewControllerDelegate {
         if _PageViewManagerM == nil {
             // memoArrayとindexPathを引数にinitを呼ぶ
             //            _modelController = ModelController(_imageInfo: imageInfo, _indexPath: indexPath)
-            _PageViewManagerM = PageViewManagerM(_imageInfo: imageInfo, _indexPath: indexPath)
+            _PageViewManagerM = PageViewManagerM(_imageInfo: imageInfo, _indexPath: indexPath, _favDic: favDic)
         }
         return _PageViewManagerM!
     }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5Sd-F6-TMi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5Sd-F6-TMi">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -60,7 +60,7 @@
                         <viewControllerLayoutGuide type="bottom" id="MXm-oH-dtN"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="KZz-Uh-t7t">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="292"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="krH-oq-Qmj">
@@ -107,7 +107,7 @@
                         <viewControllerLayoutGuide type="bottom" id="l0H-Xf-gdH"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="fpH-Na-0H6">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="292"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -116,6 +116,42 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h21-l5-pQp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2804" y="306"/>
+        </scene>
+        <!--Detail User Home TabVC-->
+        <scene sceneID="4Ab-J8-Tj5">
+            <objects>
+                <viewController id="Pnf-Be-tKH" customClass="DetailUserHomeTabVC" customModule="NailApp_Refactoring" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AJL-Qq-xdu"/>
+                        <viewControllerLayoutGuide type="bottom" id="o8m-of-OIC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="S5I-bx-N8t">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="276"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ed6-gG-aU0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2497" y="1055"/>
+        </scene>
+        <!--Detail Users ProfileVC-->
+        <scene sceneID="hQD-yg-vN7">
+            <objects>
+                <viewController storyboardIdentifier="detailUsersProfileVC" id="jML-zd-eOf" customClass="DetailUsersProfileVC" customModule="NailApp_Refactoring" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ihf-2B-tQ4"/>
+                        <viewControllerLayoutGuide type="bottom" id="njc-Km-GJo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pkU-5n-XWE">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nib-6F-7mY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3441" y="1840"/>
         </scene>
         <!--DetailVC-->
         <scene sceneID="ieA-LN-lcx">
@@ -149,13 +185,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v6o-Bl-dD6">
-                                <rect key="frame" x="0.0" y="308" width="600" height="292"/>
+                                <rect key="frame" x="0.0" y="324" width="600" height="276"/>
                                 <connections>
-                                    <segue destination="wE2-I7-uiS" kind="embed" identifier="segueToCollectionView" id="6KX-Bt-0IJ"/>
+                                    <segue destination="Pnf-Be-tKH" kind="embed" id="0ew-Nj-HZS"/>
                                 </connections>
                             </containerView>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n4u-3N-Ehc">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n4u-3N-Ehc">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="216"/>
                                 <color key="backgroundColor" red="1" green="0.85417972659999997" blue="0.985100788" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="Bit-Gi-Uxh"/>
@@ -317,7 +353,7 @@
                                         <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="05P-uE-Vpe" id="CNP-5s-J6D">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tIj-1T-MJ2">

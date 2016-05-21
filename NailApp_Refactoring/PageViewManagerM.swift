@@ -14,10 +14,11 @@ class PageViewManagerM: NSObject, UIPageViewControllerDataSource {
     var imageArray: NSArray = NSArray()
     var memoArray: NSArray = NSArray()
     var imageInfo = []
+    var favDic: [Int:Bool] = [:]
     var indexImageInfoArray: Int = 0
     
     // memoArrayとindexPathを引数に持つinit
-    init(_imageInfo: NSArray, _indexPath: NSIndexPath) {
+    init(_imageInfo: NSArray, _indexPath: NSIndexPath, _favDic: [Int:Bool]) {
         super.init()
         // Create the data model.
         let dateFormatter = NSDateFormatter()
@@ -27,6 +28,8 @@ class PageViewManagerM: NSObject, UIPageViewControllerDataSource {
         indexImageInfoArray = _indexPath.row
         // imageInfoの実態。JSON形式。
         imageInfo = _imageInfo
+        
+        favDic = _favDic
     }
     
     func viewControllerAtIndex(index: Int, storyboard: UIStoryboard) -> DetailVC? {
@@ -44,6 +47,8 @@ class PageViewManagerM: NSObject, UIPageViewControllerDataSource {
         //        dataViewController.dataObject = self.imageInfo[indexImageInfoArray] as! String
         // dataViewControllerのインスタンス変数に情報を注入
         detailVC.imageCollectionObject = targetImageData as? NCMBObject
+        detailVC.favDic = self.favDic
+        detailVC.index = index
         // ここで二つのVCを返却すればいい感じで次の画像も取得してセットしておくことができるかも。
         return detailVC
     }

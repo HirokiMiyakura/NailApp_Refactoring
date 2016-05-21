@@ -24,15 +24,20 @@ class CollectionFavVM: CollectionBaseVM {
          */
         var query: NCMBQuery = NCMBQuery(className: "Fav")
         let currentuser = NCMBUser.currentUser()
-        query = NCMBQuery(className: "Fav")
+//        query = NCMBQuery(className: "Fav")
         query.whereKey("myName", equalTo: currentuser.userName)
+        query.whereKey("favFlg", equalTo: true)
         query.orderByDescending("createDate")
-        query.findObjectsInBackgroundWithBlock({(objects, error) in
+        var imageQuery: NCMBQuery = NCMBQuery(className: "image")
+        imageQuery.whereKey("imagePath", matchesKey:"imagePath", inQuery:query)
+        imageQuery.findObjectsInBackgroundWithBlock({(objects, error) in
             
             if error == nil {
                 
                 if objects.count > 0 {
                     
+                    
+//                    self.getImageData(objects)
                     self.imageInfo = objects
                     
                     //コレクションビューをリロードする
@@ -53,6 +58,10 @@ class CollectionFavVM: CollectionBaseVM {
                 return
 //            }
         }
+    
+    func getImageData() {
+        var imageQuery: NCMBQuery = NCMBQuery(className: "image")
+    }
     
     
 }

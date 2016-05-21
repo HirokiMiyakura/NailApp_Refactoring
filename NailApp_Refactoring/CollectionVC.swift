@@ -8,11 +8,11 @@
 
 import UIKit
 
-class CollectionVC: UIViewController, UICollectionViewDelegate {
+class CollectionVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
     @IBOutlet weak var collectionView: UICollectionView!
 //    private let mModel = CollectionVM();
-    private var mModel: CollectionProtocol?
+    private var mModel: CollectionBaseVM?
     var tabKind: String?
     var userName: String?
 //    override func loadView() {
@@ -28,7 +28,8 @@ class CollectionVC: UIViewController, UICollectionViewDelegate {
 //        let nib: UINib = UINib(nibName: "CollectionViewCell", bundle: nil)
 //        collectionView.registerNib(nib, forCellWithReuseIdentifier: "CollectionViewCell")
         collectionView.delegate = self
-        collectionView.dataSource = mModel
+        collectionView.dataSource = self
+        
         
         mModel!.loadImageData()
         
@@ -66,8 +67,8 @@ class CollectionVC: UIViewController, UICollectionViewDelegate {
         // 3カラム
         let width: CGFloat = super.view.frame.width / 3 - 6
         let height: CGFloat = width
-        print(width)
-        print(height)
+//        print(width)
+//        print(height)
         let rect:CGRect = CGRectMake(0, 0, width, height)
         
         return CGSize(width: width, height: height) // The size of one cell
@@ -99,9 +100,72 @@ class CollectionVC: UIViewController, UICollectionViewDelegate {
         let controller = segue.destinationViewController as! PageViewManagerVC
         controller.indexPath = indexPath!
         controller.imageInfo = mModel!.imageInfo
+        controller.favDic = mModel!.favDic
         
         
     }
     
+    func didClickImageView(recognizer: UIGestureRecognizer) {
+        if let imageView = recognizer.view as? UIImageView {
+            print("didClickImageView")
+            /** netViewController への遷移 */
+            print("FavImage!!!!")
+            if(NCMBUser.currentUser() == nil) {
+                print("ログインせよ")
+                // 未ログインの場合はポップアップを出して処理終了
+                let alertController = UIAlertController(title: "Sorry!", message: "カワイイネをするには会員になってね", preferredStyle: .Alert)
+                
+                let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                alertController.addAction(defaultAction)
+                
+                self.presentViewController(alertController, animated: true, completion: nil)
+                return
+            }
+            mModel!.updateFavData(imageView)
+//            let targetFavData: AnyObject = self.imageInfo[imageView.tag]
+//            updateFavData(targetFavData, imageView: imageView)
+            
+        }
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        print("collectionViewの設定開始")
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! MyCollectionViewCell
+        let targetImageData = mModel!.imageInfo[indexPath.row]
+        let url = NSURL(string: (targetImageData.objectForKey("imagePath") as? String)!)
+        
+        let placeholder = UIImage(named: "transparent.png")
+        let imageView = UIImageView()
+        //        imageView.frame = self.cellRect!
+        imageView.frame = CGRect(x: 0,y: 0,width: 132,height: 132) // The size of one cell
+        
+        let rect:CGRect = CGRectMake(imageView.frame.width/3*2, imageView.frame.height/3*2, imageView.frame.width/3, imageView.frame.height/3)
+        let favImageView = UIImageView()
+        // didClickImageViewを有効化するための処理
+        favImageView.userInteractionEnabled = true
+        imageView.userInteractionEnabled = true
+        let gesture = UITapGestureRecognizer(target:self, action:#selector(CollectionVC.didClickImageView(_:)))
+        favImageView.addGestureRecognizer(gesture)
+        favImageView.tag = indexPath.row
+        favImageView.frame = rect
+        favImageView.image = UIImage(named: "heart_unlike.png")
+        imageView.addSubview(favImageView)
+        
+        
+        mModel!.setFavImage(favImageView, targetImageData: targetImageData as! NCMBObject)
+        
+        cell.addSubview(imageView)
+        imageView.setImageWithURL(url, placeholderImage: placeholder)
+        return cell
+    }
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return mModel!.imageInfo.count
+    }
+    
+    func didClickImageView2(recognizer: UIGestureRecognizer) {
+        print("hahaha")
+    }
+
     
 }

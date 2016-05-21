@@ -10,7 +10,7 @@ import UIKit
 
 class CollectionFactory: NSObject {
 
-    static func getCollectionClass(tabKind: String) -> CollectionProtocol {
+    static func getCollectionClass(tabKind: String) -> CollectionBaseVM {
         if (tabKind == "1") {
             return CollectionNewVM()
         } else if (tabKind == "2") {

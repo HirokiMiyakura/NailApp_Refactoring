@@ -16,4 +16,8 @@ class DetailView: UIView {
 
     @IBOutlet weak var kawaiineCountLabel: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
+    
+    override func layoutSubviews() {
+        scrollView.contentSize = CGSizeMake(screenWidth, 1200)
+    }
 }

@@ -68,7 +68,7 @@ class CollectionNewVM: CollectionBaseVM {
             if error == nil {
                 
                 if objects.count > 0 {
-                    print(objects)
+//                    print(objects)
                     
                     self.imageInfo = objects
 //                    self.favInfo = [Bool]

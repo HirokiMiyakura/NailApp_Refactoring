@@ -100,6 +100,7 @@ class CollectionBaseVM: NSObject, CollectionProtocol {
                             var saveError: NSError? = nil
                             if (error == nil) {
                                 objImage.incrementKey("kawaiine",byAmount: -1)
+//                                objImage.setObject(!favFlg,forKey: "favFlg")
                                 objImage.save(&saveError)
                                 targetFavData.incrementKey("kawaiine", byAmount: -1)
                             } else {
@@ -117,6 +118,7 @@ class CollectionBaseVM: NSObject, CollectionProtocol {
                             if (error == nil) {
                                 objImage.incrementKey("kawaiine",byAmount: 1)
                                 targetFavData.incrementKey("kawaiine", byAmount: 1)
+//                                objImage.setObject(!favFlg,forKey: "favFlg")
                                 objImage.save(&saveError)
                             } else {
                                 print("favFlgがfalse時のkawaiine保存時にエラーが発生しました: \(error)")

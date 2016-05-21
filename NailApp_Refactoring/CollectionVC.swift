@@ -67,8 +67,8 @@ class CollectionVC: UIViewController, UICollectionViewDelegate, UICollectionView
         // 3カラム
         let width: CGFloat = super.view.frame.width / 3 - 6
         let height: CGFloat = width
-        print(width)
-        print(height)
+//        print(width)
+//        print(height)
         let rect:CGRect = CGRectMake(0, 0, width, height)
         
         return CGSize(width: width, height: height) // The size of one cell

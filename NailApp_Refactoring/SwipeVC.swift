@@ -10,6 +10,7 @@ import UIKit
 
 class SwipeVC: UINavigationController,UIPageViewControllerDelegate,UIPageViewControllerDataSource,UIScrollViewDelegate {
 
+    var titleArray = []
     // もともと0だったが-10位がちょうどいいかもNew,Popularの部分の横幅に関連する。
     let X_BUFFER:CGFloat = -10  //%%% the number of pixels on either side of the segment
     // もともと30。New,Popularの部分の縦幅
@@ -90,7 +91,8 @@ class SwipeVC: UINavigationController,UIPageViewControllerDelegate,UIPageViewCon
         let numControllers :Int = viewControllerArray.count
         
         if (buttonText.count == 0) {
-            buttonText = ["New","Popular","Favorite"] //%%%buttontitle
+//            buttonText = ["New","Popular","Favorite"] //%%%buttontitle
+            buttonText = titleArray as! [String]
         }
         
         for (var i = 0 ; i < numControllers; i++) {

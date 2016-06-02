@@ -45,6 +45,7 @@ class SettingVC: UIViewController, UITableViewDelegate {
             let detailUserVC = self.storyboard!.instantiateViewControllerWithIdentifier( "detailUserVC" ) as! DetailUserVC
             detailUserVC.userName = NCMBUser.currentUser().userName
             detailUserVC.ownORotherFlg = "1" // 1は自分
+            gblUserName = NCMBUser.currentUser().userName
             self.navigationController?.pushViewController(detailUserVC, animated: true)
 //            performSegueWithIdentifier("segueToDetailUserVC", sender: nil)
         case 2:

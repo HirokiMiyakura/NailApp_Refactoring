@@ -23,6 +23,8 @@ class CollectionFactory: NSObject {
             return CollectionOwnVM()
         } else if (tabKind == "6") {
             return CollectionFavVM()
+        } else if (tabKind == "7") {
+            return CollectionMineVM()
         }else {
             return CollectionBaseVM()
         }

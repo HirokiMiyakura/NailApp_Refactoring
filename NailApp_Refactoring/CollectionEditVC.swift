@@ -8,29 +8,30 @@
 
 import UIKit
 
-class CollectionVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-
+class CollectionEditVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    @IBAction func editButton(sender: AnyObject) {
+        
+        
+    }
+    override func setEditing(editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+        collectionView?.allowsMultipleSelection = editing
+        
+//        toolBar.hidden = !editing
+    }
+    
     @IBOutlet weak var collectionView: UICollectionView!
-//    private let mModel = CollectionVM();
     private var mModel: CollectionBaseVM?
     var tabKind: String = "5"
     var userName: String?
-//    override func loadView() {
-//        self.view = UINib(nibName: "CollectionView", bundle: nil).instantiateWithOwner(self, options: nil)[0] as! CollectionView
-//    }
-//    override func loadView() {
-//        self.view = UINib(nibName: "CustomView", bundle: nil).instantiateWithOwner(self, options: nil)[0] as! CustomView
-//    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        collectionView.dataSource = self
+        collectionView.delegate = self
         // Do any additional setup after loading the view.
         mModel = CollectionFactory.getCollectionClass(tabKind)
-//        let nib: UINib = UINib(nibName: "CollectionViewCell", bundle: nil)
-//        collectionView.registerNib(nib, forCellWithReuseIdentifier: "CollectionViewCell")
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        
-        
         mModel!.loadImageData()
         
         let refreshControl = UIRefreshControl()
@@ -38,8 +39,10 @@ class CollectionVC: UIViewController, UICollectionViewDelegate, UICollectionView
         refreshControl.addTarget(self, action: "reloadCollection:", forControlEvents: UIControlEvents.ValueChanged)
         //UICollectionView上に、ロード中...を表示するための新しいビューを作る
         self.collectionView?.addSubview(refreshControl)
+        
+        navigationItem.leftBarButtonItem = editButtonItem()
     }
-
+    
     //リフレッシュさせる
     func reloadCollection(sender:AnyObject) {
         sender.beginRefreshing()
@@ -51,27 +54,44 @@ class CollectionVC: UIViewController, UICollectionViewDelegate, UICollectionView
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    // MARK:- Highlight
+    
+    func highlightCell(indexPath : NSIndexPath, flag: Bool) {
+        
+        let cell = collectionView.cellForItemAtIndexPath(indexPath)
+        
+        if flag {
+            cell?.contentView.backgroundColor = UIColor.magentaColor()
+        } else {
+            cell?.contentView.backgroundColor = nil
+        }
     }
-    */
-
+    
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         
         // 3カラム
-        let width: CGFloat = super.view.frame.width / 3 - 6
-        let height: CGFloat = width
-//        print(width)
-//        print(height)
-        let rect:CGRect = CGRectMake(0, 0, width, height)
+//        let width: CGFloat = super.view.frame.width / 3 - 6
+//        let height: CGFloat = width
+//        //        print(width)
+//        //        print(height)
+//        let rect:CGRect = CGRectMake(0, 0, width, height)
+//        
+//        return CGSize(width: width, height: height) // The size of one cell
         
-        return CGSize(width: width, height: height) // The size of one cell
+        
+        let length = (UIScreen.mainScreen().bounds.width-15)/2
+        return CGSizeMake(length,length);
         
     }
     
@@ -85,11 +105,11 @@ class CollectionVC: UIViewController, UICollectionViewDelegate, UICollectionView
     override func viewWillDisappear(animated: Bool) {
         mModel!.removeObserver(self, forKeyPath: "imageInfo")
     }
-
+    
     
     override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
         NSLog("Called")
-//        print(change)
+        //        print(change)
         collectionView.reloadData()
     }
     
@@ -122,8 +142,8 @@ class CollectionVC: UIViewController, UICollectionViewDelegate, UICollectionView
                 return
             }
             mModel!.updateFavData(imageView)
-//            let targetFavData: AnyObject = self.imageInfo[imageView.tag]
-//            updateFavData(targetFavData, imageView: imageView)
+            //            let targetFavData: AnyObject = self.imageInfo[imageView.tag]
+            //            updateFavData(targetFavData, imageView: imageView)
             
         }
     }
@@ -154,7 +174,7 @@ class CollectionVC: UIViewController, UICollectionViewDelegate, UICollectionView
         
         mModel!.setFavImage(favImageView, targetImageData: targetImageData as! NCMBObject)
         
-        cell.addSubview(imageView)
+        cell.contentView.addSubview(imageView)
         imageView.setImageWithURL(url, placeholderImage: placeholder)
         return cell
     }
@@ -166,6 +186,14 @@ class CollectionVC: UIViewController, UICollectionViewDelegate, UICollectionView
     func didClickImageView2(recognizer: UIGestureRecognizer) {
         print("hahaha")
     }
-
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        highlightCell(indexPath, flag: true)
+    }
+    
+    func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
+        highlightCell(indexPath, flag: false)
+    }
+    
     
 }

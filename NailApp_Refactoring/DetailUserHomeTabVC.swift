@@ -9,6 +9,7 @@
 import UIKit
 
 class DetailUserHomeTabVC: UIViewController {
+    var userName: String!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,11 +18,16 @@ class DetailUserHomeTabVC: UIViewController {
         // Dispose of any resources that can be recreated.
         let pageController:UIPageViewController = UIPageViewController(transitionStyle: UIPageViewControllerTransitionStyle.Scroll, navigationOrientation: UIPageViewControllerNavigationOrientation.Horizontal, options: nil)
         let navigationController:SwipeVC = SwipeVC(rootViewController: pageController)
+        navigationController.titleArray = ["Profile","Images"]
         let DetailUserProfileVC = self.storyboard!.instantiateViewControllerWithIdentifier( "detailUsersProfileVC" ) as! DetailUsersProfileVC
-        let CollectionNewVC = self.storyboard!.instantiateViewControllerWithIdentifier( "collectionVC" ) as! CollectionVC
-        CollectionNewVC.tabKind = "1"
+        let CollectionMineVC = self.storyboard!.instantiateViewControllerWithIdentifier( "collectionVC" ) as! CollectionVC
+        CollectionMineVC.tabKind = "7"
         
-        navigationController.viewControllerArray = [DetailUserProfileVC,CollectionNewVC]
+        navigationController.viewControllerArray = [DetailUserProfileVC,CollectionMineVC]
+//        let vc = self.parentViewController as! DetailUserVC
+        print("userNameは")
+        print(self.userName)
+        DetailUserProfileVC.userName = self.userName
         self.addChildViewController(navigationController)
         self.view.addSubview(navigationController.view)
     }

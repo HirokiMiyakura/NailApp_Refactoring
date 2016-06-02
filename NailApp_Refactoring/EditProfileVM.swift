@@ -11,11 +11,13 @@ import UIKit
 class EditProfileVM: NSObject {
 
      dynamic var prefectureArray: NSArray = []
+    dynamic var uploadDoneFlg = false
      var cityArray: NSArray = []
     var selectedPrefecture: String!
     var selectedCity: String!
     dynamic var salonInfo: NSArray = []
     dynamic var aiueoaiueo: NSArray = []
+//    dynamic var aiueoaiueo: NCMBObject!
     dynamic var hoge: String!
 //    dynamic var salonInfo = NSDate()
     func resizeImage(image: UIImage, width: Int, height: Int) -> UIImage {
@@ -47,6 +49,8 @@ class EditProfileVM: NSObject {
             "userName" : userName!,
             "fileName" : param1["time"] as! String
         ]
+        print("time2")
+        print(param["fileName"])
         let boundary = generateBoundaryString()
         request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
         //        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -68,11 +72,13 @@ class EditProfileVM: NSObject {
             dispatch_async(dispatch_get_main_queue(),{
                 //アップロード完了
 //                self.dismissViewControllerAnimated(true, completion: nil)
+                self.registerSalonInfomation(param1)
+//                self.uploadDoneFlg = true
             });
         }
         task.resume()
         
-        registerSalonInfomation(param1)
+//        registerSalonInfomation(param1)
         
     }
     func generateBoundaryString() -> String {
@@ -86,6 +92,8 @@ class EditProfileVM: NSObject {
                 body.appendString("--\(boundary)\r\n")
                 body.appendString("Content-Disposition: form-data; name=\"\(key)\"\r\n\r\n")
                 body.appendString("\(value)\r\n")
+                print("value")
+                print(value)
             }
         }
         let filename = "image(1).jpg"
@@ -181,8 +189,12 @@ class EditProfileVM: NSObject {
         let carrentUser = NCMBUser.currentUser()
         carrentUser.setObject(param1["nickName"], forKey: "nickName")
         carrentUser.setObject(param1["commentTextView"], forKey: "comment")
-        let time = param1["time"] as! String
-        carrentUser.setObject(urlUploadProfileImagesLocation + time + ".jpg", forKey: "imagePath")
+        
+        if param1["time"] != nil {
+            let time = param1["time"] as! String
+            carrentUser.setObject(urlUploadProfileImagesLocation + time + ".jpg", forKey: "imagePath")
+        }
+        
         
         
         let salonObject = NCMBObject(className: "salon")
@@ -207,6 +219,7 @@ class EditProfileVM: NSObject {
         carrentUser.saveInBackgroundWithBlock({ (error: NSError!) -> Void in
             //            self.dismissViewControllerAnimated(true, completion: nil)
             print("サロン登録完了")
+            self.uploadDoneFlg = true
         })
         
     }
@@ -215,7 +228,14 @@ class EditProfileVM: NSObject {
         
         
         let carrentUser = NCMBUser.currentUser()
-        let salonObjectId = carrentUser.objectForKey("salonPointer").objectForKey("objectId") as! String
+        if carrentUser.objectForKey("salonPointer") == nil {
+            return
+        }
+//        let a = carrentUser.objectForKey("salonPointer")
+//        let salonObjectId = a.objectForKey("objectId")
+//        let salonObjectId = a.objectId
+        let salonObjectId = carrentUser.objectForKey("salonPointer").objectId
+//        self.aiueoaiueo = carrentUser.objectForKey("salonPointer") as! NCMBObject
         let salonQuery = NCMBQuery(className: "salon")
         salonQuery.whereKey("objectId", equalTo: salonObjectId)
         

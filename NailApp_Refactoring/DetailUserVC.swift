@@ -84,7 +84,7 @@ class DetailUserVC: UIViewController {
     */
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        print("segue")
+        print("segue！！")
         if (segue.identifier == "segueToEdit") {
             // プロフィール編集処理画面遷移時
 //            let controller = segue.destinationViewController as! editProfileViewController
@@ -100,6 +100,9 @@ class DetailUserVC: UIViewController {
                 controller.tabKind = "4"
             }
             
+        } else if (segue.identifier == "segueToDetailProfile") {
+            let controller = segue.destinationViewController as! DetailUserHomeTabVC
+            controller.userName = self.userName!
         }
         
         
@@ -113,6 +116,10 @@ class DetailUserVC: UIViewController {
 //        editProfileVC.
         editProfileVC.commentTextView = topViewXIB.profileCommentLabel.text!
         editProfileVC.nickNameTextField = topViewXIB.nickNameLabel.text!
+        if(topViewXIB.profileImage != nil) {
+            editProfileVC.imageView = topViewXIB.profileImage
+        }
+        
         self.presentViewController(editProfileVC, animated: true, completion: nil)
 //        self.navigationController?.pushViewController(editProfileVC, animated: true)
         

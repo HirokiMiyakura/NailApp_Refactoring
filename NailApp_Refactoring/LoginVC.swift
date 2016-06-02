@@ -62,7 +62,10 @@ class LoginVC: UIViewController {
                 // ログイン成功時の処理
                 let alertController = UIAlertController(title: "Thank You!", message: "ログイン成功！", preferredStyle: .Alert)
 
-                let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: {
+                    (action:UIAlertAction!) -> Void in
+                    self.closeMyView()
+                })
                 alertController.addAction(defaultAction)
 
                 self.presentViewController(alertController, animated: true, completion: nil)
@@ -70,6 +73,10 @@ class LoginVC: UIViewController {
             }
         }))
         
+    }
+    
+    func closeMyView() {
+        self.navigationController?.popViewControllerAnimated(true)
     }
 
 }

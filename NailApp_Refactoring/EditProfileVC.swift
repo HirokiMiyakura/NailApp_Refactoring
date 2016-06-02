@@ -14,6 +14,7 @@ class EditProfileVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
     var imageChangeFlg: Bool = false
     private var mModel: EditProfileVM!
 
+    var imageView: UIImageView!
     
     var prefecturePicker: UIPickerView!
     var cityPicker: UIPickerView!
@@ -36,6 +37,7 @@ class EditProfileVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
         let view = self.view as? EditProfileView
         view!.commentTextView.text = self.commentTextView
         view!.nickNameTextField.text = self.nickNameTextField
+        view!.profileImageView.image = self.imageView.image
         view!.cancelButton.action = #selector(EditProfileVC.cancelButtonTapped(_:))
         view!.saveButton.action = #selector(EditProfileVC.saveButtonTapped(_:))
         view!.changeImageButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(EditProfileVC.changeImage(_:))))
@@ -102,6 +104,7 @@ class EditProfileVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
         super.viewWillAppear(animated)
         
         mModel.addObserver(self, forKeyPath: "aiueoaiueo", options: [.New, .Old], context: nil)
+        mModel.addObserver(self, forKeyPath: "uploadDoneFlg", options: [.New, .Old], context: nil)
 //        mModel.addObserver(self, forKeyPath: "prefectureArray", options: [.New, .Old], context: nil)
         
         //        myClass.value = "NewValue"
@@ -109,6 +112,7 @@ class EditProfileVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
     
     override func viewWillDisappear(animated: Bool) {
         mModel.removeObserver(self, forKeyPath: "aiueoaiueo")
+        mModel.removeObserver(self, forKeyPath: "uploadDoneFlg")
 //        mModel.removeObserver(self, forKeyPath: "prefectureArray")
     }
 
@@ -125,17 +129,27 @@ class EditProfileVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
     override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
         NSLog("Called")
         
-        let view = self.view as! EditProfileView
-        view.salonNameTextField.text = mModel.aiueoaiueo[0].objectForKey("salonName") as? String
-        view.mailTextField.text = mModel.aiueoaiueo[0].objectForKey("mailAddress") as? String
-        view.telTextField.text = mModel.aiueoaiueo[0].objectForKey("tel") as? String
-        view.prefectureTextField.text = mModel.aiueoaiueo[0].objectForKey("locationPrefecture") as? String
-        view.cityTextField.text = mModel.aiueoaiueo[0].objectForKey("locationCity") as? String
-        view.lineIdTextField.text = mModel.aiueoaiueo[0].objectForKey("lineId") as? String
-        view.urlTextField.text = mModel.aiueoaiueo[0].objectForKey("url") as? String
-        view.averageAgeTextField.text = mModel.aiueoaiueo[0].objectForKey("averageAge") as? String
-        view.averageCostTextField.text = mModel.aiueoaiueo[0].objectForKey("averageCost") as? String
-//        view.nailistSwitch.on = (mModel.aiueoaiueo[0].objectForKey("nailistFlg") as? Bool)!
+        if (keyPath == "aiueoaiueo") {
+            let view = self.view as! EditProfileView
+            
+//            view.salonNameTextField.text = mModel.aiueoaiueo.objectForKey("salonName") as! String
+            view.salonNameTextField.text = mModel.aiueoaiueo[0].objectForKey("salonName") as? String
+            view.mailTextField.text = mModel.aiueoaiueo[0].objectForKey("mailAddress") as? String
+            view.telTextField.text = mModel.aiueoaiueo[0].objectForKey("tel") as? String
+            view.prefectureTextField.text = mModel.aiueoaiueo[0].objectForKey("locationPrefecture") as? String
+            view.cityTextField.text = mModel.aiueoaiueo[0].objectForKey("locationCity") as? String
+            view.lineIdTextField.text = mModel.aiueoaiueo[0].objectForKey("lineId") as? String
+            view.urlTextField.text = mModel.aiueoaiueo[0].objectForKey("url") as? String
+            view.averageAgeTextField.text = mModel.aiueoaiueo[0].objectForKey("averageAge") as? String
+            view.averageCostTextField.text = mModel.aiueoaiueo[0].objectForKey("averageCost") as? String
+            
+            
+            //        view.nailistSwitch.on = (mModel.aiueoaiueo[0].objectForKey("nailistFlg") as? Bool)!
+            
+        } else if (keyPath == "uploadDoneFlg") {
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
+        
     }
     
     func cancelButtonTapped(sender: AnyObject) {
@@ -150,7 +164,7 @@ class EditProfileVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
         print("save")
         let view = self.view as? EditProfileView
         let time:Int = Int(NSDate().timeIntervalSince1970)
-        let param1 = [
+        var param1 = [
             "nickName" : view!.nickNameTextField.text!,
             "commentTextView" : view!.commentTextView.text,
             "image" : view!.profileImageView,
@@ -164,16 +178,17 @@ class EditProfileVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
             "averageAge" : view!.averageAgeTextField.text!,
             "averageCost" : view!.averageCostTextField.text!,
             "nailistFlg" : view!.nailistSwitch.on,
-            "time" : String(time)
+//            "time" : String(time)
             ] as Dictionary<String, AnyObject>
         
         if (imageChangeFlg) {
 //            var dict = anyObject as Dictionary<String, AnyObject>
+            param1["time"] = String(time)
             
             mModel.myImageUploadRequest(param1)
             // TODO
             // 非同期だからどうしよう。
-            self.dismissViewControllerAnimated(true, completion: nil)
+//            self.dismissViewControllerAnimated(true, completion: nil)
         } else {
 //            let carrentUser = NCMBUser.currentUser()
 //            carrentUser.setObject(view!.nickNameTextField.text, forKey: "nickName")
@@ -182,7 +197,7 @@ class EditProfileVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
 //                self.dismissViewControllerAnimated(true, completion: nil)
 //            })
             mModel.registerSalonInfomation(param1)
-            self.dismissViewControllerAnimated(true, completion: nil)
+//            self.dismissViewControllerAnimated(true, completion: nil)
         }
     }
     func changeImage(sender: UITapGestureRecognizer) {

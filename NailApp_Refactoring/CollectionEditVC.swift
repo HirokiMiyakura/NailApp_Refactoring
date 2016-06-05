@@ -151,6 +151,10 @@ class CollectionEditVC: UIViewController, UICollectionViewDelegate, UICollection
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         print("collectionViewの設定開始")
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! MyCollectionViewCell
+        
+        for subview in cell.contentView.subviews{
+            subview.removeFromSuperview()
+        }
         let targetImageData = mModel!.imageInfo[indexPath.row]
         let url = NSURL(string: (targetImageData.objectForKey("imagePath") as? String)!)
         
@@ -188,6 +192,12 @@ class CollectionEditVC: UIViewController, UICollectionViewDelegate, UICollection
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let cell = collectionView.cellForItemAtIndexPath(indexPath)
+        let imageView = UIImageView()
+        let rect:CGRect = CGRectMake(cell!.frame.width/3*2, cell!.frame.height/3*2, cell!.frame.width/3, cell!.frame.height/3)
+        imageView.image = UIImage(named: "check.png")
+        imageView.frame = rect
+        cell!.contentView.addSubview(imageView)
         highlightCell(indexPath, flag: true)
     }
     

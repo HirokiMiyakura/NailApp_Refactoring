@@ -89,11 +89,17 @@ class CollectionEditVC: UIViewController, UICollectionViewDelegate, UICollection
 //        
 //        return CGSize(width: width, height: height) // The size of one cell
         
-        
+//        
         let length = (UIScreen.mainScreen().bounds.width-15)/2
         return CGSizeMake(length,length);
         
     }
+    
+//    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+//        let cellSize:CGFloat = self.view.frame.size.width/2-2
+//        // 正方形で返すためにwidth,heightを同じにする
+//        return CGSizeMake(cellSize, cellSize)
+//    }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -150,7 +156,13 @@ class CollectionEditVC: UIViewController, UICollectionViewDelegate, UICollection
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         print("collectionViewの設定開始")
+        
+        
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! MyCollectionViewCell
+        
+        for subview in cell.subviews{
+            subview.removeFromSuperview()
+        }
         let targetImageData = mModel!.imageInfo[indexPath.row]
         let url = NSURL(string: (targetImageData.objectForKey("imagePath") as? String)!)
         
@@ -174,7 +186,7 @@ class CollectionEditVC: UIViewController, UICollectionViewDelegate, UICollection
         
         mModel!.setFavImage(favImageView, targetImageData: targetImageData as! NCMBObject)
         
-        cell.contentView.addSubview(imageView)
+        cell.addSubview(imageView)
         imageView.setImageWithURL(url, placeholderImage: placeholder)
         return cell
     }
@@ -188,7 +200,22 @@ class CollectionEditVC: UIViewController, UICollectionViewDelegate, UICollection
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        print("select")
+//        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! MyCollectionViewCell
+//        
+//        let imageView = UIImageView()
+//        imageView.image = UIImage(named: "heart_unlike.png")
+////        let rect:CGRect = CGRectMake(cell.frame.width/3*2, cell.frame.height/3*2, cell.frame.width/3, cell.frame.height/3)
+////        let rect:CGRect = CGRectMake(cell.frame.width, cell.frame.height, cell.frame.width, cell.frame.height)
+//        imageView.frame = CGRectMake(self.view.bounds.height/2, self.view.bounds.width/2, 100, 100)
+//
+//        cell.addSubview(imageView)
         highlightCell(indexPath, flag: true)
+//        self.view.bringSubviewToFront(imageView)
+//        collectionView.reloadData()
+        
+        
+        
     }
     
     func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {

@@ -15,6 +15,7 @@
 		9452D96A1CDEC89400055351 /* DetailUserHomeTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9452D9691CDEC89400055351 /* DetailUserHomeTabVC.swift */; };
 		9452D9721CDECE7F00055351 /* DetailUsersProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9452D9711CDECE7F00055351 /* DetailUsersProfileVC.swift */; };
 		9461C0C41CE2090000F07837 /* TestVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9461C0C31CE2090000F07837 /* TestVM.swift */; };
+		947D16B61D04850D00693EBA /* MyCollectionViewCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947D16B51D04850D00693EBA /* MyCollectionViewCell2.swift */; };
 		94B6F34B1CD5CE2F004FC477 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B6F34A1CD5CE2F004FC477 /* DetailView.swift */; };
 		94B6F34D1CD5CE3E004FC477 /* DetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94B6F34C1CD5CE3E004FC477 /* DetailView.xib */; };
 		94B6F34F1CD60478004FC477 /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B6F34E1CD60478004FC477 /* MyCollectionViewCell.swift */; };
@@ -82,6 +83,7 @@
 		9452D9691CDEC89400055351 /* DetailUserHomeTabVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailUserHomeTabVC.swift; sourceTree = "<group>"; };
 		9452D9711CDECE7F00055351 /* DetailUsersProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailUsersProfileVC.swift; sourceTree = "<group>"; };
 		9461C0C31CE2090000F07837 /* TestVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestVM.swift; sourceTree = "<group>"; };
+		947D16B51D04850D00693EBA /* MyCollectionViewCell2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell2.swift; sourceTree = "<group>"; };
 		94B6F34A1CD5CE2F004FC477 /* DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		94B6F34C1CD5CE3E004FC477 /* DetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailView.xib; sourceTree = "<group>"; };
 		94B6F34E1CD60478004FC477 /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 				94B6F3701CD6FA0C004FC477 /* SettingView.xib */,
 				94B6F3761CD72A09004FC477 /* LoginView.xib */,
 				94B6F3781CD72A1B004FC477 /* LoginView.swift */,
+				947D16B51D04850D00693EBA /* MyCollectionViewCell2.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -477,6 +480,7 @@
 				94EE27891CF4981A00FC499B /* CollectionEditVC.swift in Sources */,
 				9452D9721CDECE7F00055351 /* DetailUsersProfileVC.swift in Sources */,
 				94B6F34B1CD5CE2F004FC477 /* DetailView.swift in Sources */,
+				947D16B61D04850D00693EBA /* MyCollectionViewCell2.swift in Sources */,
 				94F0730F1CD9E03400E0B7C8 /* UploadImageVM.swift in Sources */,
 				94B6F3691CD6F23B004FC477 /* EditProfileVC.swift in Sources */,
 				94EE27871CF1EBB800FC499B /* CollectionMineVM.swift in Sources */,

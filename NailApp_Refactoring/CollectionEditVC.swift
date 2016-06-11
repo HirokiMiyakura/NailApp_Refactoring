@@ -10,6 +10,31 @@ import UIKit
 
 class CollectionEditVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    
+    
+    @IBAction func deleteCells(sender: AnyObject) {
+        
+        var test:[String] = ["A", "B", "C", "D", "E", "F"]
+        test.removeAtIndex(0)
+        let indexpaths = collectionView?.indexPathsForSelectedItems()
+        
+        if let indexpaths = indexpaths {
+            
+            for item  in indexpaths {
+                collectionView?.deselectItemAtIndexPath((item), animated: true)
+                // fruits for section
+//                let sectionfruits = dataSource.fruitsInGroup(item.section)
+//                deletedFruits.append(sectionfruits[item.row])
+            }
+            
+//            mModel!.imageInfo.object
+            
+            collectionView?.deleteItemsAtIndexPaths(indexpaths)
+        }
+    }
+    @IBOutlet weak var toolBar: UIToolbar!
+    var checkArray:NSMutableArray = []
+    
     @IBAction func editButton(sender: AnyObject) {
         
         
@@ -18,7 +43,7 @@ class CollectionEditVC: UIViewController, UICollectionViewDelegate, UICollection
         super.setEditing(editing, animated: animated)
         collectionView?.allowsMultipleSelection = editing
         
-//        toolBar.hidden = !editing
+        toolBar.hidden = !editing
     }
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -41,6 +66,7 @@ class CollectionEditVC: UIViewController, UICollectionViewDelegate, UICollection
         self.collectionView?.addSubview(refreshControl)
         
         navigationItem.leftBarButtonItem = editButtonItem()
+        toolBar.hidden = true
     }
     
     //リフレッシュさせる
@@ -81,17 +107,17 @@ class CollectionEditVC: UIViewController, UICollectionViewDelegate, UICollection
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         
         // 3カラム
-//        let width: CGFloat = super.view.frame.width / 3 - 6
-//        let height: CGFloat = width
-//        //        print(width)
-//        //        print(height)
-//        let rect:CGRect = CGRectMake(0, 0, width, height)
-//        
-//        return CGSize(width: width, height: height) // The size of one cell
+        let width: CGFloat = super.view.frame.width / 3 - 6
+        let height: CGFloat = width
+        //        print(width)
+        //        print(height)
+        let rect:CGRect = CGRectMake(0, 0, width, height)
+        
+        return CGSize(width: width, height: height) // The size of one cell
         
         
-        let length = (UIScreen.mainScreen().bounds.width-15)/2
-        return CGSizeMake(length,length);
+//        let length = (UIScreen.mainScreen().bounds.width-15)/2
+//        return CGSizeMake(length,length);
         
     }
     
@@ -150,36 +176,56 @@ class CollectionEditVC: UIViewController, UICollectionViewDelegate, UICollection
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         print("collectionViewの設定開始")
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! MyCollectionViewCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! MyCollectionViewCell2
         
-        for subview in cell.contentView.subviews{
-            subview.removeFromSuperview()
-        }
+//        for subview in cell.contentView.subviews{
+//            subview.removeFromSuperview()
+//        }
         let targetImageData = mModel!.imageInfo[indexPath.row]
         let url = NSURL(string: (targetImageData.objectForKey("imagePath") as? String)!)
         
         let placeholder = UIImage(named: "transparent.png")
-        let imageView = UIImageView()
-        //        imageView.frame = self.cellRect!
-        imageView.frame = CGRect(x: 0,y: 0,width: 132,height: 132) // The size of one cell
+//        let imageView = UIImageView()
+//        //        imageView.frame = self.cellRect!
+//        imageView.frame = CGRect(x: 0,y: 0,width: 132,height: 132) // The size of one cell
+//        
+//        let rect:CGRect = CGRectMake(imageView.frame.width/3*2, imageView.frame.height/3*2, imageView.frame.width/3, imageView.frame.height/3)
+//        let favImageView = UIImageView()
+//        // didClickImageViewを有効化するための処理
+//        favImageView.userInteractionEnabled = true
+//        imageView.userInteractionEnabled = true
+//        let gesture = UITapGestureRecognizer(target:self, action:#selector(CollectionVC.didClickImageView(_:)))
+//        favImageView.addGestureRecognizer(gesture)
+//        favImageView.tag = indexPath.row
+//        favImageView.frame = rect
+//        favImageView.image = UIImage(named: "heart_unlike.png")
+//        imageView.addSubview(favImageView)
+//        
+//        
+//        mModel!.setFavImage(favImageView, targetImageData: targetImageData as! NCMBObject)
+//        
+//        cell.contentView.addSubview(imageView)
+//        imageView.setImageWithURL(url, placeholderImage: placeholder)
         
-        let rect:CGRect = CGRectMake(imageView.frame.width/3*2, imageView.frame.height/3*2, imageView.frame.width/3, imageView.frame.height/3)
-        let favImageView = UIImageView()
-        // didClickImageViewを有効化するための処理
-        favImageView.userInteractionEnabled = true
-        imageView.userInteractionEnabled = true
-        let gesture = UITapGestureRecognizer(target:self, action:#selector(CollectionVC.didClickImageView(_:)))
-        favImageView.addGestureRecognizer(gesture)
-        favImageView.tag = indexPath.row
-        favImageView.frame = rect
-        favImageView.image = UIImage(named: "heart_unlike.png")
-        imageView.addSubview(favImageView)
+        
+        cell.nailImageView.frame = CGRect(x: 0,y: 0,width: 132,height: 132) // The size of one cell
+        cell.nailImageView.setImageWithURL(url, placeholderImage: placeholder)
         
         
-        mModel!.setFavImage(favImageView, targetImageData: targetImageData as! NCMBObject)
+        if checkArray.containsObject(indexPath.row){
+//            checkBtnView = UIImageView()
+            let checkImage = UIImage(named:"check.png")! as UIImage
+//            checkBtnView!.frame = CGRectMake(0,0,20,20)
+//            checkBtnView!.layer.position = CGPoint(x: cell.layer.frame.width - 15.0, y: cell.layer.frame.height - 15.0)
+//            checkBtnView!.image = checkImage
+//            cell.contentView.addSubview(checkBtnView!)
+            cell.checkImageView.image = checkImage
+        }else{
+            print("何も表示しません")
+            cell.checkImageView.image = nil
+        }
         
-        cell.contentView.addSubview(imageView)
-        imageView.setImageWithURL(url, placeholderImage: placeholder)
+        
         return cell
     }
     
@@ -192,16 +238,30 @@ class CollectionEditVC: UIViewController, UICollectionViewDelegate, UICollection
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        let cell = collectionView.cellForItemAtIndexPath(indexPath)
-        let imageView = UIImageView()
-        let rect:CGRect = CGRectMake(cell!.frame.width/3*2, cell!.frame.height/3*2, cell!.frame.width/3, cell!.frame.height/3)
-        imageView.image = UIImage(named: "check.png")
-        imageView.frame = rect
-        cell!.contentView.addSubview(imageView)
+        
+        let cell = collectionView.cellForItemAtIndexPath(indexPath) as! MyCollectionViewCell2
+//        let imageView = UIImageView()
+//        let rect:CGRect = CGRectMake(cell!.frame.width/3*2, cell!.frame.height/3*2, cell!.frame.width/3, cell!.frame.height/3)
+//        imageView.image = UIImage(named: "check.png")
+//        imageView.frame = rect
+//        cell!.contentView.addSubview(imageView)
+        cell.checkImageView.image = UIImage(named: "check.png")
+//        if checkArray.containsObject(indexPath.row){
+//            checkArray.removeObject(indexPath.row)
+//        } else {
+            checkArray.addObject(indexPath.row)
+//        }
         highlightCell(indexPath, flag: true)
     }
     
     func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
+        let cell = collectionView.cellForItemAtIndexPath(indexPath) as! MyCollectionViewCell2
+        cell.checkImageView.image = nil
+//        if checkArray.containsObject(indexPath.row) {
+            checkArray.removeObject(indexPath.row)
+//        } else {
+//            checkArray.addObject(indexPath.row)
+//        }
         highlightCell(indexPath, flag: false)
     }
     

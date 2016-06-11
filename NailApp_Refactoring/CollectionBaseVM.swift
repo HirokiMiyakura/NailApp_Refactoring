@@ -242,6 +242,68 @@ class CollectionBaseVM: NSObject, CollectionProtocol {
         
     }
     
+    func deleteImage(deleteObjects: [AnyObject]) {
+        
+        let obj: NCMBObject = NCMBObject(className: "image")
+        var objectId = ""
+        
+        for item in deleteObjects {
+            objectId = item.objectForKey("objectId") as! String
+            obj.objectId = objectId
+            
+            obj.deleteInBackgroundWithBlock({(error) in
+                self.loadImageData()
+            })
+            
+        }
+//        obj.objectId = deleteObjects.i
+        //        obj.fetchInBackgroundWithBlock({(error) in
+        //
+        //            if (error == nil) {
+        
+//        obj.deleteInBackgroundWithBlock({(error) in
+//            
+//            if (error == nil) {
+//                
+//                //削除成功時に画像も一緒に削除する
+//                let fileData = NCMBFile.fileWithName(self.targetFileName, data: nil) as! NCMBFile
+//                fileData.deleteInBackgroundWithBlock({(error) in
+//                    print("画像データ削除完了: \(self.targetFileName)")
+//                })
+//                
+//            }
+//        })
+//        
+//        //            } else {
+//        //                print("データ取得処理時にエラーが発生しました: \(error)")
+//        //            }
+//        //        })
+//        
+//        //UITextFieldを空にする
+//        self.titleField.text = ""
+//        self.moneyField.text = ""
+//        self.commnetField.text = ""
+//        
+//        //登録されたアラートを表示してOKを押すと戻る
+//        let errorAlert = UIAlertController(
+//            title: "完了",
+//            message: "このデータは削除されました。",
+//            preferredStyle: UIAlertControllerStyle.Alert
+//        )
+//        errorAlert.addAction(
+//            UIAlertAction(
+//                title: "OK",
+//                style: UIAlertActionStyle.Default,
+//                handler: saveComplete
+//            )
+//        )
+//        presentViewController(errorAlert, animated: true, completion: nil)
+
+
+
+    
+    }
+    
     func setFavImage(favImageView: UIImageView, targetImageData: NCMBObject) {
         print("setFavImageを実装しろや")
         if (NCMBUser.currentUser() == nil) {

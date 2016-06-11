@@ -14,8 +14,8 @@ class CollectionEditVC: UIViewController, UICollectionViewDelegate, UICollection
     
     @IBAction func deleteCells(sender: AnyObject) {
         
-        var test:[String] = ["A", "B", "C", "D", "E", "F"]
-        test.removeAtIndex(0)
+        var deletedFruits:[AnyObject] = []
+        
         let indexpaths = collectionView?.indexPathsForSelectedItems()
         
         if let indexpaths = indexpaths {
@@ -24,12 +24,12 @@ class CollectionEditVC: UIViewController, UICollectionViewDelegate, UICollection
                 collectionView?.deselectItemAtIndexPath((item), animated: true)
                 // fruits for section
 //                let sectionfruits = dataSource.fruitsInGroup(item.section)
-//                deletedFruits.append(sectionfruits[item.row])
+                deletedFruits.append(mModel!.imageInfo[item.row])
             }
             
-//            mModel!.imageInfo.object
+            mModel!.deleteImage(deletedFruits)
             
-            collectionView?.deleteItemsAtIndexPaths(indexpaths)
+//            collectionView?.deleteItemsAtIndexPaths(indexpaths)
         }
     }
     @IBOutlet weak var toolBar: UIToolbar!
@@ -136,6 +136,7 @@ class CollectionEditVC: UIViewController, UICollectionViewDelegate, UICollection
     override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
         NSLog("Called")
         //        print(change)
+        checkArray = []
         collectionView.reloadData()
     }
     

@@ -53,6 +53,12 @@ class DetailVC: UIViewController {
 //        detailVM!.setImage(detailView.detailImage)
         detailView.nailistBtn.setTitle(detailVM!.getNailistName(), forState: .Normal)
         
+        
+        // show search button and set action
+        var rightSearchBarButtonItem:UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Search, target: self, action: "searchButtonTapped")
+        // add the button to navigationBar
+        self.navigationItem.setRightBarButtonItems([rightSearchBarButtonItem], animated: true)
+        
     }
     override func viewWillAppear(animated: Bool) {
 

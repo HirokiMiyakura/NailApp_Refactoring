@@ -60,6 +60,7 @@ class CollectionEditVC: UIViewController, UICollectionViewDelegate, UICollection
                     //                let sectionfruits = dataSource.fruitsInGroup(item.section)
 //                    deletedFruits.append(mModel!.imageInfo[item.row])
                 }
+            checkArray = []
                 
 //                mModel!.deleteImage(deletedFruits)
             

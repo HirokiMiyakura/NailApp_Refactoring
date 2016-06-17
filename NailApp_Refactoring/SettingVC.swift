@@ -36,10 +36,7 @@ class SettingVC: UIViewController, UITableViewDelegate {
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         switch indexPath.row {
-        case 1:
-            
-            self.navigationController?.pushViewController(LoginVC(), animated: true)
-//            performSegueWithIdentifier("segueToLoginVC", sender: nil)
+        
             
         case 0:
             let detailUserVC = self.storyboard!.instantiateViewControllerWithIdentifier( "detailUserVC" ) as! DetailUserVC
@@ -48,7 +45,15 @@ class SettingVC: UIViewController, UITableViewDelegate {
             gblUserName = NCMBUser.currentUser().userName
             self.navigationController?.pushViewController(detailUserVC, animated: true)
 //            performSegueWithIdentifier("segueToDetailUserVC", sender: nil)
+            
+        case 1:
+            
+            self.navigationController?.pushViewController(LoginVC(), animated: true)
+        //            performSegueWithIdentifier("segueToLoginVC", sender: nil)
         case 2:
+            NCMBUser.logOut()
+            
+        case 3:
             self.navigationController?.showViewController(ViewController(), sender: true)
         default:
             break

@@ -13,7 +13,7 @@ class SettingVM: NSObject, UITableViewDataSource {
     let settingOptions = [
         "プロフィール",
         "ログイン",
-        "あいうえお",
+        "ログアウト",
         "かきくけこ",
         "さしすせそ",
         "たちつてと",

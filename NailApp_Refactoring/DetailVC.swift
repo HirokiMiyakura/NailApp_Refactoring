@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Social
 
 class DetailVC: UIViewController {
     var imageCollectionObject: NCMBObject?
@@ -45,6 +46,9 @@ class DetailVC: UIViewController {
 //        detailView.clipImage.image = UIImage(named: "Clipped.png")
         detailView.clipImage.userInteractionEnabled = true
         detailView.clipImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(DetailVC.clipImageTapped(_:))))
+        detailView.shareImage.userInteractionEnabled = true
+        detailView.shareImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(DetailVC.shareImageTapped(_:))))
+        detailView.shareImage.image = UIImage(named: "share.png")
         detailView.commentLabel.text = detailVM!.getComment()
         detailView.kawaiineCountLabel.text = String(detailVM!.getKawaiineCount())
         let url = NSURL(string: (self.imageCollectionObject!.objectForKey("imagePath") as? String)!)
@@ -127,6 +131,51 @@ class DetailVC: UIViewController {
         detailVM!.updateFavData()
 //        detailVM!.favFlg = !detailVM!.favFlg
 //        detailView.clipImage.image = UIImage(named: "unClipped.png")
+        
+    }
+    
+    func shareImageTapped(sender: UITapGestureRecognizer) {
+        print("shareImageTapped")
+        
+        
+        let alertController = UIAlertController(title: "Share", message: "", preferredStyle: .Alert)
+        
+        let editProfileAction = UIAlertAction(title: "Facebookで共有", style: .Default, handler: {
+            (action:UIAlertAction!) -> Void in
+            print("Facebook共有します")
+            let text = "facebook share text"
+            
+            let composeViewController: SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeFacebook)!
+            composeViewController.setInitialText(text)
+            
+            self.presentViewController(composeViewController, animated: true, completion: nil)
+            
+        })
+        
+        let editImageAction = UIAlertAction(title: "Twitterで共有", style: .Default, handler: {
+            (action:UIAlertAction!) -> Void in
+            print("Twitterで共有します")
+            let text = "twitter share text"
+            
+            let composeViewController: SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeTwitter)!
+            composeViewController.setInitialText(text)
+            
+            self.presentViewController(composeViewController, animated: true, completion: nil)
+
+            
+        })
+        
+        let cancelAction = UIAlertAction(title: "キャンセル", style: .Default, handler: {
+            (action:UIAlertAction!) -> Void in
+            print("キャンセルします")
+        })
+        
+        alertController.addAction(editProfileAction)
+        alertController.addAction(editImageAction)
+        alertController.addAction(cancelAction)
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
+
         
     }
 //    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

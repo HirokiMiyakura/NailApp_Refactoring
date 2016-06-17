@@ -11,6 +11,7 @@ import UIKit
 class DetailVM: NSObject {
     dynamic var imageCollectionObject: NCMBObject?
     dynamic var favFlg: Bool = false
+    dynamic var nickName: String?
     
     init(imageCollectionObject: NCMBObject) {
         super.init()
@@ -48,8 +49,28 @@ class DetailVM: NSObject {
         
     }
     
-    func getNailistName() -> String {
-        return (self.imageCollectionObject!.objectForKey("userName") as? String!)!
+    func getNailistName() {
+        let userQuery = NCMBUser.query()
+        userQuery.whereKey("userName", equalTo: self.imageCollectionObject!.objectForKey("userName") as? String!)
+        userQuery.findObjectsInBackgroundWithBlock({(items, error) in
+            
+            if error == nil {
+                print("登録件数：\(items.count)")
+                // items.countは1か0しかない。
+                if items.count > 0 {
+                    self.nickName = (items[0].objectForKey("nickName") as? String)!
+//                    return items[0].objectForKey("nickName") as String
+                    
+                } else {
+                    
+                    
+                }
+            }
+            
+            
+        })
+
+//        return (self.imageCollectionObject!.objectForKey("userName") as? String!)!
     }
     
     func checkFavFlg() {

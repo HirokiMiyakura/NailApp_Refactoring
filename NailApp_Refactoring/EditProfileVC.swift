@@ -297,5 +297,22 @@ class EditProfileVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
         let view = self.view as? EditProfileView
         view!.cityTextField.resignFirstResponder()
     }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        let view = self.view as? EditProfileView
+        view!.prefectureTextField.resignFirstResponder()
+        view!.cityTextField.resignFirstResponder()
+        view!.nickNameTextField.resignFirstResponder()
+        view!.commentTextView.resignFirstResponder()
+        view!.averageAgeTextField.resignFirstResponder()
+        view!.averageCostTextField.resignFirstResponder()
+        view!.urlTextField.resignFirstResponder()
+        view!.lineIdTextField.resignFirstResponder()
+        view!.telTextField.resignFirstResponder()
+        view!.mailTextField.resignFirstResponder()
+        view!.salonNameTextField.resignFirstResponder()
+        
+        
+    }
 
 }

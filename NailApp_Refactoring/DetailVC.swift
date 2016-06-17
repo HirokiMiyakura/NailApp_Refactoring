@@ -51,22 +51,32 @@ class DetailVC: UIViewController {
         let placeholder = UIImage(named: "transparent.png")
         detailView.detailImage.setImageWithURL(detailVM!.getURL(), placeholderImage: placeholder)
 //        detailVM!.setImage(detailView.detailImage)
-        detailView.nailistBtn.setTitle(detailVM!.getNailistName(), forState: .Normal)
+//        detailView.nailistBtn.setTitle(detailVM!.getNailistName(), forState: .Normal)
+        
+//        detailView.scrollView.touchesBegan(<#T##touches: Set<UITouch>##Set<UITouch>#>, withEvent: <#T##UIEvent?#>)
+//        detailView.scrollView.delegate = self
         
         
-        // show search button and set action
-        var rightSearchBarButtonItem:UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Search, target: self, action: "searchButtonTapped")
-        // add the button to navigationBar
-        self.navigationItem.setRightBarButtonItems([rightSearchBarButtonItem], animated: true)
         
+        
+    }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+//        let detailView = self.view as! DetailView
+//        
+//        detailView.nailistBtn.touchesBegan(touches, withEvent: event)
+        
+        print("aaaaa")
     }
     override func viewWillAppear(animated: Bool) {
 
         print("viewWillApper")
         detailVM!.addObserver(self, forKeyPath: "favFlg", options: [.New, .Old], context: nil)
         detailVM!.addObserver(self, forKeyPath: "imageCollectionObject", options: [.New, .Old], context: nil)
+        detailVM!.addObserver(self, forKeyPath: "nickName", options: [.New, .Old], context: nil)
         
         detailVM!.checkFavFlg()
+        detailVM!.getNailistName()
 
 //        super.viewWillAppear(animated)
 //        let detailView = self.view as! DetailView
@@ -85,6 +95,7 @@ class DetailVC: UIViewController {
         print("viewWillDisapper")
         detailVM!.removeObserver(self, forKeyPath: "favFlg")
         detailVM!.removeObserver(self, forKeyPath: "imageCollectionObject")
+        detailVM!.removeObserver(self, forKeyPath: "nickName")
     }
 
     /*
@@ -144,8 +155,14 @@ class DetailVC: UIViewController {
         } else if (keyPath == "imageCollectionObject") {
             print("imageCollectionObjectのobserve")
             
-        }
+        } else if (keyPath == "nickName") {
+            print("nickNameのobserve")
+            let detailView = self.view as! DetailView
+            detailView.nailistBtn.setTitle(detailVM!.nickName, forState: .Normal)
         
+        }
+    
+    
     }
 
 }

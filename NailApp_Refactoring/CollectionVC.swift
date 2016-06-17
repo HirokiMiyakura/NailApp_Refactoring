@@ -31,13 +31,14 @@ class CollectionVC: UIViewController, UICollectionViewDelegate, UICollectionView
         collectionView.dataSource = self
         
         
-        mModel!.loadImageData()
+//        mModel!.loadImageData()
         
         let refreshControl = UIRefreshControl()
         //下に引っ張った時に、リフレッシュさせる関数を実行する。”：”を忘れがちなので注意。
         refreshControl.addTarget(self, action: "reloadCollection:", forControlEvents: UIControlEvents.ValueChanged)
         //UICollectionView上に、ロード中...を表示するための新しいビューを作る
         self.collectionView?.addSubview(refreshControl)
+        self.collectionView.alwaysBounceVertical = true
     }
 
     //リフレッシュさせる
@@ -79,6 +80,8 @@ class CollectionVC: UIViewController, UICollectionViewDelegate, UICollectionView
         super.viewWillAppear(animated)
         
         mModel!.addObserver(self, forKeyPath: "imageInfo", options: [.New, .Old], context: nil)
+        
+        mModel!.loadImageData()
         //        myClass.value = "NewValue"
     }
     

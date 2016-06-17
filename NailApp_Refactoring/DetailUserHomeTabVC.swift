@@ -37,6 +37,11 @@ class DetailUserHomeTabVC: UIViewController {
         
     }
     
+    override func viewWillAppear(animated: Bool) {
+        print("viewWillAppear-DetailUserHomeTabVC")
+        super.viewWillAppear(animated)
+    }
+    
 
     /*
     // MARK: - Navigation

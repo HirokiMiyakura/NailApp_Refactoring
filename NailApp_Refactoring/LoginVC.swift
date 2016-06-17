@@ -76,7 +76,26 @@ class LoginVC: UIViewController {
     }
     
     func closeMyView() {
+//        self.navigationController?.popViewControllerAnimated(true)
+        // ① 2番目のタブのViewControllerを取得する
+        let tabVC0 = self.tabBarController!.viewControllers![0];
+        // ② 2番目のタブを選択済みにする
+        self.tabBarController!.selectedViewController = tabVC0;
+        // ③ UINavigationControllerに追加済みのViewを一旦取り除く
         self.navigationController?.popViewControllerAnimated(true)
+//        tabVC0.popToRootViewControllerAnimated = false
+//        [vc popToRootViewControllerAnimated:NO];
+        // ④ SecondViewの画面遷移処理を呼び出す
+//        tabVC0.viewControllers
+//        [vc.viewControllers[0] performSegueWithIdentifier:@"ThirdViewを呼び出す" sender:nil];
+
+    }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        loginView = self.view as! LoginView!
+        loginView?.eMailTextField.resignFirstResponder()
+        loginView?.passwordTextField.resignFirstResponder()
+        
     }
 
 }

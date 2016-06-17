@@ -78,5 +78,10 @@ class UploadImageVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
         // Pass the selected object to the new view controller.
     }
     */
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        uploadTextView.resignFirstResponder()
+        
+    }
 
 }

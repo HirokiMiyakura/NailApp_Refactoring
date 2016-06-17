@@ -31,9 +31,9 @@ class DetailUsersProfileVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         scrollView.contentSize = CGSizeMake(screenWidth, 1200)
-        mModel.getAPIforPrefecture()
-        mModel.getSalonInfo()
-        mModel.loadProfileInfo(self.userName)
+//        mModel.getAPIforPrefecture()
+//        mModel.getSalonInfo()
+//        mModel.loadProfileInfo(self.userName)
 //        tableView.dataSource = self
 
         // Do any additional setup after loading the view.
@@ -48,6 +48,10 @@ class DetailUsersProfileVC: UIViewController {
         
         mModel.addObserver(self, forKeyPath: "aiueoaiueo", options: [.New, .Old], context: nil)
         mModel.addObserver(self, forKeyPath: "profileInfo", options: [.New, .Old], context: nil)
+        
+        mModel.getAPIforPrefecture()
+        mModel.getSalonInfo()
+        mModel.loadProfileInfo(self.userName)
     }
     
     override func viewWillDisappear(animated: Bool) {

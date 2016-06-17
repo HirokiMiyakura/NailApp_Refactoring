@@ -44,6 +44,30 @@ class CollectionEditVC: UIViewController, UICollectionViewDelegate, UICollection
         collectionView?.allowsMultipleSelection = editing
         
         toolBar.hidden = !editing
+        
+        if (navigationItem.rightBarButtonItem!.title! == "Edit") {
+            print("Doneが押されたので選択モードを全解除")
+//            collectionView.deselectItemAtIndexPath(<#T##indexPath: NSIndexPath##NSIndexPath#>, animated: <#T##Bool#>)
+//            if let indexpaths = indexpaths {
+            
+                for item  in checkArray {
+                    collectionView?.deselectItemAtIndexPath((item) as! NSIndexPath, animated: true)
+                    
+                    let cell = collectionView?.cellForItemAtIndexPath(item as! NSIndexPath) as! MyCollectionViewCell2
+                    cell.checkImageView.image = nil
+                    highlightCell(item as! NSIndexPath, flag: false)
+                    // fruits for section
+                    //                let sectionfruits = dataSource.fruitsInGroup(item.section)
+//                    deletedFruits.append(mModel!.imageInfo[item.row])
+                }
+                
+//                mModel!.deleteImage(deletedFruits)
+            
+                //            collectionView?.deleteItemsAtIndexPaths(indexpaths)
+//            }
+            
+        }
+
     }
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -64,8 +88,9 @@ class CollectionEditVC: UIViewController, UICollectionViewDelegate, UICollection
         refreshControl.addTarget(self, action: "reloadCollection:", forControlEvents: UIControlEvents.ValueChanged)
         //UICollectionView上に、ロード中...を表示するための新しいビューを作る
         self.collectionView?.addSubview(refreshControl)
+        self.collectionView.alwaysBounceVertical = true
         
-        navigationItem.leftBarButtonItem = editButtonItem()
+        navigationItem.rightBarButtonItem = editButtonItem()
         toolBar.hidden = true
     }
     
@@ -213,7 +238,7 @@ class CollectionEditVC: UIViewController, UICollectionViewDelegate, UICollection
         cell.nailImageView.setImageWithURL(url, placeholderImage: placeholder)
         
         
-        if checkArray.containsObject(indexPath.row){
+        if checkArray.containsObject(indexPath){
 //            checkBtnView = UIImageView()
             let checkImage = UIImage(named:"check.png")! as UIImage
 //            checkBtnView!.frame = CGRectMake(0,0,20,20)
@@ -240,6 +265,12 @@ class CollectionEditVC: UIViewController, UICollectionViewDelegate, UICollection
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
+        if (navigationItem.rightBarButtonItem!.title! == "Edit") {
+            print("didSelectedだがdeselectにします。")
+            collectionView.deselectItemAtIndexPath((indexPath), animated: true)
+            return
+        }
+        
         let cell = collectionView.cellForItemAtIndexPath(indexPath) as! MyCollectionViewCell2
 //        let imageView = UIImageView()
 //        let rect:CGRect = CGRectMake(cell!.frame.width/3*2, cell!.frame.height/3*2, cell!.frame.width/3, cell!.frame.height/3)
@@ -250,16 +281,24 @@ class CollectionEditVC: UIViewController, UICollectionViewDelegate, UICollection
 //        if checkArray.containsObject(indexPath.row){
 //            checkArray.removeObject(indexPath.row)
 //        } else {
-            checkArray.addObject(indexPath.row)
+            checkArray.addObject(indexPath)
 //        }
         highlightCell(indexPath, flag: true)
+        print(navigationItem.rightBarButtonItem!.title!)
     }
     
     func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
+        
+        if (navigationItem.rightBarButtonItem!.title! == "Edit") {
+            print("ここは絶対通らないはず。")
+//            collectionView.deselectItemAtIndexPath((indexPath), animated: true)
+            return
+        }
+        
         let cell = collectionView.cellForItemAtIndexPath(indexPath) as! MyCollectionViewCell2
         cell.checkImageView.image = nil
 //        if checkArray.containsObject(indexPath.row) {
-            checkArray.removeObject(indexPath.row)
+            checkArray.removeObject(indexPath)
 //        } else {
 //            checkArray.addObject(indexPath.row)
 //        }

@@ -121,7 +121,7 @@
         <!--Item-->
         <scene sceneID="w0W-Ov-P3u">
             <objects>
-                <viewController id="rnR-X9-hyW" customClass="CollectionEditVC" customModule="NailApp_Refactoring" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="collectionEditVC" id="rnR-X9-hyW" customClass="CollectionEditVC" customModule="NailApp_Refactoring" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VqW-ye-Gxf"/>
                         <viewControllerLayoutGuide type="bottom" id="xAc-dL-7eL"/>
@@ -131,7 +131,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qar-dz-ely">
-                                <rect key="frame" x="0.0" y="64" width="414" height="487"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="516"/>
                                 <inset key="scrollIndicatorInsets" minX="8" minY="8" maxX="8" maxY="8"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="t91-kL-wLa">
                                     <size key="itemSize" width="132" height="132"/>
@@ -184,9 +184,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="51c-43-INJ"/>
-                    <navigationItem key="navigationItem" id="UJV-ib-AUP">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="c2O-SD-V7q"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="UJV-ib-AUP"/>
                     <connections>
                         <outlet property="collectionView" destination="qar-dz-ely" id="3PF-bm-cDG"/>
                         <outlet property="toolBar" destination="Clo-pE-chS" id="DVm-M4-ry8"/>

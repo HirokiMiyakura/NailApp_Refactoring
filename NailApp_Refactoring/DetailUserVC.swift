@@ -37,6 +37,12 @@ class DetailUserVC: UIViewController {
 
         // Do any additional setup after loading the view.
         topViewXIB.editProfileButtonOutlet.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(DetailUserVC.editProfileButtonOutletTapped(_:))))
+        
+        
+        // show search button and set action
+        var rightSearchBarButtonItem:UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Search, target: self, action: #selector(DetailUserVC.editButton))
+        // add the button to navigationBar
+        self.navigationItem.setRightBarButtonItems([rightSearchBarButtonItem], animated: true)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -62,7 +68,9 @@ class DetailUserVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
+//    override func shouldAutomaticallyForwardAppearanceMethods() -> Bool {
+//        return false
+//    }
     
     override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
         NSLog("Called")
@@ -122,6 +130,52 @@ class DetailUserVC: UIViewController {
         
         self.presentViewController(editProfileVC, animated: true, completion: nil)
 //        self.navigationController?.pushViewController(editProfileVC, animated: true)
+        
+    }
+    
+    func editButton() {
+        
+        // ログイン成功時の処理
+        let alertController = UIAlertController(title: "編集", message: "", preferredStyle: .Alert)
+        
+        let editProfileAction = UIAlertAction(title: "プロフィール編集", style: .Default, handler: {
+            (action:UIAlertAction!) -> Void in
+            print("プロフィール編集します")
+            let editProfileVC = self.storyboard!.instantiateViewControllerWithIdentifier( "editProfileVC" ) as! EditProfileVC
+            editProfileVC.modalTransitionStyle = UIModalTransitionStyle.CoverVertical
+            //        detailUserVC.userName = self.imageCollectionObject?.objectForKey("userName") as? String
+            //        detailUserVC.ownORotherFlg = "2"
+            //        gblUserN?ame = self.imageCollectionObject?.objectForKey("userName") as? String
+            //        editProfileVC.
+            editProfileVC.commentTextView = self.topViewXIB.profileCommentLabel.text!
+            editProfileVC.nickNameTextField = self.topViewXIB.nickNameLabel.text!
+            if(self.topViewXIB.profileImage != nil) {
+                editProfileVC.imageView = self.topViewXIB.profileImage
+            }
+            
+            self.presentViewController(editProfileVC, animated: true, completion: nil)
+
+        })
+        
+        let editImageAction = UIAlertAction(title: "投稿写真編集", style: .Default, handler: {
+            (action:UIAlertAction!) -> Void in
+            print("投稿写真編集します")
+            
+            let editImageVC = self.storyboard!.instantiateViewControllerWithIdentifier( "collectionEditVC" ) as! CollectionEditVC
+//            self.pushViewController(editImageVC, animated: true, completion: nil)
+            self.navigationController?.pushViewController(editImageVC, animated: true)
+        })
+        
+        let cancelAction = UIAlertAction(title: "キャンセル", style: .Default, handler: {
+            (action:UIAlertAction!) -> Void in
+            print("キャンセルします")
+        })
+
+        alertController.addAction(editProfileAction)
+        alertController.addAction(editImageAction)
+        alertController.addAction(cancelAction)
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
         
     }
 }

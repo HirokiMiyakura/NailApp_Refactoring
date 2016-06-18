@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import NCMB
 class DetailUserProfileVM: NSObject {
     
     dynamic var profileInfo = []

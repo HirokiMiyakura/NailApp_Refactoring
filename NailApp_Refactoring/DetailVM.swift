@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import NCMB
 class DetailVM: NSObject {
     dynamic var imageCollectionObject: NCMBObject?
     dynamic var favFlg: Bool = false

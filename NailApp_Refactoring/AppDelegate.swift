@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import NCMB
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

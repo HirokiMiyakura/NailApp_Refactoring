@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import NCMB
 
 class PageViewManagerM: NSObject, UIPageViewControllerDataSource {
 

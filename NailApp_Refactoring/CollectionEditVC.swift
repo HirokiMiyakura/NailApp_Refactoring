@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import GradientCircularProgress
+import NCMB
 
 class CollectionEditVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     

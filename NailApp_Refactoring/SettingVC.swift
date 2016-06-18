@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import NCMB
 
 class SettingVC: UIViewController, UITableViewDelegate {
     private let mModel = SettingVM();

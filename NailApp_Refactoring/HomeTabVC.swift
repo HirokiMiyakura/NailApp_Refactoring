@@ -7,6 +7,8 @@
 //
 
 import UIKit
+//import AFNetworking
+import NCMB
 
 extension NSMutableData {
     func appendString(string: String) {

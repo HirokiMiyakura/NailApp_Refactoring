@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import NCMB
+import AFNetworking
 
 class CollectionVM: NSObject, UICollectionViewDataSource {
     dynamic var imageInfo = []

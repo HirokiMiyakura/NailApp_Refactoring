@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import NCMB
 
 class CollectionBaseVM: NSObject, CollectionProtocol {
     dynamic var imageInfo = []

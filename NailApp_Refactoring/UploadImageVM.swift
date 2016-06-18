@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import NCMB
 class UploadImageVM: NSObject {
     
     func resizeImage(image: UIImage, width: Int, height: Int) -> UIImage {

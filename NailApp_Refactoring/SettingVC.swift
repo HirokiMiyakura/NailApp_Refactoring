@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import NCMB
+//import NCMB
 
 class SettingVC: UIViewController, UITableViewDelegate {
     private let mModel = SettingVM();
@@ -40,6 +40,22 @@ class SettingVC: UIViewController, UITableViewDelegate {
         
             
         case 0:
+            
+            if (NCMBUser.currentUser() == nil) {
+                print("ログインせよ")
+                // 未ログインの場合はポップアップを出して処理終了
+                let alertController = UIAlertController(title: "Sorry!", message: "お気に入りをみるには会員になって！", preferredStyle: .Alert)
+                
+                let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                alertController.addAction(defaultAction)
+                
+                self.presentViewController(alertController, animated: true, completion: nil)
+                return
+
+            }
+            
+            
+            
             let detailUserVC = self.storyboard!.instantiateViewControllerWithIdentifier( "detailUserVC" ) as! DetailUserVC
             detailUserVC.userName = NCMBUser.currentUser().userName
             detailUserVC.ownORotherFlg = "1" // 1は自分

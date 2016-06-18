@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import NCMB
+//import NCMB
 class DetailVM: NSObject {
     dynamic var imageCollectionObject: NCMBObject?
     dynamic var favFlg: Bool = false
@@ -74,6 +74,11 @@ class DetailVM: NSObject {
     }
     
     func checkFavFlg() {
+        
+        if (NCMBUser.currentUser() == nil) {
+            self.favFlg = false
+            return
+        }
 //        print("imageView.tag")
 //        print(imageView.tag)
 //        let targetFavData: AnyObject = self.imageInfo[imageView.tag]

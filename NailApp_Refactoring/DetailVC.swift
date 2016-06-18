@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import NCMB
+import Social
 
 class DetailVC: UIViewController {
     var imageCollectionObject: NCMBObject?
@@ -125,7 +125,18 @@ class DetailVC: UIViewController {
     
     func clipImageTapped(sender: UITapGestureRecognizer) {
         print("clipImageTapped")
-        
+        if (NCMBUser.currentUser() == nil) {
+            print("ログインせよ")
+            // 未ログインの場合はポップアップを出して処理終了
+            let alertController = UIAlertController(title: "Sorry!", message: "カワイイネをするには会員になって！", preferredStyle: .Alert)
+            
+            let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+            alertController.addAction(defaultAction)
+            
+            self.presentViewController(alertController, animated: true, completion: nil)
+            return
+            
+        }
 
 //        detailVM!.favFlg = !detailVM!.favFlg
         detailVM!.updateFavData()

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import NCMB
+//import NCMB
 
 class CollectionVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
@@ -26,12 +26,12 @@ class CollectionVC: UIViewController, UICollectionViewDelegate, UICollectionView
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        if(tabKind == "6") {
-            if (NCMBUser.currentUser() == nil) {
-                // わかんねーー。
-                self.dismissViewControllerAnimated(true, completion: nil)
-            }
-        }
+//        if(tabKind == "6") {
+//            if (NCMBUser.currentUser() == nil) {
+//                // わかんねーー。
+//                self.dismissViewControllerAnimated(true, completion: nil)
+//            }
+//        }
         mModel = CollectionFactory.getCollectionClass(tabKind)
 //        let nib: UINib = UINib(nibName: "CollectionViewCell", bundle: nil)
 //        collectionView.registerNib(nib, forCellWithReuseIdentifier: "CollectionViewCell")

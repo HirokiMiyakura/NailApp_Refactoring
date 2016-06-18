@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import NCMB
+//import NCMB
 class CollectionUsersVM: CollectionBaseVM {
     
     override func loadImageData() {

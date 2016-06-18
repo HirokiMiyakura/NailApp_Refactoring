@@ -179,6 +179,22 @@ class SwipeVC: UINavigationController,UIPageViewControllerDelegate,UIPageViewCon
     //eg: if you're on page 1 and you click tab 3, then it shows you page 2 and then page 3
     func tapSegmentButtonAction(button:UIButton) {
         
+        print(button.tag)
+        if (button.tag == 2) {
+            if (NCMBUser.currentUser() == nil) {
+                print("ログインせよ")
+                // 未ログインの場合はポップアップを出して処理終了
+                let alertController = UIAlertController(title: "Sorry!", message: "お気に入りをみるには会員になって！", preferredStyle: .Alert)
+                
+                let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                alertController.addAction(defaultAction)
+                
+                self.presentViewController(alertController, animated: true, completion: nil)
+                return
+
+            }
+        }
+        
         let tempIndex:Int = currentPageIndex
         
         weak var weakSelf = self

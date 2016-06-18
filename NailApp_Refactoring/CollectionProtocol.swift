@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import NCMB
+//import NCMB
 
 protocol CollectionProtocol:  UICollectionViewDataSource {
     

@@ -7,10 +7,11 @@
 //
 
 import UIKit
-import GradientCircularProgress
-import NCMB
+//import GradientCircularProgress
+//import NCMB
 
 class CollectionEditVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+    
     
     
     
@@ -84,7 +85,7 @@ class CollectionEditVC: UIViewController, UICollectionViewDelegate, UICollection
         collectionView.delegate = self
         // Do any additional setup after loading the view.
         mModel = CollectionFactory.getCollectionClass(tabKind)
-        mModel!.loadImageData()
+//        mModel!.loadImageData()
         
         let refreshControl = UIRefreshControl()
         //下に引っ張った時に、リフレッシュさせる関数を実行する。”：”を忘れがちなので注意。
@@ -153,6 +154,7 @@ class CollectionEditVC: UIViewController, UICollectionViewDelegate, UICollection
         super.viewWillAppear(animated)
         
         mModel!.addObserver(self, forKeyPath: "imageInfo", options: [.New, .Old], context: nil)
+        mModel!.loadImageData()
         //        myClass.value = "NewValue"
     }
     
@@ -172,10 +174,11 @@ class CollectionEditVC: UIViewController, UICollectionViewDelegate, UICollection
         
         let cell = sender as! UICollectionViewCell
         let indexPath = self.collectionView!.indexPathForCell(cell)
-        let controller = segue.destinationViewController as! PageViewManagerVC
-        controller.indexPath = indexPath!
-        controller.imageInfo = mModel!.imageInfo
-        controller.favDic = mModel!.favDic
+        let controller = segue.destinationViewController as! EditDetailVC
+//        controller.indexPath = indexPath!
+//        controller.imageInfo = mModel!.imageInfo
+        controller.imageCollectionObject = mModel!.imageInfo[indexPath!.row] as? NCMBObject
+        
         
         
     }
@@ -308,5 +311,13 @@ class CollectionEditVC: UIViewController, UICollectionViewDelegate, UICollection
         highlightCell(indexPath, flag: false)
     }
     
+    override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
+        
+        if (navigationItem.rightBarButtonItem!.title! == "Done") {
+            return false
+        }
+        
+        return true
+    }
     
 }

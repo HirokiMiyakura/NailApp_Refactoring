@@ -9,6 +9,9 @@
 #ifndef NailApp_Refactoring_BridgingHeader_h
 #define NailApp_Refactoring_BridgingHeader_h
 
-
+#import <NCMB/NCMB.h>
+#import <AFNetworking/AFNetworking.h>
+#import <AFNetworking/UIImageView+AFNetworking.h>
+#import <JSONKit.h>
 
 #endif /* NailApp_Refactoring_BridgingHeader_h */

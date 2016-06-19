@@ -9,7 +9,9 @@
 import UIKit
 //import NCMB
 class UploadImageVM: NSObject {
-    
+    dynamic var uploadDoneFlg = false
+    var uploadDoneFlgTmp1 = false
+    var uploadDoneFlgTmp2 = false
     func resizeImage(image: UIImage, width: Int, height: Int) -> UIImage {
         
         let size: CGSize = CGSize(width: width, height: height)
@@ -51,6 +53,7 @@ class UploadImageVM: NSObject {
             data, response, error in
             if error != nil {
                 print("error=\(error)")
+                self.uploadDoneFlg = true
                 return
             }
             // リクエストを出力
@@ -60,6 +63,16 @@ class UploadImageVM: NSObject {
             let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
             print("****** response data = \(responseString!)")
             dispatch_async(dispatch_get_main_queue(),{
+                print("アップロード完了")
+                if (self.uploadDoneFlgTmp2) {
+                    print("どっちもアップロード完了したぜ1")
+//                    self.uploadDoneFlgTmp1 = true
+                    self.uploadDoneFlg = true
+                } else {
+                    print("画像がアップロードまでできてないぜ")
+                    self.uploadDoneFlgTmp1 = true
+                }
+                
                 //アップロード完了
                 // これかかないとアップロード後画面が固まる。
                 //                self.removeFromParentViewController()
@@ -88,6 +101,14 @@ class UploadImageVM: NSObject {
                 } else {
                     // deviceTokenの重複以外のエラーが返ってきた場合
                 }
+            }
+            if (self.uploadDoneFlgTmp1) {
+                print("どっちもアップロードしたぜ2")
+//                self.uploadDoneFlgTmp2 = true
+                self.uploadDoneFlg = true
+            } else {
+                print("niftyのほうがまだだぜ")
+                self.uploadDoneFlgTmp2 = true
             }
             //            self.removeFromParentViewController()
             //            self.view.removeFromSuperview()

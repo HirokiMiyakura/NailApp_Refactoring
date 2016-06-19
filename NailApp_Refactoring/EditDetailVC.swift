@@ -73,6 +73,7 @@ class EditDetailVC: UIViewController {
         NSLog("Called")
         
         if (keyPath == "uploadDoneFlg") {
+            LoadingProxy.off();//ローディング表示。非表示にする場合はoff
             self.navigationController?.popViewControllerAnimated(true)
         }
     }
@@ -80,6 +81,8 @@ class EditDetailVC: UIViewController {
 
     // addBtnをタップしたときのアクション
     func saveData() {
+        LoadingProxy.set(self); //表示する親をセット
+        LoadingProxy.on();//ローディング表示。非表示にする場合はoff
         let editDetailView = self.view as! EditDetailView
         var objectIdOfImageInfo: String
         objectIdOfImageInfo = imageCollectionObject!.objectForKey("objectId")! as! String

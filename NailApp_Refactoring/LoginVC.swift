@@ -48,19 +48,28 @@ class LoginVC: UIViewController {
     */
     
     func loginButtonTapped(sender: UITapGestureRecognizer) {
+        
+        LoadingProxy.set(self); //表示する親をセット
+        LoadingProxy.on();//ローディング表示。非表示にする場合はoff
         // メールアドレスとパスワードでログイン
         NCMBUser.logInWithMailAddressInBackground(loginView!.eMailTextField.text, password: loginView!.passwordTextField.text, block: ({(user, error) in
             if (error != nil){
                 // ログイン失敗時の処理
+                LoadingProxy.off();//ローディング表示。非表示にする場合はoff
                 let alertController = UIAlertController(title: "Sorry!", message: "ログイン失敗です。原因は謎。", preferredStyle: .Alert)
 
-                let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: {
+                    (action:UIAlertAction!) -> Void in
+                    self.closeMyView()
+                })
+
                 alertController.addAction(defaultAction)
 
                 self.presentViewController(alertController, animated: true, completion: nil)
 
             }else{
                 // ログイン成功時の処理
+                LoadingProxy.off();//ローディング表示。非表示にする場合はoff
                 let alertController = UIAlertController(title: "Thank You!", message: "ログイン成功！", preferredStyle: .Alert)
 
                 let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: {
@@ -77,6 +86,8 @@ class LoginVC: UIViewController {
     }
     
     func closeMyView() {
+        
+        
 //        self.navigationController?.popViewControllerAnimated(true)
         // ① 2番目のタブのViewControllerを取得する
         let tabVC0 = self.tabBarController!.viewControllers![0];

@@ -147,6 +147,7 @@ class EditProfileVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
             //        view.nailistSwitch.on = (mModel.aiueoaiueo[0].objectForKey("nailistFlg") as? Bool)!
             
         } else if (keyPath == "uploadDoneFlg") {
+            LoadingProxy.off();//ローディング表示。非表示にする場合はoff
             self.dismissViewControllerAnimated(true, completion: nil)
         }
         
@@ -162,6 +163,8 @@ class EditProfileVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
     }
     func saveButtonTapped(sender: UITapGestureRecognizer) {
         print("save")
+        LoadingProxy.set(self); //表示する親をセット
+        LoadingProxy.on();//ローディング表示。非表示にする場合はoff
         let view = self.view as? EditProfileView
         let time:Int = Int(NSDate().timeIntervalSince1970)
         var param1 = [

@@ -99,7 +99,7 @@ class CollectionVC: UIViewController, UICollectionViewDelegate, UICollectionView
 
     
     override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
-        NSLog("Called")
+        NSLog("Called:" + keyPath!)
 //        print(change)
         collectionView.reloadData()
     }
@@ -148,7 +148,9 @@ class CollectionVC: UIViewController, UICollectionViewDelegate, UICollectionView
         let placeholder = UIImage(named: "transparent.png")
         let imageView = UIImageView()
         //        imageView.frame = self.cellRect!
-        imageView.frame = CGRect(x: 0,y: 0,width: 132,height: 132) // The size of one cell
+        print("cellのframe")
+        print(cell.frame)
+        imageView.frame = CGRect(x: 0,y: 0,width: cell.frame.size.width,height: cell.frame.size.height) // The size of one cell
         
         let rect:CGRect = CGRectMake(imageView.frame.width/3*2, imageView.frame.height/3*2, imageView.frame.width/3, imageView.frame.height/3)
         let favImageView = UIImageView()

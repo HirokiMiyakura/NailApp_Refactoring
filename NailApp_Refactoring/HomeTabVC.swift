@@ -39,7 +39,7 @@ class HomeTabVC: UIViewController {
         CollectionFavVC.tabKind = "6"
         navigationController.viewControllerArray = [CollectionNewVC,CollectionPopularVC,CollectionFavVC]
         self.addChildViewController(navigationController)
-        navigationView.addSubview(navigationController.view)
+        self.view.addSubview(navigationController.view)
         
     }
 

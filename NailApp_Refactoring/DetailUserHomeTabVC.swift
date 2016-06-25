@@ -14,6 +14,8 @@ class DetailUserHomeTabVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        print("DetailUserHomeTabVCのサイズ")
+        print(self.view.bounds)
         // Do any additional setup after loading the view.
         // Dispose of any resources that can be recreated.
         let pageController:UIPageViewController = UIPageViewController(transitionStyle: UIPageViewControllerTransitionStyle.Scroll, navigationOrientation: UIPageViewControllerNavigationOrientation.Horizontal, options: nil)

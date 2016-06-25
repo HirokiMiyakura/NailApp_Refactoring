@@ -101,7 +101,11 @@ class DetailUserProfileVM: NSObject {
 //        let userQuery = NCMBUser.query()
 //        userQuery.whereKey("userName", equalTo: userName)
         
+        // TODO ここcurrentUserじゃ他人のページを見ても自分のユーザーのサロン情報を撮ってきてしまう。
         let carrentUser = NCMBUser.currentUser()
+        if (carrentUser == nil) {
+            return
+        }
         if carrentUser.objectForKey("salonPointer") == nil {
             return
         }

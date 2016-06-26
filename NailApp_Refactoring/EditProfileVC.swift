@@ -31,6 +31,7 @@ class EditProfileVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
         mModel.getAPIforPrefecture()
         mModel.getSalonInfo()
         
+        self.navigationItem.title = "プロフィール編集"
         
         // Do any additional setup after loading the view.
         

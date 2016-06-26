@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5Sd-F6-TMi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5Sd-F6-TMi">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -11,7 +11,7 @@
         <!--HOME-->
         <scene sceneID="90q-Vv-qtL">
             <objects>
-                <navigationController id="8i7-at-nrt" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="navinavi" id="8i7-at-nrt" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="HOME" id="ZyL-0O-5Kp"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="T1C-aH-ULN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -20,12 +20,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AxD-Un-gVt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="508" y="306"/>
+            <point key="canvasLocation" x="479" y="44"/>
         </scene>
         <!--HOME-->
         <scene sceneID="8it-90-7B6">
             <objects>
-                <viewController id="8y2-gl-G5X" customClass="HomeTabVC" customModule="NailApp_Refactoring" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeTabController" id="8y2-gl-G5X" customClass="HomeTabVC" customModule="NailApp_Refactoring" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2Tf-gR-HdH"/>
                         <viewControllerLayoutGuide type="bottom" id="oaH-ly-Sqh"/>
@@ -129,8 +129,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qar-dz-ely">
-                                <rect key="frame" x="0.0" y="64" width="414" height="443"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qar-dz-ely">
+                                <rect key="frame" x="0.0" y="20" width="600" height="536"/>
                                 <inset key="scrollIndicatorInsets" minX="8" minY="8" maxX="8" maxY="8"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="t91-kL-wLa">
                                     <size key="itemSize" width="132" height="132"/>
@@ -140,7 +140,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="thM-cn-pdD" customClass="MyCollectionViewCell2" customModule="NailApp_Refactoring" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="64" width="132" height="132"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="132" height="132"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="132" height="132"/>
@@ -163,15 +163,8 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wuX-qj-wOZ">
-                                <rect key="frame" x="203" y="28" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="editButton:" destination="rnR-X9-hyW" eventType="touchUpInside" id="dJy-uF-HfM"/>
-                                </connections>
-                            </button>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Clo-pE-chS">
-                                <rect key="frame" x="0.0" y="507" width="600" height="44"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Clo-pE-chS">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
                                     <barButtonItem systemItem="trash" id="nin-hh-uAt">
                                         <connections>
@@ -182,6 +175,15 @@
                             </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qar-dz-ely" firstAttribute="leading" secondItem="KHi-0w-Y6L" secondAttribute="leading" id="7cA-EM-ESv"/>
+                            <constraint firstItem="Clo-pE-chS" firstAttribute="top" secondItem="qar-dz-ely" secondAttribute="bottom" id="ANq-2y-9iB"/>
+                            <constraint firstAttribute="trailing" secondItem="qar-dz-ely" secondAttribute="trailing" id="bBL-vj-yeq"/>
+                            <constraint firstItem="qar-dz-ely" firstAttribute="top" secondItem="VqW-ye-Gxf" secondAttribute="bottom" id="bBN-C4-oSH"/>
+                            <constraint firstItem="Clo-pE-chS" firstAttribute="leading" secondItem="KHi-0w-Y6L" secondAttribute="leading" id="kb3-gf-wqN"/>
+                            <constraint firstItem="xAc-dL-7eL" firstAttribute="top" secondItem="Clo-pE-chS" secondAttribute="bottom" id="odn-Yl-fpg"/>
+                            <constraint firstAttribute="trailing" secondItem="Clo-pE-chS" secondAttribute="trailing" id="pRS-BH-xOB"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="51c-43-INJ"/>
                     <navigationItem key="navigationItem" id="UJV-ib-AUP"/>
@@ -192,29 +194,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ki9-78-BmX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1899" y="956"/>
-        </scene>
-        <!--Item-->
-        <scene sceneID="ngD-iM-Svv">
-            <objects>
-                <navigationController id="KaW-2n-QTe" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="UWo-XR-3Fm"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Y4M-eP-ad4">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="rnR-X9-hyW" kind="relationship" relationship="rootViewController" id="RHT-dS-WA2"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="34H-KW-vMb" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1183" y="1408"/>
+            <point key="canvasLocation" x="2082" y="1034"/>
         </scene>
         <!--Detail User Home TabVC-->
         <scene sceneID="4Ab-J8-Tj5">
             <objects>
-                <viewController id="Pnf-Be-tKH" customClass="DetailUserHomeTabVC" customModule="NailApp_Refactoring" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailUserHomeTabVC" id="Pnf-Be-tKH" customClass="DetailUserHomeTabVC" customModule="NailApp_Refactoring" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AJL-Qq-xdu"/>
                         <viewControllerLayoutGuide type="bottom" id="o8m-of-OIC"/>
@@ -232,7 +217,7 @@
         <!--Edit DetailVC-->
         <scene sceneID="FRd-jC-JZh">
             <objects>
-                <viewController id="x9h-9w-ovc" customClass="EditDetailVC" customModule="NailApp_Refactoring" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditDetailVC" id="x9h-9w-ovc" customClass="EditDetailVC" customModule="NailApp_Refactoring" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6mC-4y-QvC"/>
                         <viewControllerLayoutGuide type="bottom" id="DaU-H9-XSs"/>
@@ -242,6 +227,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sFN-nI-ylV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -469,19 +455,19 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="だれだれさん" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="05R-Wo-LZ2">
                                         <rect key="frame" x="8" y="8" width="60" height="12"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w0b-bm-yRN">
-                                        <rect key="frame" x="287" y="54" width="26.5" height="12"/>
+                                        <rect key="frame" x="287" y="54" width="27" height="12"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="一言" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tJQ-mX-7hf">
                                         <rect key="frame" x="283" y="8" width="34" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -545,7 +531,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="NYU-aw-kVj">
             <objects>
-                <tabBarController id="5Sd-F6-TMi" customClass="TabBarController" customModule="NailApp_Refactoring" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabBarController" id="5Sd-F6-TMi" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="o3m-Yy-Wib">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -555,17 +541,16 @@
                         <segue destination="8y2-gl-G5X" kind="relationship" relationship="viewControllers" id="JPC-Sc-xmG"/>
                         <segue destination="C9j-lG-wbz" kind="relationship" relationship="viewControllers" id="l49-aq-sJD"/>
                         <segue destination="1go-Cl-9vc" kind="relationship" relationship="viewControllers" id="bgP-y7-Mi7"/>
-                        <segue destination="KaW-2n-QTe" kind="relationship" relationship="viewControllers" id="AUz-vI-bxX"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tAa-sU-rxx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-226" y="774"/>
+            <point key="canvasLocation" x="-427" y="577"/>
         </scene>
         <!--Setting-->
         <scene sceneID="JY3-D9-fGt">
             <objects>
-                <navigationController id="C9j-lG-wbz" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="settingNaviVC" id="C9j-lG-wbz" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Setting" id="Pgk-3S-e3E"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="a99-u0-rgh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -582,7 +567,7 @@
         <!--P画像投稿-->
         <scene sceneID="YW5-LJ-lNi">
             <objects>
-                <viewController id="1go-Cl-9vc" customClass="UploadImageVC" customModule="NailApp_Refactoring" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="uploadImageVC" id="1go-Cl-9vc" customClass="UploadImageVC" customModule="NailApp_Refactoring" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="g9X-PS-wYh"/>
                         <viewControllerLayoutGuide type="bottom" id="p2P-vJ-kCm"/>
@@ -648,7 +633,7 @@
         <!--SettingVC-->
         <scene sceneID="vYJ-Gg-Kbn">
             <objects>
-                <viewController id="RNX-Ro-mdx" customClass="SettingVC" customModule="NailApp_Refactoring" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="settingVC" id="RNX-Ro-mdx" customClass="SettingVC" customModule="NailApp_Refactoring" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="j5a-og-jss"/>
                         <viewControllerLayoutGuide type="bottom" id="cBZ-9v-QDc"/>
@@ -665,7 +650,7 @@
                                         <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="05P-uE-Vpe" id="CNP-5s-J6D">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tIj-1T-MJ2">
@@ -694,7 +679,7 @@
         <!--LoginVC-->
         <scene sceneID="AQD-H4-4DN">
             <objects>
-                <viewController id="WIA-BD-P6j" customClass="LoginVC" customModule="NailApp_Refactoring" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginVC" id="WIA-BD-P6j" customClass="LoginVC" customModule="NailApp_Refactoring" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SPB-At-TZM"/>
                         <viewControllerLayoutGuide type="bottom" id="jey-vw-2f6"/>
@@ -707,7 +692,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GMZ-Ww-i8k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1540" y="2056"/>
+            <point key="canvasLocation" x="1546" y="2214"/>
         </scene>
     </scenes>
 </document>

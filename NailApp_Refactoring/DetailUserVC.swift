@@ -31,6 +31,8 @@ class DetailUserVC: UIViewController {
 //        topViewXIB = nib.instantiateWithOwner(nil, options: nil)[0] as! DetailUserView
 //        self.topView.addSubview(topViewXIB)
         
+        self.navigationItem.title = "プロフィール"
+        
         mModel = DetailUserVM(userName: self.userName!)
 //        mModel = DetailUserVM()
 //        topViewXIB.profileCommentLabel.text = "saito"
@@ -85,6 +87,9 @@ class DetailUserVC: UIViewController {
         self.nickNameLabel.text = mModel?.profileInfo[0].objectForKey("nickName") as? String
         let placeholder = UIImage(named: "transparent.png")
 //        topViewXIB.profileImage.setImageWithURL(NSURL(string: (mModel?.profileInfo[0].objectForKey("imagePath") as? String)!), placeholderImage: placeholder)
+        if mModel?.profileInfo[0].objectForKey("imagePath") == nil {
+            return
+        }
         self.profileImage.setImageWithURL(NSURL(string: (mModel?.profileInfo[0].objectForKey("imagePath") as? String)!), placeholderImage: placeholder)
     }
 
@@ -154,8 +159,12 @@ class DetailUserVC: UIViewController {
             //        detailUserVC.ownORotherFlg = "2"
             //        gblUserN?ame = self.imageCollectionObject?.objectForKey("userName") as? String
             //        editProfileVC.
-            editProfileVC.commentTextView = self.profileCommentLabel.text!
-            editProfileVC.nickNameTextField = self.nickNameLabel.text!
+            if(self.profileCommentLabel.text != nil) {
+                editProfileVC.commentTextView = self.profileCommentLabel.text!
+            }
+            if(self.nickNameLabel.text != nil) {
+                    editProfileVC.nickNameTextField = self.nickNameLabel.text!
+            }
             if(self.profileImage != nil) {
                 editProfileVC.imageView = self.profileImage
             }

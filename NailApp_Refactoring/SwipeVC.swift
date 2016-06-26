@@ -69,7 +69,8 @@ class SwipeVC: UINavigationController,UIPageViewControllerDelegate,UIPageViewCon
         print("SWipeVCのサイズ")
         print(self.view.bounds)
         print(self.view.frame)
-        self.navigationBar.barTintColor = UIColor(red:0.01, green:0.05, blue:0.06, alpha:1) //%%% bartint
+//        self.navigationBar.barTintColor = UIColor(red:0.01, green:0.05, blue:0.06, alpha:0.2) //%%% bartint
+        self.navigationBar.barTintColor = UIColor.whiteColor() //%%% bartint
         self.navigationBar.translucent = true
 //        self.navigationBar.backgroundColor = UIColor.blueColor()
         

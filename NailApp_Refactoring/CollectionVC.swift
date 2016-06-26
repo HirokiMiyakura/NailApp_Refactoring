@@ -24,6 +24,7 @@ class CollectionVC: UIViewController, UICollectionViewDelegate, UICollectionView
 //    }
     override func viewDidLoad() {
         super.viewDidLoad()
+//        self.edgesForExtendedLayout = UIRectEdge.None
         // Do any additional setup after loading the view.
         
 //        if(tabKind == "6") {

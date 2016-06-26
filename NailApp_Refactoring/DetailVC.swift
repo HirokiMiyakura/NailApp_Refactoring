@@ -22,6 +22,7 @@ class DetailVC: UIViewController {
     }
 
     override func viewDidLoad() {
+        print("DetailVCのviewDidLoad")
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
@@ -30,6 +31,8 @@ class DetailVC: UIViewController {
 //        detailVM!.addObserver(self, forKeyPath: "favFlg", options: [.New, .Old], context: nil)
 //        detailVM!.addObserver(self, forKeyPath: "imageCollectionObject", options: [.New, .Old], context: nil)
         let detailView = self.view as! DetailView
+        
+        print(detailView.scrollView.frame)
 //        detailView.userInteractionEnabled = true
 //        detailView.nailistBtn.userInteractionEnabled = true
         detailView.nailistBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(DetailVC.nailistBtnTapped(_:))))
@@ -74,7 +77,7 @@ class DetailVC: UIViewController {
     }
     override func viewWillAppear(animated: Bool) {
 
-        print("viewWillApper")
+        print("DetailVCのviewWillApper")
         detailVM!.addObserver(self, forKeyPath: "favFlg", options: [.New, .Old], context: nil)
         detailVM!.addObserver(self, forKeyPath: "imageCollectionObject", options: [.New, .Old], context: nil)
         detailVM!.addObserver(self, forKeyPath: "nickName", options: [.New, .Old], context: nil)

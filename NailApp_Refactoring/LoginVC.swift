@@ -29,6 +29,8 @@ class LoginVC: UIViewController {
         
         
         loginView!.loginButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(LoginVC.loginButtonTapped(_:))))
+        
+        loginView!.authButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(LoginVC.authButtonTapped(_:))))
     }
 
     override func didReceiveMemoryWarning() {
@@ -82,6 +84,75 @@ class LoginVC: UIViewController {
                 
             }
         }))
+        
+    }
+    
+    func authButtonTapped(sender: UITapGestureRecognizer) {
+//        //NCMBUserのインスタンスを作成
+//        let user = NCMBUser()
+//        //ユーザー名を設定
+//        user.userName = loginView!.eMailTextField.text
+//        //パスワードを設定
+//        user.password = loginView!.passwordTextField.text
+//        //会員の登録を行う
+//        user.signUpInBackgroundWithBlock({(error) in
+//            if (error != nil){
+//                // 新規登録失敗時の処理
+//                let alertController = UIAlertController(title: "Sorry!", message: "登録失敗です。原因は謎。", preferredStyle: .Alert)
+//                
+//                let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+//                alertController.addAction(defaultAction)
+//                
+//                self.presentViewController(alertController, animated: true, completion: nil)
+//            }else{
+//                // 新規登録成功時の処理
+//                let alertController = UIAlertController(title: "Thank You!", message: "ご登録ありがとうございます！", preferredStyle: .Alert)
+//                
+//                let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+//                alertController.addAction(defaultAction)
+//                
+//                self.presentViewController(alertController, animated: true, completion: nil)
+//                
+//            }
+//        })
+
+        
+        var error : NSError? = nil
+        NCMBUser.requestAuthenticationMail(loginView!.eMailTextField.text, error: &error)
+        
+//        LoadingProxy.set(self); //表示する親をセット
+//        LoadingProxy.on();//ローディング表示。非表示にする場合はoff
+//        // メールアドレスとパスワードでログイン
+//        NCMBUser.logInWithMailAddressInBackground(loginView!.eMailTextField.text, password: loginView!.passwordTextField.text, block: ({(user, error) in
+//            if (error != nil){
+//                // ログイン失敗時の処理
+//                LoadingProxy.off();//ローディング表示。非表示にする場合はoff
+//                let alertController = UIAlertController(title: "Sorry!", message: "ログイン失敗です。原因は謎。", preferredStyle: .Alert)
+//                
+//                let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: {
+//                    (action:UIAlertAction!) -> Void in
+//                    self.closeMyView()
+//                })
+//                
+//                alertController.addAction(defaultAction)
+//                
+//                self.presentViewController(alertController, animated: true, completion: nil)
+//                
+//            }else{
+//                // ログイン成功時の処理
+//                LoadingProxy.off();//ローディング表示。非表示にする場合はoff
+//                let alertController = UIAlertController(title: "Thank You!", message: "ログイン成功！", preferredStyle: .Alert)
+//                
+//                let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: {
+//                    (action:UIAlertAction!) -> Void in
+//                    self.closeMyView()
+//                })
+//                alertController.addAction(defaultAction)
+//                
+//                self.presentViewController(alertController, animated: true, completion: nil)
+//                
+//            }
+//        }))
         
     }
     

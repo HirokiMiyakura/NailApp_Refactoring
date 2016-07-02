@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5Sd-F6-TMi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5Sd-F6-TMi">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -54,12 +54,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="krH-oq-Qmj">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="krH-oq-Qmj">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="600" id="6H8-tK-vAe"/>
-                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="al7-R7-B59">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -84,9 +81,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="krH-oq-Qmj" firstAttribute="top" secondItem="KZz-Uh-t7t" secondAttribute="top" id="A0g-M6-UoU"/>
-                            <constraint firstItem="krH-oq-Qmj" firstAttribute="leading" secondItem="KZz-Uh-t7t" secondAttribute="leading" id="ZWu-jH-Inx"/>
-                            <constraint firstAttribute="trailing" secondItem="krH-oq-Qmj" secondAttribute="trailing" id="swN-Kz-hQl"/>
+                            <constraint firstItem="krH-oq-Qmj" firstAttribute="top" secondItem="KZz-Uh-t7t" secondAttribute="top" constant="30" id="21y-m7-uEP"/>
+                            <constraint firstItem="krH-oq-Qmj" firstAttribute="leading" secondItem="KZz-Uh-t7t" secondAttribute="leading" id="Kdg-T2-yRo"/>
+                            <constraint firstAttribute="trailing" secondItem="krH-oq-Qmj" secondAttribute="trailing" id="Kqy-vG-raX"/>
+                            <constraint firstItem="MXm-oH-dtN" firstAttribute="top" secondItem="krH-oq-Qmj" secondAttribute="bottom" id="zb3-sS-BnF"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="NrI-y3-JRI"/>
@@ -531,7 +529,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="NYU-aw-kVj">
             <objects>
-                <tabBarController storyboardIdentifier="tabBarController" id="5Sd-F6-TMi" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabBarController" id="5Sd-F6-TMi" customClass="TabBarController" customModule="NailApp_Refactoring" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="o3m-Yy-Wib">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -650,7 +648,7 @@
                                         <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="05P-uE-Vpe" id="CNP-5s-J6D">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tIj-1T-MJ2">

@@ -53,7 +53,7 @@ class DetailVC: UIViewController {
         detailView.shareImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(DetailVC.shareImageTapped(_:))))
         detailView.shareImage.image = UIImage(named: "share.png")
         detailView.commentLabel.text = detailVM!.getComment()
-        detailView.kawaiineCountLabel.text = String(detailVM!.getKawaiineCount())
+        detailView.kawaiineCountLabel.text = String(detailVM!.getKawaiineCount()) + "人がクリップしています。"
         let url = NSURL(string: (self.imageCollectionObject!.objectForKey("imagePath") as? String)!)
         let placeholder = UIImage(named: "transparent.png")
         detailView.detailImage.setImageWithURL(detailVM!.getURL(), placeholderImage: placeholder)
@@ -209,11 +209,11 @@ class DetailVC: UIViewController {
             if (detailVM!.favFlg) {
                 detailView.clipImage.image = UIImage(named: "Clipped.png")
 //                detailVM!.imageCollectionObject!.incrementKey("kawaiine", byAmount: 1)
-                detailView.kawaiineCountLabel.text = String(detailVM!.getKawaiineCount())
+                detailView.kawaiineCountLabel.text = String(detailVM!.getKawaiineCount()) + "人がクリップしています。"
             } else {
                 detailView.clipImage.image = UIImage(named: "unClipped.png")
 //                detailVM!.imageCollectionObject!.incrementKey("kawaiine", byAmount: -1)
-                detailView.kawaiineCountLabel.text = String(detailVM!.getKawaiineCount())
+                detailView.kawaiineCountLabel.text = String(detailVM!.getKawaiineCount()) + "人がクリップしています。"
             }
         } else if (keyPath == "imageCollectionObject") {
             print("imageCollectionObjectのobserve")

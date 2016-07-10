@@ -10,6 +10,7 @@ import UIKit
 
 class LoginView: UIView {
 
+    @IBOutlet weak var facebookLoginBtn: UIButton!
     @IBOutlet weak var authButton: UIButton!
     @IBOutlet weak var loginButton: UIButton!
 //    @IBAction func authButton(sender: AnyObject) {

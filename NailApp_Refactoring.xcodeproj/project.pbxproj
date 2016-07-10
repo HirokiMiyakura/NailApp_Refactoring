@@ -76,13 +76,13 @@
 		94F0730F1CD9E03400E0B7C8 /* UploadImageVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F0730E1CD9E03400E0B7C8 /* UploadImageVM.swift */; };
 		94F073111CD9FD4200E0B7C8 /* heart_like.png in Resources */ = {isa = PBXBuildFile; fileRef = 94F073101CD9FD4200E0B7C8 /* heart_like.png */; };
 		94F073131CD9FDC400E0B7C8 /* heart_unlike.png in Resources */ = {isa = PBXBuildFile; fileRef = 94F073121CD9FDC400E0B7C8 /* heart_unlike.png */; };
-		E1491D4D5C76B949EA3CDCFB /* libPods-NailApp_Refactoring.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CC8A7A88DB48651D89C1875 /* libPods-NailApp_Refactoring.a */; };
+		A349CD598C51DCA245C951E0 /* libPods-NailApp_Refactoring.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E29710370BBA6FA5927D00F /* libPods-NailApp_Refactoring.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1B400473E2B057A7E10835C0 /* Pods-NailApp_Refactoring.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NailApp_Refactoring.release.xcconfig"; path = "Pods/Target Support Files/Pods-NailApp_Refactoring/Pods-NailApp_Refactoring.release.xcconfig"; sourceTree = "<group>"; };
+		1E29710370BBA6FA5927D00F /* libPods-NailApp_Refactoring.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NailApp_Refactoring.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B7EEAFA95751FB6EE05C4F8 /* Pods-NailApp_Refactoring.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NailApp_Refactoring.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NailApp_Refactoring/Pods-NailApp_Refactoring.debug.xcconfig"; sourceTree = "<group>"; };
-		7CC8A7A88DB48651D89C1875 /* libPods-NailApp_Refactoring.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NailApp_Refactoring.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9408CA911CD8F960002DE2E2 /* CollectionOwnVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionOwnVM.swift; sourceTree = "<group>"; };
 		941396331D1509A900FB4F18 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		941396351D15205000FB4F18 /* EditDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditDetailVC.swift; sourceTree = "<group>"; };
@@ -163,7 +163,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1491D4D5C76B949EA3CDCFB /* libPods-NailApp_Refactoring.a in Frameworks */,
+				A349CD598C51DCA245C951E0 /* libPods-NailApp_Refactoring.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,7 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				946F78361D14540A00FAD963 /* AFNetworking.framework */,
-				7CC8A7A88DB48651D89C1875 /* libPods-NailApp_Refactoring.a */,
+				1E29710370BBA6FA5927D00F /* libPods-NailApp_Refactoring.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

@@ -41,14 +41,22 @@
                     <rect key="frame" x="2" y="420" width="135" height="30"/>
                     <state key="normal" title="メールアドレス認証"/>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kwI-4j-Hmg">
+                    <rect key="frame" x="210" y="329" width="181" height="40"/>
+                    <state key="normal" title="FaceBookログイン" image="facebook_login"/>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <connections>
                 <outlet property="authButton" destination="aS6-MV-6up" id="6B1-TZ-SuI"/>
                 <outlet property="eMailTextField" destination="mhM-Fk-ZnB" id="vg5-A2-ycl"/>
+                <outlet property="facebookLoginBtn" destination="kwI-4j-Hmg" id="I5K-x5-WvU"/>
                 <outlet property="loginButton" destination="ffp-dw-vfs" id="mM0-QC-8Hy"/>
                 <outlet property="passwordTextField" destination="N0g-C6-8gl" id="zeA-ok-bqR"/>
             </connections>
         </view>
     </objects>
+    <resources>
+        <image name="facebook_login" width="666" height="162"/>
+    </resources>
 </document>

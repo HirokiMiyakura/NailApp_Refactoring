@@ -31,6 +31,8 @@ class LoginVC: UIViewController {
         loginView!.loginButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(LoginVC.loginButtonTapped(_:))))
         
         loginView!.authButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(LoginVC.authButtonTapped(_:))))
+        
+        loginView!.facebookLoginBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(LoginVC.facebookLonginButtonTapped(_:))))
     }
 
     override func didReceiveMemoryWarning() {
@@ -154,6 +156,23 @@ class LoginVC: UIViewController {
 //            }
 //        }))
         
+    }
+    func facebookLonginButtonTapped(sender: UITapGestureRecognizer) {
+//        NCMBFacebookUtils.logInWithReadPermission(["email"]) {(user, error) -> Void in
+//            if (error != nil){
+//                if (error.code == NCMBErrorFacebookLoginCancelled){
+//                    // Facebookのログインがキャンセルされた場合
+//                    
+//                }else{
+//                    // その他のエラーが発生した場合
+//                    
+//                }
+//            }else{
+//                // 会員登録後の処理
+//                
+//            }
+//        }
+    
     }
     
     func closeMyView() {

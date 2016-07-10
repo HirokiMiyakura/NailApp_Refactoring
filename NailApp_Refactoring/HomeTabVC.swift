@@ -30,7 +30,8 @@ class HomeTabVC: UIViewController {
         print(self.view.bounds)
         let pageController:UIPageViewController = UIPageViewController(transitionStyle: UIPageViewControllerTransitionStyle.Scroll, navigationOrientation: UIPageViewControllerNavigationOrientation.Horizontal, options: nil)
         let navigationController:SwipeVC = SwipeVC(rootViewController: pageController)
-        navigationController.titleArray = ["New","Popular","Favorite"]
+//        navigationController.titleArray = ["New","Popular","Favorite"]
+        navigationController.titleArray = ["新着","人気","お気に入り"]
         let CollectionNewVC = self.storyboard!.instantiateViewControllerWithIdentifier( "collectionVC" ) as! CollectionVC
         CollectionNewVC.tabKind = "1"
         let CollectionPopularVC = self.storyboard!.instantiateViewControllerWithIdentifier( "collectionVC" ) as! CollectionVC

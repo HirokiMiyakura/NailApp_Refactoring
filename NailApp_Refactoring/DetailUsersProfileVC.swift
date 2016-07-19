@@ -50,7 +50,7 @@ class DetailUsersProfileVC: UIViewController {
         mModel.addObserver(self, forKeyPath: "profileInfo", options: [.New, .Old], context: nil)
         
         mModel.getAPIforPrefecture()
-        mModel.getSalonInfo()
+        mModel.getSalonInfo(self.userName)
         mModel.loadProfileInfo(self.userName)
     }
     

@@ -95,42 +95,69 @@ class DetailUserProfileVM: NSObject {
         
     }
     
-    func getSalonInfo() {
+    func getSalonInfo(userName: String) {
         
         
 //        let userQuery = NCMBUser.query()
 //        userQuery.whereKey("userName", equalTo: userName)
         
         // TODO ここcurrentUserじゃ他人のページを見ても自分のユーザーのサロン情報を撮ってきてしまう。
-        let carrentUser = NCMBUser.currentUser()
-        if (carrentUser == nil) {
-            return
-        }
-        if carrentUser.objectForKey("salonPointer") == nil {
-            return
-        }
-//        let a =  carrentUser.objectForKey("salonPointer")
-//        let salonObjectId = a.objectForKey("objectId") as! String
-        let salonObjectId = carrentUser.objectForKey("salonPointer").objectId
-        let salonQuery = NCMBQuery(className: "salon")
-        salonQuery.whereKey("objectId", equalTo: salonObjectId)
-        
-        salonQuery.findObjectsInBackgroundWithBlock({(objects, error) in
+//        let carrentUser = NCMBUser.currentUser()
+//        if (carrentUser == nil) {
+//            return
+//        }
+        let userQuery = NCMBUser.query()
+        userQuery.whereKey("userName", equalTo: userName)
+//        if carrentUser.objectForKey("salonPointer") == nil {
+//            return
+//        }
+        userQuery.findObjectsInBackgroundWithBlock({(items, error) in
             
             if error == nil {
-                
-                if objects.count > 0 {
+                print("登録件数：\(items.count)")
+                // items.countは1か0しかない。
+                if items.count > 0 {
                     
-                    self.aiueoaiueo = objects
+//                    self.profileInfo = items
+                    
+                    if items[0].objectForKey("salonPointer").objectId == nil {
+                        return
+                    }
+
+                    
+                    let salonObjectId = items[0].objectForKey("salonPointer").objectId
+                    
+                                        let salonQuery = NCMBQuery(className: "salon")
+                    salonQuery.whereKey("objectId", equalTo: salonObjectId)
+                    
+                    salonQuery.findObjectsInBackgroundWithBlock({(objects, error) in
+                        
+                        if error == nil {
+                            
+                            if objects.count > 0 {
+                                
+                                self.aiueoaiueo = objects
+                                
+                                
+                            }
+                            
+                        } else {
+                            print("エラー")
+                            print(error.localizedDescription)
+                        }
+                    })
+                    
+                } else {
                     
                     
                 }
-                
-            } else {
-                print("エラー")
-                print(error.localizedDescription)
             }
+            
+            
         })
+//        let a =  carrentUser.objectForKey("salonPointer")
+//        let salonObjectId = a.objectForKey("objectId") as! String
+        
         
     }
     

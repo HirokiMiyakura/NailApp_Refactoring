@@ -90,6 +90,9 @@ class UploadImageVM: NSObject {
         objImage.setObject(urlUploadImagesLocation + String(time) + ".jpg", forKey: "imagePath")
         objImage.setObject(param1["commentTextView"]!, forKey: "comment")
         objImage.setObject(0, forKey: "kawaiine")
+        objImage.setObject(param1["typeLength"]!, forKey: "typeLength")
+        objImage.setObject(param1["typeColor"]!, forKey: "typeColor")
+        objImage.setObject(param1["typeScene"]!, forKey: "typeScene")
         //        objImage.save(&saveError)
         objImage.saveInBackgroundWithBlock { (error: NSError?) -> Void in
             if let e = error {

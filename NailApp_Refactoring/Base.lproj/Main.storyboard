@@ -20,7 +20,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AxD-Un-gVt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="479" y="44"/>
+            <point key="canvasLocation" x="167" y="-465"/>
         </scene>
         <!--HOME-->
         <scene sceneID="8it-90-7B6">
@@ -36,12 +36,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <tabBarItem key="tabBarItem" title="HOME" id="T8O-Eg-5US"/>
+                    <tabBarItem key="tabBarItem" title="HOME" image="Tab_Home" id="T8O-Eg-5US"/>
                     <navigationItem key="navigationItem" id="hwa-FL-W0s"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ePR-nb-2KD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1270" y="306"/>
+            <point key="canvasLocation" x="792" y="-672"/>
         </scene>
         <!--Item-->
         <scene sceneID="JJT-iw-JU1">
@@ -55,7 +55,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="krH-oq-Qmj">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="krH-oq-Qmj">
                                 <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="al7-R7-B59">
@@ -66,7 +66,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="hbR-ds-jpZ" customClass="MyCollectionViewCell" customModule="NailApp_Refactoring" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="8" width="50" height="50"/>
+                                        <rect key="frame" x="8" y="72" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -95,7 +95,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GuV-G6-aUG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2057" y="306"/>
+            <point key="canvasLocation" x="1598" y="-672"/>
         </scene>
         <!--Page View ManagerVC-->
         <scene sceneID="20u-8q-GeM">
@@ -106,7 +106,7 @@
                         <viewControllerLayoutGuide type="bottom" id="l0H-Xf-gdH"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="fpH-Na-0H6">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -114,7 +114,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h21-l5-pQp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2804" y="306"/>
+            <point key="canvasLocation" x="2861" y="-672"/>
         </scene>
         <!--Item-->
         <scene sceneID="w0W-Ov-P3u">
@@ -230,7 +230,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sFN-nI-ylV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2511" y="1490"/>
+            <point key="canvasLocation" x="2651" y="1762"/>
         </scene>
         <!--Detail Users ProfileVC-->
         <scene sceneID="hQD-yg-vN7">
@@ -425,7 +425,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ohv-cp-kvk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3441" y="306"/>
+            <point key="canvasLocation" x="3502" y="-672"/>
         </scene>
         <!--Detail UserVC-->
         <scene sceneID="A0y-Vj-OdW">
@@ -538,19 +538,37 @@
                     </tabBar>
                     <connections>
                         <segue destination="8y2-gl-G5X" kind="relationship" relationship="viewControllers" id="JPC-Sc-xmG"/>
+                        <segue destination="khj-hD-8Nn" kind="relationship" relationship="viewControllers" id="Whg-Jf-Ur3"/>
+                        <segue destination="PIM-q2-8Se" kind="relationship" relationship="viewControllers" id="Jeb-Sf-ddO"/>
                         <segue destination="C9j-lG-wbz" kind="relationship" relationship="viewControllers" id="l49-aq-sJD"/>
-                        <segue destination="1go-Cl-9vc" kind="relationship" relationship="viewControllers" id="bgP-y7-Mi7"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tAa-sU-rxx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-427" y="577"/>
         </scene>
-        <!--Setting-->
+        <!--検索-->
+        <scene sceneID="ooT-fB-gj8">
+            <objects>
+                <navigationController id="khj-hD-8Nn" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="検索" image="Tab_Search" id="Vbj-CA-dXK"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0l7-85-jBF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="WI8-Ro-cPh" kind="relationship" relationship="rootViewController" id="EPi-S0-L2f"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xUu-Lv-Lp5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="235" y="903"/>
+        </scene>
+        <!--MyPage-->
         <scene sceneID="JY3-D9-fGt">
             <objects>
                 <navigationController storyboardIdentifier="settingNaviVC" id="C9j-lG-wbz" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Setting" id="Pgk-3S-e3E"/>
+                    <tabBarItem key="tabBarItem" title="MyPage" image="Tab_Gear" id="Pgk-3S-e3E"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="a99-u0-rgh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -561,7 +579,295 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iRd-CU-QWq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-153" y="1476"/>
+            <point key="canvasLocation" x="463" y="1912"/>
+        </scene>
+        <!--投稿-->
+        <scene sceneID="0iz-L2-CBr">
+            <objects>
+                <navigationController id="PIM-q2-8Se" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="投稿" image="Tab_Camera" id="aTp-UY-5xJ"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Zbs-Fr-PB7">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="L4P-zC-ue2" kind="relationship" relationship="rootViewController" id="zXA-b0-xfd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pMN-wr-frV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-262" y="2017"/>
+        </scene>
+        <!--Camera Home TabVC-->
+        <scene sceneID="Oho-dD-50s">
+            <objects>
+                <viewController id="L4P-zC-ue2" customClass="cameraHomeTabVC" customModule="NailApp_Refactoring" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Z9g-Lv-Ae0"/>
+                        <viewControllerLayoutGuide type="bottom" id="QlF-4c-BKP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0pm-go-NQd">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PKl-rI-4AB">
+                                <rect key="frame" x="285" y="228" width="30" height="30"/>
+                                <state key="normal" title="撮影"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EnF-n3-GE7">
+                                <rect key="frame" x="255" y="368" width="90" height="30"/>
+                                <state key="normal" title="カメラロール"/>
+                                <connections>
+                                    <action selector="fromCameraRollBtn:" destination="L4P-zC-ue2" eventType="touchUpInside" id="hRh-Vy-Rbx"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="z9N-pc-a7a"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gb5-9s-8Ng" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-262" y="2965"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="LHh-9o-rea">
+            <objects>
+                <viewController id="e4h-NT-3vW" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Mjc-Jg-tLV"/>
+                        <viewControllerLayoutGuide type="bottom" id="v5f-0u-s9T"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="o0p-lH-aQE">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8GO-YJ-Ff4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="463" y="2664"/>
+        </scene>
+        <!--SearchVC-->
+        <scene sceneID="iHX-G0-m2x">
+            <objects>
+                <viewController id="WI8-Ro-cPh" customClass="SearchVC" customModule="NailApp_Refactoring" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="W5e-dI-GZ2"/>
+                        <viewControllerLayoutGuide type="bottom" id="lby-r7-Bcz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gx6-E3-NX1">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="色は" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0D3-wN-eSj">
+                                <rect key="frame" x="0.0" y="64" width="600" height="21"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eu6-t6-pT5" customClass="CustomButton" customModule="NailApp_Refactoring" customModuleProvider="target">
+                                <rect key="frame" x="30" y="93" width="45" height="30"/>
+                                <state key="normal" title="ピンク">
+                                    <color key="titleColor" red="0.87058823529999996" green="0.21176470589999999" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.87058823529999996" green="0.21176470589999999" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="highlightedBackgroundColor">
+                                        <color key="value" red="0.87058823529999996" green="0.21176470589999999" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="colorPinkBtn:" destination="WI8-Ro-cPh" eventType="touchUpInside" id="JA2-Gv-IiF"/>
+                                    <action selector="colorPinkBtn:" destination="1go-Cl-9vc" eventType="touchUpInside" id="jv2-aU-XdV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgv-M6-E77" customClass="CustomButton" customModule="NailApp_Refactoring" customModuleProvider="target">
+                                <rect key="frame" x="83" y="93" width="45" height="30"/>
+                                <state key="normal" title="ブルー">
+                                    <color key="titleColor" red="0.2371893987" green="0.79782899740000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.2371893987" green="0.79782899740000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="colorBlueBtn:" destination="1go-Cl-9vc" eventType="touchUpInside" id="9hm-Lv-rSl"/>
+                                    <action selector="colorBlueBtn:" destination="WI8-Ro-cPh" eventType="touchUpInside" id="VPb-WQ-cHK"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="長さは" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8dr-9m-iqA">
+                                <rect key="frame" x="0.0" y="131" width="600" height="21"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z1j-Ld-LaQ" customClass="CustomButton" customModule="NailApp_Refactoring" customModuleProvider="target">
+                                <rect key="frame" x="8" y="160" width="45" height="30"/>
+                                <state key="normal" title="ロング">
+                                    <color key="titleColor" red="0.87058823529999996" green="0.21176470589999999" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.87058823529999996" green="0.21176470589999999" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="lengthLongBtn:" destination="WI8-Ro-cPh" eventType="touchUpInside" id="Oxv-7q-gX2"/>
+                                    <action selector="lengthLongBtn:" destination="1go-Cl-9vc" eventType="touchUpInside" id="u1q-PV-jTu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UX1-Xq-4co" customClass="CustomButton" customModule="NailApp_Refactoring" customModuleProvider="target">
+                                <rect key="frame" x="61" y="160" width="60" height="30"/>
+                                <state key="normal" title="ショート">
+                                    <color key="titleColor" red="0.87058823529999996" green="0.21176470589999999" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.87058823529999996" green="0.21176470589999999" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="lengthShortBtn:" destination="WI8-Ro-cPh" eventType="touchUpInside" id="fw4-UH-h9h"/>
+                                    <action selector="lengthShortBtn:" destination="1go-Cl-9vc" eventType="touchUpInside" id="gp3-Um-hoD"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="シーンは" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dhn-T4-CDy">
+                                <rect key="frame" x="0.0" y="198" width="600" height="21"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5qG-Bl-UKq" customClass="CustomButton" customModule="NailApp_Refactoring" customModuleProvider="target">
+                                <rect key="frame" x="8" y="227" width="60" height="30"/>
+                                <state key="normal" title="オフィス">
+                                    <color key="titleColor" red="0.87058823529999996" green="0.21176470589999999" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.87058823529999996" green="0.21176470589999999" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="sceneOfficeBtn:" destination="WI8-Ro-cPh" eventType="touchUpInside" id="6Vk-QF-DnI"/>
+                                    <action selector="sceneOfficeBtn:" destination="1go-Cl-9vc" eventType="touchUpInside" id="sV1-vO-syy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xeP-Z6-pnR" customClass="CustomButton" customModule="NailApp_Refactoring" customModuleProvider="target">
+                                <rect key="frame" x="76" y="227" width="45" height="30"/>
+                                <state key="normal" title="デート">
+                                    <color key="titleColor" red="1" green="0.11193644780000001" blue="0.83293095380000004" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.87058823529999996" green="0.21176470589999999" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="sceneDateBtn:" destination="WI8-Ro-cPh" eventType="touchUpInside" id="GLT-Xb-qRZ"/>
+                                    <action selector="sceneDateBtn:" destination="1go-Cl-9vc" eventType="touchUpInside" id="PO8-Ap-UME"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NTP-zP-cNv" customClass="CustomButton" customModule="NailApp_Refactoring" customModuleProvider="target">
+                                <rect key="frame" x="260" y="513" width="80" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.11193644780000001" blue="0.83293095380000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="TH1-gw-KmZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="検索">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="1" green="0.11193644780000001" blue="0.83293095380000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="11"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="wE2-I7-uiS" kind="show" id="71t-At-3lt"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0D3-wN-eSj" firstAttribute="leading" secondItem="gx6-E3-NX1" secondAttribute="leading" id="3Vu-bo-TeP"/>
+                            <constraint firstItem="5qG-Bl-UKq" firstAttribute="leading" secondItem="gx6-E3-NX1" secondAttribute="leading" constant="8" id="3hH-BV-Zaq"/>
+                            <constraint firstItem="z1j-Ld-LaQ" firstAttribute="leading" secondItem="gx6-E3-NX1" secondAttribute="leading" constant="8" id="8Lz-wB-L3L"/>
+                            <constraint firstItem="5qG-Bl-UKq" firstAttribute="top" secondItem="Dhn-T4-CDy" secondAttribute="bottom" constant="8" id="B9p-J0-zzA"/>
+                            <constraint firstItem="xeP-Z6-pnR" firstAttribute="top" secondItem="Dhn-T4-CDy" secondAttribute="bottom" constant="8" id="Bpe-bP-JUP"/>
+                            <constraint firstItem="Dhn-T4-CDy" firstAttribute="top" secondItem="UX1-Xq-4co" secondAttribute="bottom" constant="8" id="LUf-1f-i7V"/>
+                            <constraint firstItem="xeP-Z6-pnR" firstAttribute="leading" secondItem="5qG-Bl-UKq" secondAttribute="trailing" constant="8" id="QXm-sC-R1I"/>
+                            <constraint firstItem="UX1-Xq-4co" firstAttribute="leading" secondItem="z1j-Ld-LaQ" secondAttribute="trailing" constant="8" id="Smb-Zy-YfW"/>
+                            <constraint firstItem="0D3-wN-eSj" firstAttribute="top" secondItem="W5e-dI-GZ2" secondAttribute="bottom" id="UMC-Ee-YgM"/>
+                            <constraint firstAttribute="trailing" secondItem="0D3-wN-eSj" secondAttribute="trailing" id="Ujx-xb-R79"/>
+                            <constraint firstItem="8dr-9m-iqA" firstAttribute="top" secondItem="hgv-M6-E77" secondAttribute="bottom" constant="8" id="b00-9H-IeU"/>
+                            <constraint firstItem="hgv-M6-E77" firstAttribute="leading" secondItem="Eu6-t6-pT5" secondAttribute="trailing" constant="8" id="dfy-IG-FFz"/>
+                            <constraint firstItem="hgv-M6-E77" firstAttribute="top" secondItem="0D3-wN-eSj" secondAttribute="bottom" constant="8" id="fq8-1G-Ihh"/>
+                            <constraint firstItem="Dhn-T4-CDy" firstAttribute="leading" secondItem="gx6-E3-NX1" secondAttribute="leading" id="h0q-2E-xFo"/>
+                            <constraint firstItem="Eu6-t6-pT5" firstAttribute="leading" secondItem="gx6-E3-NX1" secondAttribute="leadingMargin" constant="10" id="jrh-QU-mHP"/>
+                            <constraint firstItem="z1j-Ld-LaQ" firstAttribute="top" secondItem="8dr-9m-iqA" secondAttribute="bottom" constant="8" id="kTM-pw-7v0"/>
+                            <constraint firstItem="Eu6-t6-pT5" firstAttribute="top" secondItem="0D3-wN-eSj" secondAttribute="bottom" constant="8" id="mXT-NL-EWh"/>
+                            <constraint firstItem="NTP-zP-cNv" firstAttribute="centerX" secondItem="gx6-E3-NX1" secondAttribute="centerX" id="pLV-N1-upm"/>
+                            <constraint firstAttribute="trailing" secondItem="Dhn-T4-CDy" secondAttribute="trailing" id="rHR-kT-933"/>
+                            <constraint firstItem="lby-r7-Bcz" firstAttribute="top" secondItem="NTP-zP-cNv" secondAttribute="bottom" constant="8" id="suh-XK-mKE"/>
+                            <constraint firstItem="UX1-Xq-4co" firstAttribute="top" secondItem="8dr-9m-iqA" secondAttribute="bottom" constant="8" id="vdA-no-nd7"/>
+                            <constraint firstItem="8dr-9m-iqA" firstAttribute="leading" secondItem="gx6-E3-NX1" secondAttribute="leading" id="vf1-dx-VBn"/>
+                            <constraint firstAttribute="trailing" secondItem="8dr-9m-iqA" secondAttribute="trailing" id="wRb-gU-t8i"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="pAy-lz-RCq"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7mc-A0-cmh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1063" y="48"/>
         </scene>
         <!--P画像投稿-->
         <scene sceneID="YW5-LJ-lNi">
@@ -576,21 +882,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="j4r-9J-e8W">
-                                <rect key="frame" x="20" y="50" width="134" height="134"/>
+                                <rect key="frame" x="233" y="28" width="134" height="134"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="134" id="LRN-ib-yGM"/>
                                     <constraint firstAttribute="height" constant="134" id="g1g-Sl-tpa"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fEg-eI-opg">
-                                <rect key="frame" x="278" y="50" width="45" height="30"/>
-                                <state key="normal" title="カメラ"/>
-                                <connections>
-                                    <action selector="chooseImageButton:" destination="1go-Cl-9vc" eventType="touchUpInside" id="O6T-Xb-i0Q"/>
-                                </connections>
-                            </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="写真に対するコメントを入力してください。" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="p5x-q1-Twi">
-                                <rect key="frame" x="180" y="236" width="240" height="128"/>
+                                <rect key="frame" x="180" y="377" width="240" height="128"/>
                                 <color key="backgroundColor" red="1" green="0.6847301938" blue="0.01666546948" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="Hsc-9y-xyZ"/>
@@ -599,27 +898,173 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5TX-9K-snP">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5TX-9K-snP">
                                 <rect key="frame" x="218" y="513" width="165" height="30"/>
                                 <state key="normal" title="この内容でアップロード"/>
                                 <connections>
                                     <action selector="uploadButton:" destination="1go-Cl-9vc" eventType="touchUpInside" id="MJe-H2-8hj"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="色は" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EKE-y7-TNZ">
+                                <rect key="frame" x="0.0" y="170" width="600" height="21"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="長さは" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ufg-fe-b4X">
+                                <rect key="frame" x="0.0" y="250" width="600" height="21"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="シーン" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ovr-J8-GXm">
+                                <rect key="frame" x="0.0" y="319" width="600" height="21"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f5W-ke-mAJ" customClass="CustomButton" customModule="NailApp_Refactoring" customModuleProvider="target">
+                                <rect key="frame" x="85" y="199" width="79" height="30"/>
+                                <state key="normal" title="ピンク">
+                                    <color key="titleColor" red="0.87058823529999996" green="0.21176470589999999" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.87058823529999996" green="0.21176470589999999" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="highlightedBackgroundColor">
+                                        <color key="value" red="0.87058823529999996" green="0.21176470589999999" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="colorPinkBtn:" destination="1go-Cl-9vc" eventType="touchUpInside" id="MTb-3d-VlA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yu0-en-jIW" customClass="CustomButton" customModule="NailApp_Refactoring" customModuleProvider="target">
+                                <rect key="frame" x="349" y="199" width="71" height="30"/>
+                                <state key="normal" title="ブルー">
+                                    <color key="titleColor" red="0.2371893987" green="0.79782899740000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.2371893987" green="0.79782899740000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="colorBlueBtn:" destination="1go-Cl-9vc" eventType="touchUpInside" id="IYB-FJ-G3Q"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jun-A8-eE4" customClass="CustomButton" customModule="NailApp_Refactoring" customModuleProvider="target">
+                                <rect key="frame" x="85" y="274" width="79" height="30"/>
+                                <state key="normal" title="ロング">
+                                    <color key="titleColor" red="0.87058823529999996" green="0.21176470589999999" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.87058823529411766" green="0.21176470588235294" blue="0.82745098039215681" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="lengthLongBtn:" destination="1go-Cl-9vc" eventType="touchUpInside" id="cWt-6e-dWy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4IN-NB-Y4s" customClass="CustomButton" customModule="NailApp_Refactoring" customModuleProvider="target">
+                                <rect key="frame" x="349" y="274" width="78" height="30"/>
+                                <state key="normal" title="ショート">
+                                    <color key="titleColor" red="0.87058823529999996" green="0.21176470589999999" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.87058823529999996" green="0.21176470589999999" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="lengthShortBtn:" destination="1go-Cl-9vc" eventType="touchUpInside" id="EzE-AA-jZu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bKn-N4-grb" customClass="CustomButton" customModule="NailApp_Refactoring" customModuleProvider="target">
+                                <rect key="frame" x="85" y="343" width="86" height="30"/>
+                                <state key="normal" title="オフィス">
+                                    <color key="titleColor" red="0.87058823529999996" green="0.21176470589999999" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.87058823529999996" green="0.21176470589999999" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="sceneOfficeBtn:" destination="1go-Cl-9vc" eventType="touchUpInside" id="Ha3-DS-i5B"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8k8-DK-Fgp" customClass="CustomButton" customModule="NailApp_Refactoring" customModuleProvider="target">
+                                <rect key="frame" x="349" y="343" width="78" height="30"/>
+                                <state key="normal" title="デート">
+                                    <color key="titleColor" red="1" green="0.11193644780000001" blue="0.83293095380000004" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.87058823529999996" green="0.21176470589999999" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="sceneDateBtn:" destination="1go-Cl-9vc" eventType="touchUpInside" id="aSx-gT-YmK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="j4r-9J-e8W" firstAttribute="leading" secondItem="3DA-1k-lEU" secondAttribute="leadingMargin" id="5Ma-sN-e93"/>
-                            <constraint firstItem="p5x-q1-Twi" firstAttribute="top" secondItem="fEg-eI-opg" secondAttribute="bottom" constant="156" id="8yd-9d-tMH"/>
-                            <constraint firstItem="fEg-eI-opg" firstAttribute="top" secondItem="g9X-PS-wYh" secondAttribute="bottom" constant="30" id="UWG-fC-ssv"/>
-                            <constraint firstItem="fEg-eI-opg" firstAttribute="centerX" secondItem="3DA-1k-lEU" secondAttribute="centerX" id="aVM-qe-HRh"/>
-                            <constraint firstItem="5TX-9K-snP" firstAttribute="centerX" secondItem="3DA-1k-lEU" secondAttribute="centerX" id="bnl-HS-cur"/>
-                            <constraint firstItem="p5x-q1-Twi" firstAttribute="centerX" secondItem="3DA-1k-lEU" secondAttribute="centerX" id="hEs-Q8-CIH"/>
-                            <constraint firstItem="j4r-9J-e8W" firstAttribute="top" secondItem="g9X-PS-wYh" secondAttribute="bottom" constant="30" id="jz4-X9-GHJ"/>
-                            <constraint firstItem="p2P-vJ-kCm" firstAttribute="top" secondItem="5TX-9K-snP" secondAttribute="bottom" constant="8" id="v3M-zV-ucj"/>
+                            <constraint firstItem="EKE-y7-TNZ" firstAttribute="leading" secondItem="3DA-1k-lEU" secondAttribute="leading" id="239-iM-2oo"/>
+                            <constraint firstItem="p5x-q1-Twi" firstAttribute="top" secondItem="j4r-9J-e8W" secondAttribute="bottom" constant="215" id="2iY-bI-1ea"/>
+                            <constraint firstItem="EKE-y7-TNZ" firstAttribute="top" secondItem="j4r-9J-e8W" secondAttribute="bottom" constant="8" id="CTc-p8-sGf"/>
+                            <constraint firstItem="p2P-vJ-kCm" firstAttribute="top" secondItem="5TX-9K-snP" secondAttribute="bottom" constant="8" symbolic="YES" id="Io8-Ro-RwA"/>
+                            <constraint firstItem="j4r-9J-e8W" firstAttribute="centerX" secondItem="3DA-1k-lEU" secondAttribute="centerX" id="LLL-gg-Xmg"/>
+                            <constraint firstAttribute="trailing" secondItem="EKE-y7-TNZ" secondAttribute="trailing" id="SBa-5a-t0l"/>
+                            <constraint firstItem="j4r-9J-e8W" firstAttribute="centerX" secondItem="p5x-q1-Twi" secondAttribute="centerX" id="h8m-Sb-LQZ"/>
+                            <constraint firstItem="j4r-9J-e8W" firstAttribute="centerX" secondItem="5TX-9K-snP" secondAttribute="centerX" id="kzN-kk-T50"/>
+                            <constraint firstItem="j4r-9J-e8W" firstAttribute="top" secondItem="g9X-PS-wYh" secondAttribute="bottom" constant="8" symbolic="YES" id="x3i-fZ-yVJ"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="P画像投稿" id="lf3-KJ-D1j"/>
+                    <navigationItem key="navigationItem" id="qb3-Sp-McO"/>
                     <connections>
                         <outlet property="uploadImageView" destination="j4r-9J-e8W" id="Ebq-XR-PrX"/>
                         <outlet property="uploadTextView" destination="p5x-q1-Twi" id="qb1-zF-2dK"/>
@@ -673,7 +1118,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yx1-62-gnc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="699" y="2056"/>
+            <point key="canvasLocation" x="1230" y="2051"/>
         </scene>
         <!--LoginVC-->
         <scene sceneID="AQD-H4-4DN">
@@ -691,7 +1136,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GMZ-Ww-i8k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1546" y="2214"/>
+            <point key="canvasLocation" x="1896" y="2017"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Tab_Camera" width="30" height="30"/>
+        <image name="Tab_Gear" width="30" height="30"/>
+        <image name="Tab_Home" width="30" height="30"/>
+        <image name="Tab_Search" width="30" height="30"/>
+    </resources>
 </document>

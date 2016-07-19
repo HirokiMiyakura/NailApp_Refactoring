@@ -36,6 +36,17 @@ class DetailVM: NSObject {
         return NSURL(string: (self.imageCollectionObject!.objectForKey("imagePath") as? String)!)!
     }
     
+    func getAllSign() -> Dictionary<String,String> {
+        let allSign = [
+            "typeColor" : self.imageCollectionObject!.objectForKey("typeColor") as! String,
+            "typeLength" : self.imageCollectionObject!.objectForKey("typeLength") as! String,
+            "typeScene" : self.imageCollectionObject!.objectForKey("typeScene") as! String,
+            
+            ] as Dictionary<String,String>
+        return allSign
+        
+    }
+    
     func setImage(detailImage: UIImageView) {
         
         let url = NSURL(string: (self.imageCollectionObject!.objectForKey("imagePath") as? String)!)

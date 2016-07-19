@@ -25,5 +25,10 @@ let urlUploadProfileImagesPhp = "http://dsh4k2h4k2.esy.es/uploadProfileImageToFi
 //let urlUploadProfileImagesPhp = "http://test.localhost/NailApp_NoUseNifty/uploadProfileImageToFileServer.php"
 let urlUploadProfileImagesLocation = "http://dsh4k2h4k2.esy.es/profileImages/"
 //let urlUploadProfileImagesLocation = "http://test.localhost/NailApp_NoUseNifty/profileImages/"
+let TAB_HOME = 0
+let TAB_SEARCH = 1
+let TAB_UPLOAD = 2
+let TAB_MYPAGE = 3
 
 var gblUserName: String?
+var gblParam = [:] as Dictionary<String, AnyObject>

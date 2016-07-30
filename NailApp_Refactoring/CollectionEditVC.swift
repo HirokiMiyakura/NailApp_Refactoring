@@ -48,8 +48,17 @@ class CollectionEditVC: UIViewController, UICollectionViewDelegate, UICollection
         
         toolBar.hidden = !editing
         
-        if (navigationItem.rightBarButtonItem!.title! == "Edit") {
-            print("Doneが押されたので選択モードを全解除")
+        if (editing)
+        {
+            navigationItem.rightBarButtonItem!.title = "キャンセル"
+        }
+        else
+        {
+            navigationItem.rightBarButtonItem!.title = "選択"
+        }
+        
+        if (!editing) {
+            print("キャンセルが押されたので選択モードを全解除")
 //            collectionView.deselectItemAtIndexPath(<#T##indexPath: NSIndexPath##NSIndexPath#>, animated: <#T##Bool#>)
 //            if let indexpaths = indexpaths {
             
@@ -71,6 +80,7 @@ class CollectionEditVC: UIViewController, UICollectionViewDelegate, UICollection
 //            }
             
         }
+        
 
     }
     
@@ -94,7 +104,10 @@ class CollectionEditVC: UIViewController, UICollectionViewDelegate, UICollection
         self.collectionView?.addSubview(refreshControl)
         self.collectionView.alwaysBounceVertical = true
         
+        self.navigationItem.title = "画像一覧"
+        
         navigationItem.rightBarButtonItem = editButtonItem()
+        navigationItem.rightBarButtonItem!.title = "選択"
         toolBar.hidden = true
     }
     
@@ -271,7 +284,7 @@ class CollectionEditVC: UIViewController, UICollectionViewDelegate, UICollection
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
-        if (navigationItem.rightBarButtonItem!.title! == "Edit") {
+        if (navigationItem.rightBarButtonItem!.title! == "選択") {
             print("didSelectedだがdeselectにします。")
             collectionView.deselectItemAtIndexPath((indexPath), animated: true)
             return
@@ -295,7 +308,7 @@ class CollectionEditVC: UIViewController, UICollectionViewDelegate, UICollection
     
     func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
         
-        if (navigationItem.rightBarButtonItem!.title! == "Edit") {
+        if (navigationItem.rightBarButtonItem!.title! == "選択") {
             print("ここは絶対通らないはず。")
 //            collectionView.deselectItemAtIndexPath((indexPath), animated: true)
             return
@@ -313,7 +326,7 @@ class CollectionEditVC: UIViewController, UICollectionViewDelegate, UICollection
     
     override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
         
-        if (navigationItem.rightBarButtonItem!.title! == "Done") {
+        if (navigationItem.rightBarButtonItem!.title! == "キャンセル") {
             return false
         }
         

@@ -10,6 +10,7 @@ import UIKit
 
 class DetailUserHomeTabVC: UIViewController {
     var userName: String!
+    var ownORotherFlg: String!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,7 @@ class DetailUserHomeTabVC: UIViewController {
         let DetailUserProfileVC = self.storyboard!.instantiateViewControllerWithIdentifier( "detailUsersProfileVC" ) as! DetailUsersProfileVC
         let CollectionMineVC = self.storyboard!.instantiateViewControllerWithIdentifier( "collectionVC" ) as! CollectionVC
         CollectionMineVC.tabKind = "7"
+        CollectionMineVC.ownORotherFlg = ownORotherFlg
         
         navigationController.viewControllerArray = [DetailUserProfileVC,CollectionMineVC]
 //        let vc = self.parentViewController as! DetailUserVC

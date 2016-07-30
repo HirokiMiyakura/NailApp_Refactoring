@@ -1,4 +1,4 @@
-@IBDesignable class CustomButton: UIButton {
+@IBDesignable class CustomBorderView: UIView {
     
     // 角丸の半径(0で四角形)
     @IBInspectable var cornerRadius: CGFloat = 0.0
@@ -17,21 +17,21 @@
         self.layer.borderWidth = borderWidth
         
         // 背景
-//        self.backgroundColor = UIColor.whiteColor()
+        //        self.backgroundColor = UIColor.whiteColor()
         
         super.drawRect(rect)
     }
     
-    @IBInspectable var highlightedBackgroundColor :UIColor?
-    @IBInspectable var nonHighlightedBackgroundColor :UIColor?
-//    override var highlighted :Bool {
-//        didSet {
-//            if highlighted {
-//                self.backgroundColor = highlightedBackgroundColor
-//            }
-//            else {
-//                self.backgroundColor = nonHighlightedBackgroundColor
-//            }
-//        }
-//    }
+//    @IBInspectable var highlightedBackgroundColor :UIColor?
+//    @IBInspectable var nonHighlightedBackgroundColor :UIColor?
+    //    override var highlighted :Bool {
+    //        didSet {
+    //            if highlighted {
+    //                self.backgroundColor = highlightedBackgroundColor
+    //            }
+    //            else {
+    //                self.backgroundColor = nonHighlightedBackgroundColor
+    //            }
+    //        }
+    //    }
 }

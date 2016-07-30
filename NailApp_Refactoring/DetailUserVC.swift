@@ -46,7 +46,7 @@ class DetailUserVC: UIViewController {
         if (ownORotherFlg != "2") {
 //            topViewXIB.editProfileButtonOutlet.hidden = true
             // show search button and set action
-            var rightSearchBarButtonItem:UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Search, target: self, action: #selector(DetailUserVC.editButton))
+            var rightSearchBarButtonItem:UIBarButtonItem = UIBarButtonItem(title: "編集", style:.Bordered, target: self, action: #selector(DetailUserVC.editButton))
             // add the button to navigationBar
             self.navigationItem.setRightBarButtonItems([rightSearchBarButtonItem], animated: true)
 
@@ -123,6 +123,12 @@ class DetailUserVC: UIViewController {
         } else if (segue.identifier == "segueToDetailProfile") {
             let controller = segue.destinationViewController as! DetailUserHomeTabVC
             controller.userName = self.userName!
+            if (ownORotherFlg == "1") {
+                controller.ownORotherFlg = "1"
+            } else if (ownORotherFlg == "2"){
+                controller.ownORotherFlg = "2"
+            }
+
         }
         
         
@@ -154,7 +160,7 @@ class DetailUserVC: UIViewController {
             (action:UIAlertAction!) -> Void in
             print("プロフィール編集します")
             let editProfileVC = self.storyboard!.instantiateViewControllerWithIdentifier( "editProfileVC" ) as! EditProfileVC
-            editProfileVC.modalTransitionStyle = UIModalTransitionStyle.CoverVertical
+//            editProfileVC.modalTransitionStyle = UIModalTransitionStyle.CoverVertical
             //        detailUserVC.userName = self.imageCollectionObject?.objectForKey("userName") as? String
             //        detailUserVC.ownORotherFlg = "2"
             //        gblUserN?ame = self.imageCollectionObject?.objectForKey("userName") as? String
@@ -169,7 +175,8 @@ class DetailUserVC: UIViewController {
                 editProfileVC.imageView = self.profileImage
             }
             
-            self.presentViewController(editProfileVC, animated: true, completion: nil)
+//            self.presentViewController(editProfileVC, animated: true, completion: nil)
+            self.navigationController?.pushViewController(editProfileVC, animated: true)
 
         })
         

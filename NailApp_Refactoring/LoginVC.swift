@@ -118,7 +118,7 @@ class LoginVC: UIViewController {
 
         
         var error : NSError? = nil
-        NCMBUser.requestAuthenticationMail(loginView!.eMailTextField.text, error: &error)
+        NCMBUser.requestAuthenticationMail(loginView!.emailShinkiTextField.text, error: &error)
         
 //        LoadingProxy.set(self); //表示する親をセット
 //        LoadingProxy.on();//ローディング表示。非表示にする場合はoff
@@ -127,17 +127,17 @@ class LoginVC: UIViewController {
 //            if (error != nil){
 //                // ログイン失敗時の処理
 //                LoadingProxy.off();//ローディング表示。非表示にする場合はoff
-//                let alertController = UIAlertController(title: "Sorry!", message: "ログイン失敗です。原因は謎。", preferredStyle: .Alert)
-//                
-//                let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: {
-//                    (action:UIAlertAction!) -> Void in
-//                    self.closeMyView()
-//                })
-//                
-//                alertController.addAction(defaultAction)
-//                
-//                self.presentViewController(alertController, animated: true, completion: nil)
-//                
+                let alertController = UIAlertController(title: "仮登録", message: "入力されたメールアドレスに確認メールを送信しました。本登録を完了させてください。", preferredStyle: .Alert)
+                
+                let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: {
+                    (action:UIAlertAction!) -> Void in
+                    self.closeMyView()
+                })
+                
+                alertController.addAction(defaultAction)
+                
+                self.presentViewController(alertController, animated: true, completion: nil)
+//
 //            }else{
 //                // ログイン成功時の処理
 //                LoadingProxy.off();//ローディング表示。非表示にする場合はoff
@@ -178,6 +178,7 @@ class LoginVC: UIViewController {
         loginView = self.view as! LoginView!
         loginView?.eMailTextField.resignFirstResponder()
         loginView?.passwordTextField.resignFirstResponder()
+        loginView?.emailShinkiTextField.resignFirstResponder()
         
     }
 

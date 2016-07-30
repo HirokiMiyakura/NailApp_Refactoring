@@ -59,7 +59,9 @@ class EditDetailVC: UIViewController {
         editDetailView.textField.text = detailVM!.getComment()
         setSign(detailVM!.getAllSign())
         setTouchFunction()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Save, target: self, action: Selector("saveData"))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "更新", style:.Bordered, target: self, action: Selector("saveData"))
+        
+        self.navigationItem.title = "画像編集"
     }
 
     override func didReceiveMemoryWarning() {

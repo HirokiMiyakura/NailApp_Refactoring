@@ -25,6 +25,7 @@ class DetailVC: UIViewController {
         print("DetailVCのviewDidLoad")
         super.viewDidLoad()
 
+        
         // Do any additional setup after loading the view.
         detailVM = DetailVM(imageCollectionObject: imageCollectionObject!)
         
@@ -62,6 +63,7 @@ class DetailVC: UIViewController {
         
 //        detailView.scrollView.touchesBegan(<#T##touches: Set<UITouch>##Set<UITouch>#>, withEvent: <#T##UIEvent?#>)
 //        detailView.scrollView.delegate = self
+        
         
         
         
@@ -207,11 +209,11 @@ class DetailVC: UIViewController {
         if (keyPath == "favFlg") {
             let detailView = self.view as! DetailView
             if (detailVM!.favFlg) {
-                detailView.clipImage.image = UIImage(named: "Clipped.png")
+                detailView.clipImage.image = UIImage(named: "heart_like.png")
 //                detailVM!.imageCollectionObject!.incrementKey("kawaiine", byAmount: 1)
                 detailView.kawaiineCountLabel.text = String(detailVM!.getKawaiineCount()) + "人がクリップしています。"
             } else {
-                detailView.clipImage.image = UIImage(named: "unClipped.png")
+                detailView.clipImage.image = UIImage(named: "heart_unlike.png")
 //                detailVM!.imageCollectionObject!.incrementKey("kawaiine", byAmount: -1)
                 detailView.kawaiineCountLabel.text = String(detailVM!.getKawaiineCount()) + "人がクリップしています。"
             }

@@ -39,11 +39,15 @@ class EditProfileVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
         view!.commentTextView.text = self.commentTextView
         view!.nickNameTextField.text = self.nickNameTextField
         view!.profileImageView.image = self.imageView.image
-        view!.cancelButton.action = #selector(EditProfileVC.cancelButtonTapped(_:))
-        view!.saveButton.action = #selector(EditProfileVC.saveButtonTapped(_:))
+//        view!.cancelButton.action = #selector(EditProfileVC.cancelButtonTapped(_:))
+//        view!.saveButton.action = #selector(EditProfileVC.saveButtonTapped(_:))
         view!.changeImageButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(EditProfileVC.changeImage(_:))))
         view!.nailistSwitch.addTarget(self, action: Selector("switchChanged:"), forControlEvents: UIControlEvents.ValueChanged)
-        view!.testButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(EditProfileVC.testAction(_:))))
+//        view!.testButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(EditProfileVC.testAction(_:))))
+        
+        var rightSearchBarButtonItem:UIBarButtonItem = UIBarButtonItem(title: "保存", style:.Bordered, target: self, action: #selector(EditProfileVC.saveButtonTapped))
+        // add the button to navigationBar
+        self.navigationItem.setRightBarButtonItems([rightSearchBarButtonItem], animated: true)
         
         
         //都道府県用PickerView作成
@@ -149,7 +153,8 @@ class EditProfileVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
             
         } else if (keyPath == "uploadDoneFlg") {
             LoadingProxy.off();//ローディング表示。非表示にする場合はoff
-            self.dismissViewControllerAnimated(true, completion: nil)
+//            self.dismissViewControllerAnimated(true, completion: nil)
+            self.navigationController?.popViewControllerAnimated(true)
         }
         
     }

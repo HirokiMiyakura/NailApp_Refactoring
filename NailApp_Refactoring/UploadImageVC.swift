@@ -10,94 +10,221 @@ import UIKit
 
 class UploadImageVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextViewDelegate {
 
+//    @IBOutlet weak var placeHolderLabel: UILabel!
+    var colorOutletDictionary = [:] as Dictionary<Int, UIButton>
+    var lengthOutletDictionary = [:] as Dictionary<Int, UIButton>
+    var sceneOutletDictionary = [:] as Dictionary<Int, UIButton>
+    
+    /* 色 */
+    /* 排他 */
+    /*
+     ピンク："1"
+     ブルー："2"
+     */
+    // アウトレット接続
+    @IBOutlet weak var colorBlueBtnOutlet: CustomButton!
+    @IBOutlet weak var colorPinkBtnOutlet: CustomButton!
+    // 押下済みかどうか判定するための配列
+    var colorTappedArray:NSMutableArray = []
+    // これはもはや不要？
     var colorPinkBtnFlg: Bool = false
-    var colorBlueBtn: Bool = false
-    var lengthLongBtn: Bool = false
-    var lengthShortBtn: Bool = false
-    var sceneOfficeBtn: Bool = false
-    var sceneDateBtn: Bool = false
+    var colorBlueBtnFlg: Bool = false
+    //  カラーサイン
     var colorSign: String = "0"
+    
+    /* 長さ */
+    /*
+     ロング："1"
+     ショート："2"
+     */
+    // アウトレット接続
+    @IBOutlet weak var lengthShortOutlet: CustomButton!
+    @IBOutlet weak var lengthLongOutlet: CustomButton!
+    // 押下済みかどうか判定するための配列
+    var lengthTappedArray:NSMutableArray = []
+    // これはもはや不要？
+    var lengthLongBtnFlg: Bool = false
+    var lengthShortBtnFlg: Bool = false
+    //  レングスサイン
     var lengthSign: String = "0"
+    
+    /* シーン */
+    /*
+     オフィス："1"
+     デート："2"
+     */
+    // アウトレット接続
+    @IBOutlet weak var sceneDateOutlet: CustomButton!
+    @IBOutlet weak var sceneOfficeOutlet: CustomButton!
+    // 押下済みかどうか判定するための配列
+    var sceneTappedArray:NSMutableArray = []
+    var sceneOfficeBtnFlg: Bool = false
+    var sceneDateBtnFlg: Bool = false
+    // シーンサイン
     var sceneSign: String = "0"
     
-    @IBAction func sceneDateBtn(sender: UIButton) {
-        sceneDateBtn = !sceneDateBtn
-        if (sceneDateBtn) {
-            sender.backgroundColor = sender.currentTitleColor
-            sender.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-            sceneSign = "2"
-            
-        } else {
-            sender.setTitleColor(sender.backgroundColor, forState: UIControlState.Normal)
-            sender.backgroundColor = UIColor.whiteColor()
-            sceneSign = "0"
+    
+    @IBAction func colorTapped(sender: UIButton) {
+        
+        // 押されたボタンが押下済みかどうか
+        var wasTapped: Bool = false
+        if colorTappedArray.containsObject(sender.tag) {
+            wasTapped = true
         }
+        // フラグが立っていたボタンの色を反転
+        for (flg,Outlet) in colorOutletDictionary {
+            if (colorTappedArray.containsObject(flg)) {
+                let tmpCurrentTitleColor:UIColor = Outlet.currentTitleColor
+                let tmpCurrentBackGroundColor:UIColor = Outlet.backgroundColor!
+                Outlet.backgroundColor = tmpCurrentTitleColor
+                Outlet.setTitleColor(tmpCurrentBackGroundColor, forState: UIControlState.Normal)
+            }
+        }
+        
+        if (!wasTapped) {
+            // 今押したボタンが押されてない状態だったら(押してない状態→押した状態の場合)
+            // まず配列を初期化
+            colorTappedArray = []
+            // そこに今押したボタンのtagを追加
+            colorTappedArray.addObject(sender.tag)
+            // 押されたボタンの色を反転
+            let tmpCurrentTitleColor:UIColor = sender.currentTitleColor
+            let tmpCurrentBackGroundColor:UIColor = sender.backgroundColor!
+            sender.backgroundColor = tmpCurrentTitleColor
+            sender.setTitleColor(tmpCurrentBackGroundColor, forState: UIControlState.Normal)
+        } else {
+            // 押されてたら（押してる状態→押してない状態の場合）
+            // 初期化
+            colorTappedArray = []
+        }
+        
+        if colorTappedArray == [] {
+            colorSign = "0"
+        } else {
+            colorSign = String(colorTappedArray[0])
+        }
+
+    }
+    @IBAction func lengthTapped(sender: UIButton) {
+        // 押されたボタンが押下済みかどうか
+        var wasTapped: Bool = false
+        if lengthTappedArray.containsObject(sender.tag) {
+            wasTapped = true
+        }
+        // フラグが立っていたボタンの色を反転
+        for (flg,Outlet) in lengthOutletDictionary {
+            if (lengthTappedArray.containsObject(flg)) {
+                let tmpCurrentTitleColor:UIColor = Outlet.currentTitleColor
+                let tmpCurrentBackGroundColor:UIColor = Outlet.backgroundColor!
+                Outlet.backgroundColor = tmpCurrentTitleColor
+                Outlet.setTitleColor(tmpCurrentBackGroundColor, forState: UIControlState.Normal)
+            }
+        }
+        
+        if (!wasTapped) {
+            // 今押したボタンが押されてない状態だったら(押してない状態→押した状態の場合)
+            // まず配列を初期化
+            lengthTappedArray = []
+            // そこに今押したボタンのtagを追加
+            lengthTappedArray.addObject(sender.tag)
+            // 押されたボタンの色を反転
+            let tmpCurrentTitleColor:UIColor = sender.currentTitleColor
+            let tmpCurrentBackGroundColor:UIColor = sender.backgroundColor!
+            sender.backgroundColor = tmpCurrentTitleColor
+            sender.setTitleColor(tmpCurrentBackGroundColor, forState: UIControlState.Normal)
+        } else {
+            // 押されてたら（押してる状態→押してない状態の場合）
+            // 初期化
+            lengthTappedArray = []
+        }
+        
+        if lengthTappedArray == [] {
+            lengthSign = "0"
+        } else {
+            lengthSign = String(lengthTappedArray[0])
+        }
+    }
+    
+    @IBAction func sceneTapped(sender: UIButton) {
+    }
+    @IBAction func sceneDateBtn(sender: UIButton) {
+//        sceneDateBtnFlg = !sceneDateBtnFlg
+//        if (sceneDateBtnFlg) {
+//            sender.backgroundColor = sender.currentTitleColor
+//            sender.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+//            sceneSign = "2"
+//            
+//        } else {
+//            sender.setTitleColor(sender.backgroundColor, forState: UIControlState.Normal)
+//            sender.backgroundColor = UIColor.whiteColor()
+//            sceneSign = "0"
+//        }
     }
     @IBAction func sceneOfficeBtn(sender: UIButton) {
-        sceneOfficeBtn = !sceneOfficeBtn
-        if (sceneOfficeBtn) {
-            sender.backgroundColor = sender.currentTitleColor
-            sender.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-            sceneSign = "1"
-            
-        } else {
-            sender.setTitleColor(sender.backgroundColor, forState: UIControlState.Normal)
-            sender.backgroundColor = UIColor.whiteColor()
-            sceneSign = "0"
-        }
+//        sceneOfficeBtnFlg = !sceneOfficeBtnFlg
+//        if (sceneOfficeBtnFlg) {
+//            sender.backgroundColor = sender.currentTitleColor
+//            sender.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+//            sceneSign = "1"
+//            
+//        } else {
+//            sender.setTitleColor(sender.backgroundColor, forState: UIControlState.Normal)
+//            sender.backgroundColor = UIColor.whiteColor()
+//            sceneSign = "0"
+//        }
     }
     @IBAction func lengthShortBtn(sender: UIButton) {
-        lengthShortBtn = !lengthShortBtn
-        if (lengthShortBtn) {
-            sender.backgroundColor = sender.currentTitleColor
-            sender.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-            lengthSign = "2"
-            
-        } else {
-            sender.setTitleColor(sender.backgroundColor, forState: UIControlState.Normal)
-            sender.backgroundColor = UIColor.whiteColor()
-            lengthSign = "0"
-        }
+//        lengthShortBtnFlg = !lengthShortBtnFlg
+//        if (lengthShortBtnFlg) {
+//            sender.backgroundColor = sender.currentTitleColor
+//            sender.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+//            lengthSign = "2"
+//            
+//        } else {
+//            sender.setTitleColor(sender.backgroundColor, forState: UIControlState.Normal)
+//            sender.backgroundColor = UIColor.whiteColor()
+//            lengthSign = "0"
+//        }
     }
     @IBAction func lengthLongBtn(sender: UIButton) {
-        lengthLongBtn = !lengthLongBtn
-        if (lengthLongBtn) {
-            sender.backgroundColor = sender.currentTitleColor
-            sender.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-            lengthSign = "1"
-            
-        } else {
-            sender.setTitleColor(sender.backgroundColor, forState: UIControlState.Normal)
-            sender.backgroundColor = UIColor.whiteColor()
-            lengthSign = "0"
-        }
+//        lengthLongBtnFlg = !lengthLongBtnFlg
+//        if (lengthLongBtnFlg) {
+//            sender.backgroundColor = sender.currentTitleColor
+//            sender.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+//            lengthSign = "1"
+//            
+//        } else {
+//            sender.setTitleColor(sender.backgroundColor, forState: UIControlState.Normal)
+//            sender.backgroundColor = UIColor.whiteColor()
+//            lengthSign = "0"
+//        }
     }
     @IBAction func colorBlueBtn(sender: UIButton) {
-        colorBlueBtn = !colorBlueBtn
-        if (colorBlueBtn) {
-            sender.backgroundColor = sender.currentTitleColor
-            sender.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-            colorSign = "2"
-            
-        } else {
-            sender.setTitleColor(sender.backgroundColor, forState: UIControlState.Normal)
-            sender.backgroundColor = UIColor.whiteColor()
-            colorSign = "0"
-        }
+//        colorBlueBtnFlg = !colorBlueBtnFlg
+//        if (colorBlueBtnFlg) {
+//            sender.backgroundColor = sender.currentTitleColor
+//            sender.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+//            colorSign = "2"
+//            
+//        } else {
+//            sender.setTitleColor(sender.backgroundColor, forState: UIControlState.Normal)
+//            sender.backgroundColor = UIColor.whiteColor()
+//            colorSign = "0"
+//        }
     }
     
     @IBAction func colorPinkBtn(sender: UIButton) {
-        colorPinkBtnFlg = !colorPinkBtnFlg
-        if (colorPinkBtnFlg) {
-            sender.backgroundColor = sender.currentTitleColor
-            sender.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-            colorSign = "1"
-            
-        } else {
-            sender.setTitleColor(sender.backgroundColor, forState: UIControlState.Normal)
-            sender.backgroundColor = UIColor.whiteColor()
-            colorSign = "0"
-        }
+//        colorPinkBtnFlg = !colorPinkBtnFlg
+//        if (colorPinkBtnFlg) {
+//            sender.backgroundColor = sender.currentTitleColor
+//            sender.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+//            colorSign = "1"
+//            
+//        } else {
+//            sender.setTitleColor(sender.backgroundColor, forState: UIControlState.Normal)
+//            sender.backgroundColor = UIColor.whiteColor()
+//            colorSign = "0"
+//        }
         
     }
     private let mModel = UploadImageVM();
@@ -136,7 +263,19 @@ class UploadImageVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
     @IBOutlet weak var uploadTextView: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        colorOutletDictionary = [
+            1: colorPinkBtnOutlet,
+            2: colorBlueBtnOutlet,
+            ] //as Dictionary<String, AnyObject>
 
+        lengthOutletDictionary = [
+            1: lengthLongOutlet,
+            2: lengthShortOutlet,
+        ]
+        sceneOutletDictionary = [
+            1: sceneOfficeOutlet,
+            2: sceneDateOutlet,
+        ]
         self.uploadImageView.image = imageView
         // Do any additional setup after loading the view.
     }
@@ -255,5 +394,20 @@ class UploadImageVC: UIViewController, UIImagePickerControllerDelegate, UINaviga
         //        [vc.viewControllers[0] performSegueWithIdentifier:@"ThirdViewを呼び出す" sender:nil];
         
     }
+    
+    //textviewがフォーカスされたら、Labelを非表示
+//    func textViewShouldBeginEditing(textView: UITextView) -> Bool
+//    {
+//        placeHolderLabel.hidden = true
+//        return true
+//    }
+    
+    //textviewからフォーカスが外れて、TextViewが空だったらLabelを再び表示
+//    func textViewDidEndEditing(textView: UITextView) {
+//        
+//        if(textView.text.isEmpty){
+//            place.hidden = false
+//        }
+//    }
 
 }

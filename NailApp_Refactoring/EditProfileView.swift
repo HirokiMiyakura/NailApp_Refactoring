@@ -13,8 +13,8 @@ class EditProfileView: UIView {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var changeImageButton: UIButton!
-    @IBOutlet weak var saveButton: UIBarButtonItem!
-    @IBOutlet weak var cancelButton: UIBarButtonItem!
+//    @IBOutlet weak var saveButton: UIBarButtonItem!
+//    @IBOutlet weak var cancelButton: UIBarButtonItem!
     @IBOutlet weak var nickNameTextField: UITextField!
     @IBOutlet weak var commentTextView: UITextView!
     @IBOutlet weak var nailistSwitch: UISwitch!
@@ -29,7 +29,7 @@ class EditProfileView: UIView {
     @IBOutlet weak var mailTextField: UITextField!
     @IBOutlet weak var salonNameTextField: UITextField!
     
-    @IBOutlet weak var testButton: UIButton!
+//    @IBOutlet weak var testButton: UIButton!
 //    func init() {
 //        cancelButton.
 //    }
@@ -51,7 +51,7 @@ class EditProfileView: UIView {
         //        //全体のサイズ
         //        scrollView.translatesAutoresizingMaskIntoConstraints = false
         //        scrollView.frame = CGRect(x: 0,y: 0,width: screenWidth,height: screenWidth)
-        scrollView.contentSize = CGSizeMake(screenWidth, 1200)  //横幅は画面に合わせ、縦幅は1200とする。
+//        scrollView.contentSize = CGSizeMake(screenWidth, 1200)  //横幅は画面に合わせ、縦幅は1200とする。
     }
 
 }

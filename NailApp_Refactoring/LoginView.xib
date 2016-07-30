@@ -3,49 +3,160 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="LoginView" customModule="NailApp_Refactoring" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="メールアドレス" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ndn-43-z7c">
-                    <rect key="frame" x="10" y="122" width="119" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="パスワード" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OBT-v6-uRs">
-                    <rect key="frame" x="27" y="194" width="85" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="mailaddress" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mhM-Fk-ZnB">
-                    <rect key="frame" x="193" y="118" width="220" height="30"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N0g-C6-8gl">
-                    <rect key="frame" x="193" y="190" width="220" height="30"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                </textField>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffp-dw-vfs">
-                    <rect key="frame" x="270" y="285" width="60" height="30"/>
-                    <state key="normal" title="ログイン"/>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aS6-MV-6up">
-                    <rect key="frame" x="2" y="420" width="135" height="30"/>
-                    <state key="normal" title="メールアドレス認証"/>
-                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TQC-KA-H0W" customClass="CustomBorderView" customModule="NailApp_Refactoring" customModuleProvider="target">
+                    <rect key="frame" x="15" y="8" width="384" height="294"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ndn-43-z7c">
+                            <rect key="frame" x="8" y="80" width="32" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OBT-v6-uRs">
+                            <rect key="frame" x="8" y="136" width="74" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="mailaddress" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mhM-Fk-ZnB">
+                            <rect key="frame" x="107" y="76" width="269" height="30"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N0g-C6-8gl">
+                            <rect key="frame" x="107" y="132" width="269" height="30"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffp-dw-vfs" customClass="CustomButton" customModule="NailApp_Refactoring" customModuleProvider="target">
+                            <rect key="frame" x="58" y="256" width="268" height="30"/>
+                            <color key="backgroundColor" red="1" green="0.11193644780000001" blue="0.83293095380000004" alpha="1" colorSpace="calibratedRGB"/>
+                            <state key="normal" title="ログイン">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="7"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" red="1" green="0.11193644780000001" blue="0.83293095380000004" alpha="1" colorSpace="calibratedRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="2"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="mhM-Fk-ZnB" firstAttribute="centerY" secondItem="ndn-43-z7c" secondAttribute="centerY" id="CdZ-CF-zih"/>
+                        <constraint firstItem="ffp-dw-vfs" firstAttribute="centerX" secondItem="TQC-KA-H0W" secondAttribute="centerX" id="Fjp-Hf-jOQ"/>
+                        <constraint firstItem="N0g-C6-8gl" firstAttribute="trailing" secondItem="mhM-Fk-ZnB" secondAttribute="trailing" id="Hbq-Mr-gmm"/>
+                        <constraint firstItem="OBT-v6-uRs" firstAttribute="top" secondItem="ndn-43-z7c" secondAttribute="bottom" constant="35" id="M4y-MT-MjY"/>
+                        <constraint firstItem="N0g-C6-8gl" firstAttribute="centerY" secondItem="OBT-v6-uRs" secondAttribute="centerY" id="O1T-b1-xnH"/>
+                        <constraint firstItem="mhM-Fk-ZnB" firstAttribute="width" secondItem="TQC-KA-H0W" secondAttribute="width" multiplier="70:100" id="OOk-E8-cu4"/>
+                        <constraint firstItem="ffp-dw-vfs" firstAttribute="width" secondItem="TQC-KA-H0W" secondAttribute="width" multiplier="70:100" id="SP2-fS-rGX"/>
+                        <constraint firstItem="ndn-43-z7c" firstAttribute="leading" secondItem="TQC-KA-H0W" secondAttribute="leading" constant="8" id="T6R-Sw-VyB"/>
+                        <constraint firstItem="ndn-43-z7c" firstAttribute="top" secondItem="TQC-KA-H0W" secondAttribute="top" constant="80" id="XMB-yB-X6b"/>
+                        <constraint firstItem="OBT-v6-uRs" firstAttribute="leading" secondItem="ndn-43-z7c" secondAttribute="leading" id="aSO-gc-FoP"/>
+                        <constraint firstItem="N0g-C6-8gl" firstAttribute="leading" secondItem="mhM-Fk-ZnB" secondAttribute="leading" id="e4i-qX-vz8"/>
+                        <constraint firstAttribute="trailing" secondItem="mhM-Fk-ZnB" secondAttribute="trailing" constant="8" id="huX-0n-I9M"/>
+                        <constraint firstAttribute="bottom" secondItem="ffp-dw-vfs" secondAttribute="bottom" constant="8" id="jaG-uj-jJa"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" red="1" green="0.85417972659999997" blue="0.985100788" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                            <real key="value" value="2"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="6"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Xq-kn-GWa" customClass="CustomBorderView" customModule="NailApp_Refactoring" customModuleProvider="target">
+                    <rect key="frame" x="15" y="310" width="384" height="221"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Th-QU-zcl">
+                            <rect key="frame" x="8" y="80" width="32" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="mailaddress" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Ry-wu-naE">
+                            <rect key="frame" x="107" y="76" width="269" height="30"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aS6-MV-6up" customClass="CustomButton" customModule="NailApp_Refactoring" customModuleProvider="target">
+                            <rect key="frame" x="58" y="183" width="269" height="30"/>
+                            <color key="backgroundColor" red="1" green="0.11193644780000001" blue="0.83293095380000004" alpha="1" colorSpace="calibratedRGB"/>
+                            <state key="normal" title="新規登録">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="7"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" red="1" green="0.11193644780000001" blue="0.83293095380000004" alpha="1" colorSpace="calibratedRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="2"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="1Th-QU-zcl" firstAttribute="top" secondItem="8Xq-kn-GWa" secondAttribute="top" constant="80" id="DVq-uu-m8U"/>
+                        <constraint firstItem="1Th-QU-zcl" firstAttribute="leading" secondItem="8Xq-kn-GWa" secondAttribute="leading" constant="8" id="Gaz-rG-HwJ"/>
+                        <constraint firstItem="aS6-MV-6up" firstAttribute="width" secondItem="8Xq-kn-GWa" secondAttribute="width" multiplier="70:100" id="Ig6-nW-9hb"/>
+                        <constraint firstAttribute="trailing" secondItem="5Ry-wu-naE" secondAttribute="trailing" constant="8" id="NPV-Nr-37F"/>
+                        <constraint firstItem="aS6-MV-6up" firstAttribute="centerX" secondItem="8Xq-kn-GWa" secondAttribute="centerX" id="V8I-gj-lIp"/>
+                        <constraint firstItem="5Ry-wu-naE" firstAttribute="width" secondItem="8Xq-kn-GWa" secondAttribute="width" multiplier="70:100" id="VQA-x7-LX3"/>
+                        <constraint firstItem="5Ry-wu-naE" firstAttribute="centerY" secondItem="1Th-QU-zcl" secondAttribute="centerY" id="utb-Ze-vph"/>
+                        <constraint firstAttribute="bottom" secondItem="aS6-MV-6up" secondAttribute="bottom" constant="8" id="xbM-J5-kqI"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" red="1" green="0.85417972659999997" blue="0.985100788" alpha="1" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                            <real key="value" value="2"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="6"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="TQC-KA-H0W" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="33u-Ha-ZOl"/>
+                <constraint firstItem="TQC-KA-H0W" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="40:100" id="F13-8r-pTb"/>
+                <constraint firstItem="8Xq-kn-GWa" firstAttribute="top" secondItem="TQC-KA-H0W" secondAttribute="bottom" constant="8" id="Jam-LQ-rQo"/>
+                <constraint firstAttribute="trailing" secondItem="TQC-KA-H0W" secondAttribute="trailing" constant="15" id="JwR-ZG-gNF"/>
+                <constraint firstItem="8Xq-kn-GWa" firstAttribute="trailing" secondItem="TQC-KA-H0W" secondAttribute="trailing" id="Oh0-Dt-0OV"/>
+                <constraint firstItem="TQC-KA-H0W" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="Sbw-Vy-kvg"/>
+                <constraint firstItem="8Xq-kn-GWa" firstAttribute="leading" secondItem="TQC-KA-H0W" secondAttribute="leading" id="m00-sM-7Xt"/>
+                <constraint firstItem="8Xq-kn-GWa" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="30:100" id="nlk-M4-Iyw"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
             <connections>
                 <outlet property="authButton" destination="aS6-MV-6up" id="6B1-TZ-SuI"/>
                 <outlet property="eMailTextField" destination="mhM-Fk-ZnB" id="vg5-A2-ycl"/>
+                <outlet property="emailShinkiTextField" destination="5Ry-wu-naE" id="eVJ-ih-xdu"/>
                 <outlet property="loginButton" destination="ffp-dw-vfs" id="mM0-QC-8Hy"/>
                 <outlet property="passwordTextField" destination="N0g-C6-8gl" id="zeA-ok-bqR"/>
             </connections>

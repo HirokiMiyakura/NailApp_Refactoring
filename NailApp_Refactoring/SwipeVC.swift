@@ -66,13 +66,29 @@ class SwipeVC: UINavigationController,UIPageViewControllerDelegate,UIPageViewCon
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.navigationBar.barTintColor = UIColor(red:0.01, green:0.05, blue:0.06, alpha:1) //%%% bartint
-        self.navigationBar.translucent = false
+        print("SWipeVCのサイズ")
+        print(self.view.bounds)
+        print(self.view.frame)
+//        self.navigationBar.barTintColor = UIColor(red:0.01, green:0.05, blue:0.06, alpha:0.2) //%%% bartint
+        self.navigationBar.barTintColor = UIColor.whiteColor() //%%% bartint
+        self.navigationBar.translucent = true
+//        self.navigationBar.backgroundColor = UIColor.blueColor()
         
         // Do any additional setup after loading the view.
         //        self.setupPageViewController()
         //        self.setupSegmentButtons()
+    }
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        print("viewDidLayoutSubviews")
+        print(self.view.frame)
+        if (((hyojizumiFlg)) != nil) {
+            
+        } else {
+            self.setupPageViewController()
+            self.setupSegmentButtons()
+            hyojizumiFlg = true
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -85,7 +101,8 @@ class SwipeVC: UINavigationController,UIPageViewControllerDelegate,UIPageViewCon
     }
     //%%% sets up the tabs using a loop.  You can take apart the loop to customize individual buttons, but remember to tag the buttons.  (button.tag=0 and the second button.tag=1, etc)
     func setupSegmentButtons() {
-        
+        print("setupSegumenButtons self.view.frame.size.width")
+        print(self.view.frame)
         navigationView = UIView(frame: CGRectMake(0,0,self.view.frame.size.width,self.navigationBar.frame.size.height))
         navigationView.backgroundColor = UIColor.blueColor() // 付け足してみた。
         let numControllers :Int = viewControllerArray.count
@@ -97,13 +114,22 @@ class SwipeVC: UINavigationController,UIPageViewControllerDelegate,UIPageViewCon
         
         for (var i = 0 ; i < numControllers; i++) {
             let frame :CGRect = CGRectMake(X_BUFFER+CGFloat(i)*(self.view.frame.size.width-2*X_BUFFER)/CGFloat(numControllers)-X_OFFSET, Y_BUFFER, (self.view.frame.size.width-2*X_BUFFER)/CGFloat(numControllers), HEIGHT)
+            print("self.view.frame.size.width")
+            print(self.view.frame)
+            print("CGFloat(numControllers)")
+            print(CGFloat(numControllers))
+            print("(self.view.frame.size.width-2*X_BUFFER)/CGFloat(numControllers)")
+            print((self.view.frame.size.width-2*X_BUFFER)/CGFloat(numControllers))
             let button :UIButton = UIButton(frame: frame)
             navigationView.addSubview(button)
             
             button.tag = i //%%% IMPORTANT: if you make your own custom buttons, you have to tag them appropriately
-            button.backgroundColor = UIColor(red: 0.80, green: 0.07, blue: 0.08, alpha: 1) //%%% buttoncolors
+//            button.backgroundColor = UIColor(red: 0.80, green: 0.07, blue: 0.08, alpha: 1) //%%% buttoncolors
+            button.backgroundColor = UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1) //%%% buttoncolors
             button.addTarget(self, action: "tapSegmentButtonAction:", forControlEvents: UIControlEvents.TouchUpInside)
             button.setTitle(buttonText[i], forState:UIControlState.Normal) //%%%buttontitle
+            button.setTitleColor(UIColor(red: 1.00, green: 0.20, blue: 0.83, alpha: 1), forState: UIControlState.Normal)
+            button.titleLabel!.font = UIFont(name: "HelveticaNeue-LightItalic",size: CGFloat(15))
         }
         
         pageController.navigationController?.navigationBar.topItem?.titleView = navigationView
@@ -126,13 +152,13 @@ class SwipeVC: UINavigationController,UIPageViewControllerDelegate,UIPageViewCon
     //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%//
     //                                                        //
     override func viewWillAppear(animated: Bool) {
-        if (((hyojizumiFlg)) != nil) {
-            
-        } else {
-            self.setupPageViewController()
-            self.setupSegmentButtons()
-            hyojizumiFlg = true
-        }
+//        if (((hyojizumiFlg)) != nil) {
+//            
+//        } else {
+//            self.setupPageViewController()
+//            self.setupSegmentButtons()
+//            hyojizumiFlg = true
+//        }
         
     }
     

@@ -26,7 +26,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
 
     func tabBarController(tabBarController: UITabBarController, didSelectViewController viewController: UIViewController) {
         print(self.selectedIndex)
-        if (self.selectedIndex == 2 && NCMBUser.currentUser() == nil) {
+        if (self.selectedIndex == TAB_UPLOAD && NCMBUser.currentUser() == nil) {
             self.selectedIndex = preSelectedIndex
             
             print("ログインせよ")

@@ -12,6 +12,7 @@ class DetailVM: NSObject {
     dynamic var imageCollectionObject: NCMBObject?
     dynamic var favFlg: Bool = false
     dynamic var nickName: String?
+    dynamic var profileInfo = []
     
     init(imageCollectionObject: NCMBObject) {
         super.init()
@@ -36,6 +37,20 @@ class DetailVM: NSObject {
         return NSURL(string: (self.imageCollectionObject!.objectForKey("imagePath") as? String)!)!
     }
     
+    func getAllSign() -> Dictionary<String,String> {
+        let allSign = [
+            "typeColor" : self.imageCollectionObject!.objectForKey("typeColor") as! String,
+            "typeLength" : self.imageCollectionObject!.objectForKey("typeLength") as! String,
+            "typeScene" : self.imageCollectionObject!.objectForKey("typeScene") as! String,
+            "typeDesign" : self.imageCollectionObject!.objectForKey("typeDesign") as! String,
+            "typeGenre" : self.imageCollectionObject!.objectForKey("typeGenre") as! String,
+            "typeTaste" : self.imageCollectionObject!.objectForKey("typeTaste") as! String
+            
+            ] as Dictionary<String,String>
+        return allSign
+        
+    }
+    
     func setImage(detailImage: UIImageView) {
         
         let url = NSURL(string: (self.imageCollectionObject!.objectForKey("imagePath") as? String)!)
@@ -49,7 +64,7 @@ class DetailVM: NSObject {
         
     }
     
-    func getNailistName() {
+    func loadProfileInfo() {
         let userQuery = NCMBUser.query()
         userQuery.whereKey("userName", equalTo: self.imageCollectionObject!.objectForKey("userName") as? String!)
         userQuery.findObjectsInBackgroundWithBlock({(items, error) in
@@ -58,7 +73,9 @@ class DetailVM: NSObject {
                 print("登録件数：\(items.count)")
                 // items.countは1か0しかない。
                 if items.count > 0 {
-                    self.nickName = (items[0].objectForKey("nickName") as? String)!
+//                    self.nickName = (items[0].objectForKey("nickName") as? String)!
+                    
+                    self.profileInfo = items
 //                    return items[0].objectForKey("nickName") as String
                     
                 } else {

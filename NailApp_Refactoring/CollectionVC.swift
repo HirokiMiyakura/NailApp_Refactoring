@@ -15,7 +15,8 @@ class CollectionVC: UIViewController, UICollectionViewDelegate, UICollectionView
 //    private let mModel = CollectionVM();
     private var mModel: CollectionBaseVM?
     var tabKind: String = "5"
-    var userName: String?
+    var userName: String? = ""
+    var ownORotherFlg: String!
 //    override func loadView() {
 //        self.view = UINib(nibName: "CollectionView", bundle: nil).instantiateWithOwner(self, options: nil)[0] as! CollectionView
 //    }
@@ -24,6 +25,7 @@ class CollectionVC: UIViewController, UICollectionViewDelegate, UICollectionView
 //    }
     override func viewDidLoad() {
         super.viewDidLoad()
+//        self.edgesForExtendedLayout = UIRectEdge.None
         // Do any additional setup after loading the view.
         
 //        if(tabKind == "6") {
@@ -32,6 +34,10 @@ class CollectionVC: UIViewController, UICollectionViewDelegate, UICollectionView
 //                self.dismissViewControllerAnimated(true, completion: nil)
 //            }
 //        }
+        
+        if (self.tabKind == "8") {
+            self.navigationItem.title = "検索結果"
+        }
         mModel = CollectionFactory.getCollectionClass(tabKind)
 //        let nib: UINib = UINib(nibName: "CollectionViewCell", bundle: nil)
 //        collectionView.registerNib(nib, forCellWithReuseIdentifier: "CollectionViewCell")
@@ -99,7 +105,7 @@ class CollectionVC: UIViewController, UICollectionViewDelegate, UICollectionView
 
     
     override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
-        NSLog("Called")
+        NSLog("Called:" + keyPath!)
 //        print(change)
         collectionView.reloadData()
     }
@@ -145,28 +151,75 @@ class CollectionVC: UIViewController, UICollectionViewDelegate, UICollectionView
         let targetImageData = mModel!.imageInfo[indexPath.row]
         let url = NSURL(string: (targetImageData.objectForKey("imagePath") as? String)!)
         
+//        for subview in cell.contentView.subviews{
+//            print("subview.remove")
+//            subview.removeFromSuperview()
+//        }
+        
+        
+        
         let placeholder = UIImage(named: "transparent.png")
+        
+        
         let imageView = UIImageView()
         //        imageView.frame = self.cellRect!
-        imageView.frame = CGRect(x: 0,y: 0,width: 132,height: 132) // The size of one cell
+//        print("cellのframe")
+//        print(cell.frame)
+        imageView.frame = CGRect(x: 0,y: 0,width: cell.frame.size.width,height: cell.frame.size.height) // The size of one cell
         
-        let rect:CGRect = CGRectMake(imageView.frame.width/3*2, imageView.frame.height/3*2, imageView.frame.width/3, imageView.frame.height/3)
-        let favImageView = UIImageView()
-        // didClickImageViewを有効化するための処理
-        favImageView.userInteractionEnabled = true
+        
+        // インジケータを作成する.
+        var myActivityIndicator = UIActivityIndicatorView()
+        myActivityIndicator.frame = CGRectMake(0, 0, 50, 50)
+        myActivityIndicator.center = imageView.center
+        
+        // アニメーションが停止している時もインジケータを表示させる.
+        myActivityIndicator.hidesWhenStopped = true
+        myActivityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
+        
+//         アニメーションを開始する.
+        myActivityIndicator.startAnimating()
+        imageView.addSubview(myActivityIndicator)
+        
+        // 自分のプロフィール経由以外の場合はFav画像設定
+        if (self.ownORotherFlg != "1") {
+            let rect:CGRect = CGRectMake(imageView.frame.width/4*3, imageView.frame.height/4*3, imageView.frame.width/4, imageView.frame.height/4)
+            let favImageView = UIImageView()
+            // didClickImageViewを有効化するための処理
+            favImageView.userInteractionEnabled = true
+            
+            let gesture = UITapGestureRecognizer(target:self, action:#selector(CollectionVC.didClickImageView(_:)))
+            favImageView.addGestureRecognizer(gesture)
+            favImageView.tag = indexPath.row
+            favImageView.frame = rect
+            favImageView.image = UIImage(named: "heart_unlike.png")
+            imageView.addSubview(favImageView)
+            mModel!.setFavImage(favImageView, targetImageData: targetImageData as! NCMBObject)
+            
+        }
+        
         imageView.userInteractionEnabled = true
-        let gesture = UITapGestureRecognizer(target:self, action:#selector(CollectionVC.didClickImageView(_:)))
-        favImageView.addGestureRecognizer(gesture)
-        favImageView.tag = indexPath.row
-        favImageView.frame = rect
-        favImageView.image = UIImage(named: "heart_unlike.png")
-        imageView.addSubview(favImageView)
         
         
-        mModel!.setFavImage(favImageView, targetImageData: targetImageData as! NCMBObject)
+        
+        
         
         cell.addSubview(imageView)
-        imageView.setImageWithURL(url, placeholderImage: placeholder)
+//        imageView.setImageWithURL(url, placeholderImage: placeholder)
+        
+        
+        let url_request = NSURLRequest(URL: url!)
+        imageView.setImageWithURLRequest(url_request, placeholderImage: placeholder, success: {(request:NSURLRequest!,response:NSHTTPURLResponse!, image:UIImage!) -> Void in
+                print("読み込みsuccess")
+                myActivityIndicator.stopAnimating()
+            imageView.image = image
+            }, failure: {
+                (request:NSURLRequest!,response:NSHTTPURLResponse!, error:NSError!) -> Void in
+                print("読み込みfailure")
+                myActivityIndicator.stopAnimating()
+            })
+        
+        
         return cell
     }
     

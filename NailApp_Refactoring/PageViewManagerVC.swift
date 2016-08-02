@@ -19,6 +19,7 @@ class PageViewManagerVC: UIViewController, UIPageViewControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.navigationItem.title = "詳細"
         // Do any additional setup after loading the view.
         self.pageViewController = UIPageViewController(transitionStyle: .Scroll, navigationOrientation: .Horizontal, options: nil)
         self.pageViewController!.delegate = self

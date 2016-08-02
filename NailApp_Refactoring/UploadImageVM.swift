@@ -9,7 +9,9 @@
 import UIKit
 //import NCMB
 class UploadImageVM: NSObject {
-    
+    dynamic var uploadDoneFlg = false
+    var uploadDoneFlgTmp1 = false
+    var uploadDoneFlgTmp2 = false
     func resizeImage(image: UIImage, width: Int, height: Int) -> UIImage {
         
         let size: CGSize = CGSize(width: width, height: height)
@@ -51,6 +53,7 @@ class UploadImageVM: NSObject {
             data, response, error in
             if error != nil {
                 print("error=\(error)")
+                self.uploadDoneFlg = true
                 return
             }
             // リクエストを出力
@@ -60,6 +63,16 @@ class UploadImageVM: NSObject {
             let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
             print("****** response data = \(responseString!)")
             dispatch_async(dispatch_get_main_queue(),{
+                print("アップロード完了")
+                if (self.uploadDoneFlgTmp2) {
+                    print("どっちもアップロード完了したぜ1")
+//                    self.uploadDoneFlgTmp1 = true
+                    self.uploadDoneFlg = true
+                } else {
+                    print("画像がアップロードまでできてないぜ")
+                    self.uploadDoneFlgTmp1 = true
+                }
+                
                 //アップロード完了
                 // これかかないとアップロード後画面が固まる。
                 //                self.removeFromParentViewController()
@@ -77,6 +90,13 @@ class UploadImageVM: NSObject {
         objImage.setObject(urlUploadImagesLocation + String(time) + ".jpg", forKey: "imagePath")
         objImage.setObject(param1["commentTextView"]!, forKey: "comment")
         objImage.setObject(0, forKey: "kawaiine")
+        objImage.setObject(param1["typeLength"]!, forKey: "typeLength")
+        objImage.setObject(param1["typeColor"]!, forKey: "typeColor")
+        objImage.setObject(param1["typeScene"]!, forKey: "typeScene")
+        objImage.setObject(param1["typeDesign"]!, forKey: "typeDesign")
+        objImage.setObject(param1["typeTaste"]!, forKey: "typeTaste")
+        objImage.setObject(param1["typeGenre"]!, forKey: "typeGenre")
+//        objImage.setObject(param1["typeScene"]!, forKey: "typeScene")
         //        objImage.save(&saveError)
         objImage.saveInBackgroundWithBlock { (error: NSError?) -> Void in
             if let e = error {
@@ -88,6 +108,14 @@ class UploadImageVM: NSObject {
                 } else {
                     // deviceTokenの重複以外のエラーが返ってきた場合
                 }
+            }
+            if (self.uploadDoneFlgTmp1) {
+                print("どっちもアップロードしたぜ2")
+//                self.uploadDoneFlgTmp2 = true
+                self.uploadDoneFlg = true
+            } else {
+                print("niftyのほうがまだだぜ")
+                self.uploadDoneFlgTmp2 = true
             }
             //            self.removeFromParentViewController()
             //            self.view.removeFromSuperview()

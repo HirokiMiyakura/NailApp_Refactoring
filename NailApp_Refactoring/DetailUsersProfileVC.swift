@@ -21,7 +21,7 @@ class DetailUsersProfileVC: UIViewController {
     @IBOutlet weak var todofukenLabel: UILabel!
     @IBOutlet weak var averageAgeLabel: UILabel!
     @IBOutlet weak var salonNameLabel: UILabel!
-    @IBOutlet var scrollView: UIScrollView!
+//    @IBOutlet var scrollView: UIScrollView!
     var userName: String!
     var mModel = DetailUserProfileVM();
 //    @IBOutlet weak var tableView: UITableView!
@@ -30,7 +30,7 @@ class DetailUsersProfileVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        scrollView.contentSize = CGSizeMake(screenWidth, 1200)
+//        scrollView.contentSize = CGSizeMake(screenWidth, 1200)
 //        mModel.getAPIforPrefecture()
 //        mModel.getSalonInfo()
 //        mModel.loadProfileInfo(self.userName)
@@ -50,7 +50,7 @@ class DetailUsersProfileVC: UIViewController {
         mModel.addObserver(self, forKeyPath: "profileInfo", options: [.New, .Old], context: nil)
         
         mModel.getAPIforPrefecture()
-        mModel.getSalonInfo()
+        mModel.getSalonInfo(self.userName)
         mModel.loadProfileInfo(self.userName)
     }
     

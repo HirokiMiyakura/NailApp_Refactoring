@@ -68,7 +68,34 @@ class SettingVC: UIViewController, UITableViewDelegate {
             self.navigationController?.pushViewController(LoginVC(), animated: true)
         //            performSegueWithIdentifier("segueToLoginVC", sender: nil)
         case 2:
-            NCMBUser.logOut()
+//            LoadingProxy.set(self); //表示する親をセット
+//            LoadingProxy.on();//ローディング表示。非表示にする場合はoff
+            var alertController:UIAlertController
+            var defaultAction:UIAlertAction
+            if (NCMBUser.currentUser() == nil) {
+                alertController = UIAlertController(title: "Sorry!", message: "すでにログアウトしています。", preferredStyle: .Alert)
+                
+                defaultAction = UIAlertAction(title: "OK", style: .Default, handler: {
+                    (action:UIAlertAction!) -> Void in
+                    self.closeMyView()
+                })
+                
+            } else {
+                NCMBUser.logOut()
+                alertController = UIAlertController(title: "ログアウト", message: "ログアウトしました。", preferredStyle: .Alert)
+                
+                defaultAction = UIAlertAction(title: "OK", style: .Default, handler: {
+                    (action:UIAlertAction!) -> Void in
+                    self.closeMyView()
+                })
+            }
+            
+//            LoadingProxy.off();//ローディング表示。非表示にする場合はoff
+            
+            
+            alertController.addAction(defaultAction)
+            
+            self.presentViewController(alertController, animated: true, completion: nil)
             
         case 3:
             self.navigationController?.showViewController(ViewController(), sender: true)
@@ -88,5 +115,22 @@ class SettingVC: UIViewController, UITableViewDelegate {
         // Pass the selected object to the new view controller.
     }
     */
+    func closeMyView() {
+        
+        
+        //        self.navigationController?.popViewControllerAnimated(true)
+        // ① 2番目のタブのViewControllerを取得する
+        let tabVC0 = self.tabBarController!.viewControllers![0];
+        // ② 2番目のタブを選択済みにする
+        self.tabBarController!.selectedViewController = tabVC0;
+        // ③ UINavigationControllerに追加済みのViewを一旦取り除く
+        self.navigationController?.popViewControllerAnimated(true)
+        //        tabVC0.popToRootViewControllerAnimated = false
+        //        [vc popToRootViewControllerAnimated:NO];
+        // ④ SecondViewの画面遷移処理を呼び出す
+        //        tabVC0.viewControllers
+        //        [vc.viewControllers[0] performSegueWithIdentifier:@"ThirdViewを呼び出す" sender:nil];
+        
+    }
 
 }

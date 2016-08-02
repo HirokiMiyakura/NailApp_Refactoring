@@ -10,10 +10,13 @@ import UIKit
 
 class DetailUserHomeTabVC: UIViewController {
     var userName: String!
+    var ownORotherFlg: String!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        print("DetailUserHomeTabVCのサイズ")
+        print(self.view.bounds)
         // Do any additional setup after loading the view.
         // Dispose of any resources that can be recreated.
         let pageController:UIPageViewController = UIPageViewController(transitionStyle: UIPageViewControllerTransitionStyle.Scroll, navigationOrientation: UIPageViewControllerNavigationOrientation.Horizontal, options: nil)
@@ -22,6 +25,7 @@ class DetailUserHomeTabVC: UIViewController {
         let DetailUserProfileVC = self.storyboard!.instantiateViewControllerWithIdentifier( "detailUsersProfileVC" ) as! DetailUsersProfileVC
         let CollectionMineVC = self.storyboard!.instantiateViewControllerWithIdentifier( "collectionVC" ) as! CollectionVC
         CollectionMineVC.tabKind = "7"
+        CollectionMineVC.ownORotherFlg = ownORotherFlg
         
         navigationController.viewControllerArray = [DetailUserProfileVC,CollectionMineVC]
 //        let vc = self.parentViewController as! DetailUserVC

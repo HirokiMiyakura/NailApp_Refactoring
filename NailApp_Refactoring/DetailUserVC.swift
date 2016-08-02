@@ -13,6 +13,9 @@ class DetailUserVC: UIViewController {
     var ownORotherFlg: String?
     private var mModel: DetailUserVM?
 
+    @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var nickNameLabel: UILabel!
+    @IBOutlet weak var profileCommentLabel: UILabel!
     @IBOutlet weak var topView: UIView!
     var topViewXIB: DetailUserView!
     
@@ -24,25 +27,30 @@ class DetailUserVC: UIViewController {
 //    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        let nib = UINib(nibName: "DetailUserView", bundle: nil)
-        topViewXIB = nib.instantiateWithOwner(nil, options: nil)[0] as! DetailUserView
-        self.topView.addSubview(topViewXIB)
+//        let nib = UINib(nibName: "DetailUserView", bundle: nil)
+//        topViewXIB = nib.instantiateWithOwner(nil, options: nil)[0] as! DetailUserView
+//        self.topView.addSubview(topViewXIB)
+        
+        self.navigationItem.title = "プロフィール"
         
         mModel = DetailUserVM(userName: self.userName!)
 //        mModel = DetailUserVM()
-        topViewXIB.profileCommentLabel.text = "saito"
+//        topViewXIB.profileCommentLabel.text = "saito"
 //        self.topView = nib.instantiateWithOwner(nil, options: nil)[0] as! UIView
 //        self.view.addSubview(nib.instantiateWithOwner(nil, options: nil)[0] as! UIView)
 //        self.view = nib.instantiateWithOwner(nil, options: nil)[0] as! UIView
 
         // Do any additional setup after loading the view.
-        topViewXIB.editProfileButtonOutlet.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(DetailUserVC.editProfileButtonOutletTapped(_:))))
+//        topViewXIB.editProfileButtonOutlet.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(DetailUserVC.editProfileButtonOutletTapped(_:))))
         
-        
-        // show search button and set action
-        var rightSearchBarButtonItem:UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Search, target: self, action: #selector(DetailUserVC.editButton))
-        // add the button to navigationBar
-        self.navigationItem.setRightBarButtonItems([rightSearchBarButtonItem], animated: true)
+        if (ownORotherFlg != "2") {
+//            topViewXIB.editProfileButtonOutlet.hidden = true
+            // show search button and set action
+            var rightSearchBarButtonItem:UIBarButtonItem = UIBarButtonItem(title: "編集", style:.Bordered, target: self, action: #selector(DetailUserVC.editButton))
+            // add the button to navigationBar
+            self.navigationItem.setRightBarButtonItems([rightSearchBarButtonItem], animated: true)
+
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -52,9 +60,7 @@ class DetailUserVC: UIViewController {
         mModel!.addObserver(self, forKeyPath: "profileInfo", options: [.New, .Old], context: nil)
         mModel!.loadProfileInfo()
 //        self.setProfile()
-        if (ownORotherFlg == "2") {
-            topViewXIB.editProfileButtonOutlet.hidden = true
-        }
+        
         
 //        performSegueWithIdentifier("segueToCollectionView",sender: nil)
         
@@ -68,17 +74,23 @@ class DetailUserVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
 //    override func shouldAutomaticallyForwardAppearanceMethods() -> Bool {
 //        return false
 //    }
     
     override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
         NSLog("Called")
-        topViewXIB.profileCommentLabel.text = mModel?.profileInfo[0].objectForKey("comment") as? String
-        topViewXIB.nickNameLabel.text = mModel?.profileInfo[0].objectForKey("nickName") as? String
+//        topViewXIB.profileCommentLabel.text = mModel?.profileInfo[0].objectForKey("comment") as? String
+        self.profileCommentLabel.text = mModel?.profileInfo[0].objectForKey("comment") as? String
+//        topViewXIB.nickNameLabel.text = mModel?.profileInfo[0].objectForKey("nickName") as? String
+        self.nickNameLabel.text = mModel?.profileInfo[0].objectForKey("nickName") as? String
         let placeholder = UIImage(named: "transparent.png")
-        topViewXIB.profileImage.setImageWithURL(NSURL(string: (mModel?.profileInfo[0].objectForKey("imagePath") as? String)!), placeholderImage: placeholder)
-        
+//        topViewXIB.profileImage.setImageWithURL(NSURL(string: (mModel?.profileInfo[0].objectForKey("imagePath") as? String)!), placeholderImage: placeholder)
+        if mModel?.profileInfo[0].objectForKey("imagePath") == nil {
+            return
+        }
+        self.profileImage.setImageWithURL(NSURL(string: (mModel?.profileInfo[0].objectForKey("imagePath") as? String)!), placeholderImage: placeholder)
     }
 
     /*
@@ -111,27 +123,33 @@ class DetailUserVC: UIViewController {
         } else if (segue.identifier == "segueToDetailProfile") {
             let controller = segue.destinationViewController as! DetailUserHomeTabVC
             controller.userName = self.userName!
+            if (ownORotherFlg == "1") {
+                controller.ownORotherFlg = "1"
+            } else if (ownORotherFlg == "2"){
+                controller.ownORotherFlg = "2"
+            }
+
         }
         
         
     }
-    func editProfileButtonOutletTapped(sender: UITapGestureRecognizer) {
-        let editProfileVC = self.storyboard!.instantiateViewControllerWithIdentifier( "editProfileVC" ) as! EditProfileVC
-        editProfileVC.modalTransitionStyle = UIModalTransitionStyle.CoverVertical
-//        detailUserVC.userName = self.imageCollectionObject?.objectForKey("userName") as? String
-//        detailUserVC.ownORotherFlg = "2"
-//        gblUserN?ame = self.imageCollectionObject?.objectForKey("userName") as? String
-//        editProfileVC.
-        editProfileVC.commentTextView = topViewXIB.profileCommentLabel.text!
-        editProfileVC.nickNameTextField = topViewXIB.nickNameLabel.text!
-        if(topViewXIB.profileImage != nil) {
-            editProfileVC.imageView = topViewXIB.profileImage
-        }
-        
-        self.presentViewController(editProfileVC, animated: true, completion: nil)
-//        self.navigationController?.pushViewController(editProfileVC, animated: true)
-        
-    }
+//    func editProfileButtonOutletTapped(sender: UITapGestureRecognizer) {
+//        let editProfileVC = self.storyboard!.instantiateViewControllerWithIdentifier( "editProfileVC" ) as! EditProfileVC
+//        editProfileVC.modalTransitionStyle = UIModalTransitionStyle.CoverVertical
+////        detailUserVC.userName = self.imageCollectionObject?.objectForKey("userName") as? String
+////        detailUserVC.ownORotherFlg = "2"
+////        gblUserN?ame = self.imageCollectionObject?.objectForKey("userName") as? String
+////        editProfileVC.
+//        editProfileVC.commentTextView = topViewXIB.profileCommentLabel.text!
+//        editProfileVC.nickNameTextField = topViewXIB.nickNameLabel.text!
+//        if(topViewXIB.profileImage != nil) {
+//            editProfileVC.imageView = topViewXIB.profileImage
+//        }
+//        
+//        self.presentViewController(editProfileVC, animated: true, completion: nil)
+////        self.navigationController?.pushViewController(editProfileVC, animated: true)
+//        
+//    }
     
     func editButton() {
         
@@ -142,18 +160,23 @@ class DetailUserVC: UIViewController {
             (action:UIAlertAction!) -> Void in
             print("プロフィール編集します")
             let editProfileVC = self.storyboard!.instantiateViewControllerWithIdentifier( "editProfileVC" ) as! EditProfileVC
-            editProfileVC.modalTransitionStyle = UIModalTransitionStyle.CoverVertical
+//            editProfileVC.modalTransitionStyle = UIModalTransitionStyle.CoverVertical
             //        detailUserVC.userName = self.imageCollectionObject?.objectForKey("userName") as? String
             //        detailUserVC.ownORotherFlg = "2"
             //        gblUserN?ame = self.imageCollectionObject?.objectForKey("userName") as? String
             //        editProfileVC.
-            editProfileVC.commentTextView = self.topViewXIB.profileCommentLabel.text!
-            editProfileVC.nickNameTextField = self.topViewXIB.nickNameLabel.text!
-            if(self.topViewXIB.profileImage != nil) {
-                editProfileVC.imageView = self.topViewXIB.profileImage
+            if(self.profileCommentLabel.text != nil) {
+                editProfileVC.commentTextView = self.profileCommentLabel.text!
+            }
+            if(self.nickNameLabel.text != nil) {
+                    editProfileVC.nickNameTextField = self.nickNameLabel.text!
+            }
+            if(self.profileImage != nil) {
+                editProfileVC.imageView = self.profileImage
             }
             
-            self.presentViewController(editProfileVC, animated: true, completion: nil)
+//            self.presentViewController(editProfileVC, animated: true, completion: nil)
+            self.navigationController?.pushViewController(editProfileVC, animated: true)
 
         })
         

@@ -18,6 +18,8 @@
 		9442C96C1CDAAE9200AB8B87 /* CollectionFavVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9442C96B1CDAAE9200AB8B87 /* CollectionFavVM.swift */; };
 		944C22E01D4A3A560034CA87 /* CustomBorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944C22DF1D4A3A560034CA87 /* CustomBorderView.swift */; };
 		944C22E21D4A49A00034CA87 /* CustomeUIButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944C22E11D4A49A00034CA87 /* CustomeUIButtonView.swift */; };
+		944C22E41D4CA2510034CA87 /* TagView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 944C22E31D4CA2510034CA87 /* TagView.xib */; };
+		944C22E61D4CA2610034CA87 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944C22E51D4CA2610034CA87 /* TagView.swift */; };
 		9452D96A1CDEC89400055351 /* DetailUserHomeTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9452D9691CDEC89400055351 /* DetailUserHomeTabVC.swift */; };
 		9452D9721CDECE7F00055351 /* DetailUsersProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9452D9711CDECE7F00055351 /* DetailUsersProfileVC.swift */; };
 		9461C0C41CE2090000F07837 /* TestVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9461C0C31CE2090000F07837 /* TestVM.swift */; };
@@ -100,6 +102,8 @@
 		9442C96B1CDAAE9200AB8B87 /* CollectionFavVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionFavVM.swift; sourceTree = "<group>"; };
 		944C22DF1D4A3A560034CA87 /* CustomBorderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBorderView.swift; sourceTree = "<group>"; };
 		944C22E11D4A49A00034CA87 /* CustomeUIButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomeUIButtonView.swift; sourceTree = "<group>"; };
+		944C22E31D4CA2510034CA87 /* TagView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TagView.xib; sourceTree = "<group>"; };
+		944C22E51D4CA2610034CA87 /* TagView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
 		9452D9691CDEC89400055351 /* DetailUserHomeTabVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailUserHomeTabVC.swift; sourceTree = "<group>"; };
 		9452D9711CDECE7F00055351 /* DetailUsersProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailUsersProfileVC.swift; sourceTree = "<group>"; };
 		9461C0C31CE2090000F07837 /* TestVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestVM.swift; sourceTree = "<group>"; };
@@ -262,6 +266,8 @@
 				94F974F31D3546AB005E1189 /* CustomBtn.swift */,
 				944C22DF1D4A3A560034CA87 /* CustomBorderView.swift */,
 				944C22E11D4A49A00034CA87 /* CustomeUIButtonView.swift */,
+				944C22E31D4CA2510034CA87 /* TagView.xib */,
+				944C22E51D4CA2610034CA87 /* TagView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -416,6 +422,7 @@
 				94D8099D1CD4519B0068A98B /* LaunchScreen.storyboard in Resources */,
 				94B6F3771CD72A09004FC477 /* LoginView.xib in Resources */,
 				94D809C11CD469210068A98B /* CustomView.xib in Resources */,
+				944C22E41D4CA2510034CA87 /* TagView.xib in Resources */,
 				94B6F3671CD6F18C004FC477 /* EditProfileView.xib in Resources */,
 				94B6F35F1CD64FBD004FC477 /* DetailUserView.xib in Resources */,
 				94D809C91CD488860068A98B /* transparent.png in Resources */,
@@ -496,6 +503,7 @@
 				94F0730D1CD9DF0900E0B7C8 /* UploadImageVC.swift in Sources */,
 				94EE27851CF16F6200FC499B /* DetailUserProfileVM.swift in Sources */,
 				94F0730B1CD9D21E00E0B7C8 /* EditProfileVM.swift in Sources */,
+				944C22E61D4CA2610034CA87 /* TagView.swift in Sources */,
 				94B6F3571CD61C27004FC477 /* PageViewManagerM.swift in Sources */,
 				94D809D11CD4B2160068A98B /* CollectionProtocol.swift in Sources */,
 				94B6F34F1CD60478004FC477 /* MyCollectionViewCell.swift in Sources */,

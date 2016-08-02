@@ -21,6 +21,9 @@ class EditImageDataVM: NSObject {
         imageObject.setObject(param1["typeLength"]!, forKey: "typeLength")
         imageObject.setObject(param1["typeColor"]!, forKey: "typeColor")
         imageObject.setObject(param1["typeScene"]!, forKey: "typeScene")
+        imageObject.setObject(param1["typeGenre"]!, forKey: "typeGenre")
+        imageObject.setObject(param1["typeTaste"]!, forKey: "typeTaste")
+        imageObject.setObject(param1["typeDesign"]!, forKey: "typeDesign")
         
         imageObject.saveInBackgroundWithBlock({ (error: NSError!) -> Void in
             print("イメージ情報更新完了")

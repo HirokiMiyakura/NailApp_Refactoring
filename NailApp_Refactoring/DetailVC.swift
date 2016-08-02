@@ -15,7 +15,7 @@ class DetailVC: UIViewController {
     var detailVM: DetailVM?
     var index: Int = 0
     override func loadView() {
-        let nib = UINib(nibName: "DetailView", bundle: nil)
+        let nib = UINib(nibName: "DetailView2", bundle: nil)
         self.view = nib.instantiateWithOwner(nil, options: nil)[0] as! UIView
         
         
@@ -31,9 +31,9 @@ class DetailVC: UIViewController {
         
 //        detailVM!.addObserver(self, forKeyPath: "favFlg", options: [.New, .Old], context: nil)
 //        detailVM!.addObserver(self, forKeyPath: "imageCollectionObject", options: [.New, .Old], context: nil)
-        let detailView = self.view as! DetailView
+        let detailView = self.view as! DetailView2
         
-        print(detailView.scrollView.frame)
+//        print(detailView.scrollView.frame)
 //        detailView.userInteractionEnabled = true
 //        detailView.nailistBtn.userInteractionEnabled = true
         detailView.nailistBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(DetailVC.nailistBtnTapped(_:))))
@@ -82,10 +82,10 @@ class DetailVC: UIViewController {
         print("DetailVCのviewWillApper")
         detailVM!.addObserver(self, forKeyPath: "favFlg", options: [.New, .Old], context: nil)
         detailVM!.addObserver(self, forKeyPath: "imageCollectionObject", options: [.New, .Old], context: nil)
-        detailVM!.addObserver(self, forKeyPath: "nickName", options: [.New, .Old], context: nil)
+        detailVM!.addObserver(self, forKeyPath: "profileInfo", options: [.New, .Old], context: nil)
         
         detailVM!.checkFavFlg()
-        detailVM!.getNailistName()
+        detailVM!.loadProfileInfo()
 
 //        super.viewWillAppear(animated)
 //        let detailView = self.view as! DetailView
@@ -104,7 +104,7 @@ class DetailVC: UIViewController {
         print("viewWillDisapper")
         detailVM!.removeObserver(self, forKeyPath: "favFlg")
         detailVM!.removeObserver(self, forKeyPath: "imageCollectionObject")
-        detailVM!.removeObserver(self, forKeyPath: "nickName")
+        detailVM!.removeObserver(self, forKeyPath: "profileInfo")
     }
 
     /*
@@ -207,7 +207,7 @@ class DetailVC: UIViewController {
         print(keyPath)
         //        print(change)
         if (keyPath == "favFlg") {
-            let detailView = self.view as! DetailView
+            let detailView = self.view as! DetailView2
             if (detailVM!.favFlg) {
                 detailView.clipImage.image = UIImage(named: "heart_like.png")
 //                detailVM!.imageCollectionObject!.incrementKey("kawaiine", byAmount: 1)
@@ -220,10 +220,14 @@ class DetailVC: UIViewController {
         } else if (keyPath == "imageCollectionObject") {
             print("imageCollectionObjectのobserve")
             
-        } else if (keyPath == "nickName") {
-            print("nickNameのobserve")
-            let detailView = self.view as! DetailView
-            detailView.nailistBtn.setTitle(detailVM!.nickName, forState: .Normal)
+        } else if (keyPath == "profileInfo") {
+            print("profileInfoのobserve")
+            let url = NSURL(string: (detailVM!.profileInfo[0].objectForKey("imagePath") as? String)!)
+            let placeholder = UIImage(named: "transparent.png")
+            let detailView = self.view as! DetailView2
+            detailView.nailistBtn.setTitle((detailVM!.profileInfo[0].objectForKey("nickName") as? String)!, forState: .Normal)
+            detailView.userImage.setImageWithURL(url, placeholderImage: placeholder)
+//            detailView.nailistBtn.setTitle(detailVM!.nickName, forState: .Normal)
         
         }
     

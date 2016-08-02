@@ -9,42 +9,148 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="EditDetailView" customModule="NailApp_Refactoring" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="1122"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VP8-ay-IPS">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="1122"/>
                     <subviews>
-                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z36-AR-y24">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z36-AR-y24">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="900"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JuE-tI-FWK">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
                                 </imageView>
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mpc-4J-e3A">
-                                    <rect key="frame" x="8" y="451" width="398" height="30"/>
+                                    <rect key="frame" x="8" y="442" width="398" height="30"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="一言コメント" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ckI-r9-Gvd">
-                                    <rect key="frame" x="0.0" y="422" width="414" height="21"/>
+                                    <rect key="frame" x="0.0" y="422" width="414" height="12"/>
                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="色は" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cL8-4w-8F4">
-                                    <rect key="frame" x="0.0" y="489" width="414" height="21"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="デザイン" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wur-FX-sAH">
+                                    <rect key="frame" x="0.0" y="480" width="414" height="12"/>
                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="er3-I9-5A0" customClass="CustomButton" customModule="NailApp_Refactoring" customModuleProvider="target">
-                                    <rect key="frame" x="9" y="518" width="90" height="30"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="90" id="Q6h-Df-doO"/>
-                                    </constraints>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4tl-fa-CPd" customClass="CustomButton" customModule="NailApp_Refactoring" customModuleProvider="target">
+                                    <rect key="frame" x="8" y="500" width="127" height="30"/>
+                                    <state key="normal" title="フレンチ">
+                                        <color key="titleColor" red="1" green="0.11193644780000001" blue="0.83293095380000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="4"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="2"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                            <color key="value" red="1" green="0.11193644780000001" blue="0.83293095380000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cKX-zF-gcu" customClass="CustomButton" customModule="NailApp_Refactoring" customModuleProvider="target">
+                                    <rect key="frame" x="143" y="500" width="128" height="30"/>
+                                    <state key="normal" title="アート">
+                                        <color key="titleColor" red="1" green="0.11193644780000001" blue="0.83293095380000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="4"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="2"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                            <color key="value" red="1" green="0.11193644780000001" blue="0.83293095380000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0wX-rf-WUZ" customClass="CustomButton" customModule="NailApp_Refactoring" customModuleProvider="target">
+                                    <rect key="frame" x="279" y="500" width="127" height="30"/>
+                                    <state key="normal" title="グラデーション">
+                                        <color key="titleColor" red="1" green="0.11193644780000001" blue="0.83293095380000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="4"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="2"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                            <color key="value" red="1" green="0.11193644780000001" blue="0.83293095380000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="omp-tH-FLV" customClass="CustomButton" customModule="NailApp_Refactoring" customModuleProvider="target">
+                                    <rect key="frame" x="8" y="538" width="127" height="30"/>
+                                    <state key="normal" title="柄">
+                                        <color key="titleColor" red="1" green="0.11193644780000001" blue="0.83293095380000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="4"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="2"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                            <color key="value" red="1" green="0.11193644780000001" blue="0.83293095380000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1tV-LQ-PTd" customClass="CustomButton" customModule="NailApp_Refactoring" customModuleProvider="target">
+                                    <rect key="frame" x="143" y="538" width="128" height="30"/>
+                                    <state key="normal" title="ワンカラー">
+                                        <color key="titleColor" red="1" green="0.11193644780000001" blue="0.83293095380000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="4"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="2"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                            <color key="value" red="1" green="0.11193644780000001" blue="0.83293095380000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W8J-0S-TO0" customClass="CustomButton" customModule="NailApp_Refactoring" customModuleProvider="target">
+                                    <rect key="frame" x="279" y="538" width="127" height="30"/>
+                                    <state key="normal" title="フット">
+                                        <color key="titleColor" red="1" green="0.11193644780000001" blue="0.83293095380000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="4"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="2"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                            <color key="value" red="1" green="0.11193644780000001" blue="0.83293095380000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="カラー" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TWo-06-5uB">
+                                    <rect key="frame" x="0.0" y="576" width="414" height="12"/>
+                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HSi-FT-QVZ" customClass="CustomButton" customModule="NailApp_Refactoring" customModuleProvider="target">
+                                    <rect key="frame" x="8" y="596" width="127" height="30"/>
                                     <state key="normal" title="ピンク">
                                         <color key="titleColor" red="1" green="0.11193644780000001" blue="0.83293095380000004" alpha="1" colorSpace="calibratedRGB"/>
                                     </state>
@@ -60,91 +166,8 @@
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DfR-Vg-Znp" customClass="CustomButton" customModule="NailApp_Refactoring" customModuleProvider="target">
-                                    <rect key="frame" x="107" y="518" width="90" height="30"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="90" id="94a-b2-XbK"/>
-                                    </constraints>
-                                    <state key="normal" title="ブルー">
-                                        <color key="titleColor" red="1" green="0.11193644780000001" blue="0.83293095380000004" alpha="1" colorSpace="calibratedRGB"/>
-                                    </state>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                            <real key="value" value="4"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                            <real key="value" value="2"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                            <color key="value" red="1" green="0.11193644780000001" blue="0.83293095380000004" alpha="1" colorSpace="calibratedRGB"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
-                                </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="txn-Zn-jGI" customClass="CustomButton" customModule="NailApp_Refactoring" customModuleProvider="target">
-                                    <rect key="frame" x="205" y="518" width="90" height="30"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="90" id="JYd-DJ-i91"/>
-                                    </constraints>
-                                    <state key="normal" title="レッド">
-                                        <color key="titleColor" red="1" green="0.11193644780000001" blue="0.83293095380000004" alpha="1" colorSpace="calibratedRGB"/>
-                                    </state>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                            <real key="value" value="4"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                            <real key="value" value="2"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                            <color key="value" red="1" green="0.11193644780000001" blue="0.83293095380000004" alpha="1" colorSpace="calibratedRGB"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
-                                </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tsh-u0-L7c" customClass="CustomButton" customModule="NailApp_Refactoring" customModuleProvider="target">
-                                    <rect key="frame" x="9" y="556" width="90" height="30"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="90" id="ikB-85-gjS"/>
-                                    </constraints>
-                                    <state key="normal" title="パープル">
-                                        <color key="titleColor" red="1" green="0.11193644780000001" blue="0.83293095380000004" alpha="1" colorSpace="calibratedRGB"/>
-                                    </state>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                            <real key="value" value="4"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                            <real key="value" value="2"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                            <color key="value" red="1" green="0.11193644780000001" blue="0.83293095380000004" alpha="1" colorSpace="calibratedRGB"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
-                                </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9fp-J5-7xZ" customClass="CustomButton" customModule="NailApp_Refactoring" customModuleProvider="target">
-                                    <rect key="frame" x="107" y="556" width="90" height="30"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="90" id="6dd-GV-Kax"/>
-                                    </constraints>
-                                    <state key="normal" title="ブラック">
-                                        <color key="titleColor" red="1" green="0.11193644780000001" blue="0.83293095380000004" alpha="1" colorSpace="calibratedRGB"/>
-                                    </state>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                            <real key="value" value="4"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                            <real key="value" value="2"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                            <color key="value" red="1" green="0.11193644780000001" blue="0.83293095380000004" alpha="1" colorSpace="calibratedRGB"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
-                                </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uBL-xi-5zO" customClass="CustomButton" customModule="NailApp_Refactoring" customModuleProvider="target">
-                                    <rect key="frame" x="205" y="556" width="90" height="30"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="90" id="6Lo-Pw-Gqs"/>
-                                    </constraints>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="17c-Og-5Yy" customClass="CustomButton" customModule="NailApp_Refactoring" customModuleProvider="target">
+                                    <rect key="frame" x="143" y="596" width="128" height="30"/>
                                     <state key="normal" title="ホワイト">
                                         <color key="titleColor" red="1" green="0.11193644780000001" blue="0.83293095380000004" alpha="1" colorSpace="calibratedRGB"/>
                                     </state>
@@ -160,27 +183,142 @@
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </button>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="長さは" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rpe-sG-gv7">
-                                    <rect key="frame" x="0.0" y="594" width="414" height="21"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MWo-I4-WXh" customClass="CustomButton" customModule="NailApp_Refactoring" customModuleProvider="target">
+                                    <rect key="frame" x="279" y="596" width="127" height="30"/>
+                                    <state key="normal" title="ブルー/グリーン">
+                                        <color key="titleColor" red="1" green="0.11193644780000001" blue="0.83293095380000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="4"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="2"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                            <color key="value" red="1" green="0.11193644780000001" blue="0.83293095380000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4QS-92-4oC" customClass="CustomButton" customModule="NailApp_Refactoring" customModuleProvider="target">
+                                    <rect key="frame" x="8" y="634" width="127" height="30"/>
+                                    <state key="normal" title="ベージュ">
+                                        <color key="titleColor" red="1" green="0.11193644780000001" blue="0.83293095380000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="4"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="2"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                            <color key="value" red="1" green="0.11193644780000001" blue="0.83293095380000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JBI-je-eCl" customClass="CustomButton" customModule="NailApp_Refactoring" customModuleProvider="target">
+                                    <rect key="frame" x="143" y="634" width="128" height="30"/>
+                                    <state key="normal" title="シルバー/ゴールド">
+                                        <color key="titleColor" red="1" green="0.11193644780000001" blue="0.83293095380000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="4"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="2"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                            <color key="value" red="1" green="0.11193644780000001" blue="0.83293095380000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="to4-lv-L3Y" customClass="CustomButton" customModule="NailApp_Refactoring" customModuleProvider="target">
+                                    <rect key="frame" x="279" y="634" width="127" height="30"/>
+                                    <state key="normal" title="オレンジ/イエロー">
+                                        <color key="titleColor" red="1" green="0.11193644780000001" blue="0.83293095380000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="4"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="2"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                            <color key="value" red="1" green="0.11193644780000001" blue="0.83293095380000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="テイスト" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kbg-X3-Tnr">
+                                    <rect key="frame" x="0.0" y="768" width="414" height="12"/>
                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="シーンは" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CKC-nn-5eQ">
-                                    <rect key="frame" x="0.0" y="661" width="414" height="21"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ll-rg-pq2" customClass="CustomButton" customModule="NailApp_Refactoring" customModuleProvider="target">
+                                    <rect key="frame" x="8" y="788" width="127" height="30"/>
+                                    <state key="normal" title="シンプル">
+                                        <color key="titleColor" red="1" green="0.11193644780000001" blue="0.83293095380000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="4"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="2"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                            <color key="value" red="1" green="0.11193644780000001" blue="0.83293095380000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nCg-A5-6cm" customClass="CustomButton" customModule="NailApp_Refactoring" customModuleProvider="target">
+                                    <rect key="frame" x="143" y="788" width="128" height="30"/>
+                                    <state key="normal" title="ガーリー">
+                                        <color key="titleColor" red="1" green="0.11193644780000001" blue="0.83293095380000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="4"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="2"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                            <color key="value" red="1" green="0.11193644780000001" blue="0.83293095380000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cGH-NR-OrL" customClass="CustomButton" customModule="NailApp_Refactoring" customModuleProvider="target">
+                                    <rect key="frame" x="279" y="788" width="127" height="30"/>
+                                    <state key="normal" title="ゴージャス">
+                                        <color key="titleColor" red="1" green="0.11193644780000001" blue="0.83293095380000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="4"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="2"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                            <color key="value" red="1" green="0.11193644780000001" blue="0.83293095380000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ジャンル" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Joj-Lu-6S4">
+                                    <rect key="frame" x="0.0" y="826" width="414" height="12"/>
                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w3s-z6-mhj" customClass="CustomButton" customModule="NailApp_Refactoring" customModuleProvider="target">
-                                    <rect key="frame" x="8" y="623" width="90" height="30"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="90" id="Ybj-G0-xuF"/>
-                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="jn4-Qa-4z7"/>
-                                    </constraints>
-                                    <state key="normal" title="ロング">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5rc-tB-v4M" customClass="CustomButton" customModule="NailApp_Refactoring" customModuleProvider="target">
+                                    <rect key="frame" x="8" y="846" width="127" height="30"/>
+                                    <state key="normal" title="ジェル">
                                         <color key="titleColor" red="1" green="0.11193644780000001" blue="0.83293095380000004" alpha="1" colorSpace="calibratedRGB"/>
                                     </state>
                                     <userDefinedRuntimeAttributes>
@@ -195,12 +333,9 @@
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iyn-LY-qBf" customClass="CustomButton" customModule="NailApp_Refactoring" customModuleProvider="target">
-                                    <rect key="frame" x="106" y="623" width="90" height="30"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="90" id="yV8-ec-7Og"/>
-                                    </constraints>
-                                    <state key="normal" title="ショート">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pwu-eq-K4d" customClass="CustomButton" customModule="NailApp_Refactoring" customModuleProvider="target">
+                                    <rect key="frame" x="143" y="846" width="128" height="30"/>
+                                    <state key="normal" title="スカルプ">
                                         <color key="titleColor" red="1" green="0.11193644780000001" blue="0.83293095380000004" alpha="1" colorSpace="calibratedRGB"/>
                                     </state>
                                     <userDefinedRuntimeAttributes>
@@ -215,12 +350,9 @@
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JiX-ag-uNm" customClass="CustomButton" customModule="NailApp_Refactoring" customModuleProvider="target">
-                                    <rect key="frame" x="204" y="623" width="90" height="30"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="90" id="oqL-oC-6jt"/>
-                                    </constraints>
-                                    <state key="normal" title="ベリーロング">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rSG-bQ-t2f" customClass="CustomButton" customModule="NailApp_Refactoring" customModuleProvider="target">
+                                    <rect key="frame" x="279" y="846" width="127" height="30"/>
+                                    <state key="normal" title="その他">
                                         <color key="titleColor" red="1" green="0.11193644780000001" blue="0.83293095380000004" alpha="1" colorSpace="calibratedRGB"/>
                                     </state>
                                     <userDefinedRuntimeAttributes>
@@ -235,12 +367,15 @@
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BdT-sc-EX7" customClass="CustomButton" customModule="NailApp_Refactoring" customModuleProvider="target">
-                                    <rect key="frame" x="8" y="690" width="90" height="30"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="9xq-aT-Soj"/>
-                                        <constraint firstAttribute="width" constant="90" id="CD8-1b-RPU"/>
-                                    </constraints>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="シーン" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yQ3-sw-N5a">
+                                    <rect key="frame" x="0.0" y="672" width="414" height="12"/>
+                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FJ1-0S-qRJ" customClass="CustomButton" customModule="NailApp_Refactoring" customModuleProvider="target">
+                                    <rect key="frame" x="8" y="692" width="127" height="30"/>
                                     <state key="normal" title="オフィス">
                                         <color key="titleColor" red="1" green="0.11193644780000001" blue="0.83293095380000004" alpha="1" colorSpace="calibratedRGB"/>
                                     </state>
@@ -256,12 +391,42 @@
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OKG-Ug-USJ" customClass="CustomButton" customModule="NailApp_Refactoring" customModuleProvider="target">
-                                    <rect key="frame" x="106" y="690" width="90" height="30"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="T0J-tw-hdo"/>
-                                        <constraint firstAttribute="width" constant="90" id="VAI-Ir-9Xl"/>
-                                    </constraints>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zER-I4-CwW" customClass="CustomButton" customModule="NailApp_Refactoring" customModuleProvider="target">
+                                    <rect key="frame" x="143" y="692" width="128" height="30"/>
+                                    <state key="normal" title="　ブライダル">
+                                        <color key="titleColor" red="1" green="0.11193644780000001" blue="0.83293095380000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="4"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="2"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                            <color key="value" red="1" green="0.11193644780000001" blue="0.83293095380000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="741-9K-wvT" customClass="CustomButton" customModule="NailApp_Refactoring" customModuleProvider="target">
+                                    <rect key="frame" x="279" y="692" width="127" height="30"/>
+                                    <state key="normal" title="合コン">
+                                        <color key="titleColor" red="1" green="0.11193644780000001" blue="0.83293095380000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="4"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="2"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                            <color key="value" red="1" green="0.11193644780000001" blue="0.83293095380000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Crf-Kr-Me8" customClass="CustomButton" customModule="NailApp_Refactoring" customModuleProvider="target">
+                                    <rect key="frame" x="8" y="730" width="127" height="30"/>
                                     <state key="normal" title="デート">
                                         <color key="titleColor" red="1" green="0.11193644780000001" blue="0.83293095380000004" alpha="1" colorSpace="calibratedRGB"/>
                                     </state>
@@ -277,51 +442,142 @@
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a31-Gc-qr7" customClass="CustomButton" customModule="NailApp_Refactoring" customModuleProvider="target">
+                                    <rect key="frame" x="143" y="730" width="128" height="30"/>
+                                    <state key="normal" title="パーティ">
+                                        <color key="titleColor" red="1" green="0.11193644780000001" blue="0.83293095380000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="4"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="2"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                            <color key="value" red="1" green="0.11193644780000001" blue="0.83293095380000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OU7-xq-gn6" customClass="CustomButton" customModule="NailApp_Refactoring" customModuleProvider="target">
+                                    <rect key="frame" x="279" y="730" width="127" height="30"/>
+                                    <state key="normal" title="シーズン">
+                                        <color key="titleColor" red="1" green="0.11193644780000001" blue="0.83293095380000004" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="4"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="2"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                            <color key="value" red="1" green="0.11193644780000001" blue="0.83293095380000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
                             </subviews>
-                            <color key="backgroundColor" red="1" green="0.85417972659999997" blue="0.985100788" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
+                                <constraint firstItem="0wX-rf-WUZ" firstAttribute="centerY" secondItem="4tl-fa-CPd" secondAttribute="centerY" id="0Zs-po-tCM"/>
+                                <constraint firstItem="0wX-rf-WUZ" firstAttribute="leading" secondItem="cKX-zF-gcu" secondAttribute="trailing" constant="8" id="0dc-8d-bYV"/>
                                 <constraint firstAttribute="trailing" secondItem="ckI-r9-Gvd" secondAttribute="trailing" id="11J-4f-eXy"/>
-                                <constraint firstAttribute="height" constant="800" id="2bn-EM-Pam"/>
-                                <constraint firstItem="DfR-Vg-Znp" firstAttribute="leading" secondItem="er3-I9-5A0" secondAttribute="trailing" constant="8" id="34e-Gc-3S4"/>
-                                <constraint firstItem="Iyn-LY-qBf" firstAttribute="top" secondItem="rpe-sG-gv7" secondAttribute="bottom" constant="8" id="3Hp-tf-MZj"/>
-                                <constraint firstItem="txn-Zn-jGI" firstAttribute="top" secondItem="cL8-4w-8F4" secondAttribute="bottom" constant="8" id="Ayf-mf-v1n"/>
-                                <constraint firstItem="er3-I9-5A0" firstAttribute="top" secondItem="cL8-4w-8F4" secondAttribute="bottom" constant="8" id="BgV-um-tpG"/>
-                                <constraint firstItem="rpe-sG-gv7" firstAttribute="top" secondItem="uBL-xi-5zO" secondAttribute="bottom" constant="8" id="CDT-h6-0vi"/>
-                                <constraint firstAttribute="trailing" secondItem="CKC-nn-5eQ" secondAttribute="trailing" id="DZW-DF-Php"/>
+                                <constraint firstItem="Pwu-eq-K4d" firstAttribute="width" secondItem="5rc-tB-v4M" secondAttribute="width" id="2M9-ay-sTE"/>
+                                <constraint firstItem="wur-FX-sAH" firstAttribute="top" secondItem="mpc-4J-e3A" secondAttribute="bottom" constant="8" id="2U6-ZQ-fQd"/>
+                                <constraint firstItem="zER-I4-CwW" firstAttribute="centerY" secondItem="FJ1-0S-qRJ" secondAttribute="centerY" id="2bW-Dv-xmf"/>
+                                <constraint firstAttribute="height" constant="900" id="2bn-EM-Pam"/>
+                                <constraint firstItem="JBI-je-eCl" firstAttribute="centerY" secondItem="4QS-92-4oC" secondAttribute="centerY" id="2cd-u9-wCy"/>
+                                <constraint firstItem="rSG-bQ-t2f" firstAttribute="width" secondItem="5rc-tB-v4M" secondAttribute="width" id="2ye-HF-kfX"/>
+                                <constraint firstItem="17c-Og-5Yy" firstAttribute="centerY" secondItem="HSi-FT-QVZ" secondAttribute="centerY" id="4Qb-hC-cm4"/>
+                                <constraint firstAttribute="trailing" secondItem="wur-FX-sAH" secondAttribute="trailing" id="6uU-gj-tht"/>
+                                <constraint firstItem="0wX-rf-WUZ" firstAttribute="width" secondItem="4tl-fa-CPd" secondAttribute="width" id="7E8-PH-NZG"/>
+                                <constraint firstItem="a31-Gc-qr7" firstAttribute="width" secondItem="Crf-Kr-Me8" secondAttribute="width" id="7gc-e3-Rt9"/>
+                                <constraint firstItem="4tl-fa-CPd" firstAttribute="leading" secondItem="z36-AR-y24" secondAttribute="leading" constant="8" id="7vF-ew-S53"/>
+                                <constraint firstItem="5Ll-rg-pq2" firstAttribute="leading" secondItem="z36-AR-y24" secondAttribute="leading" constant="8" id="80i-hj-IZ9"/>
+                                <constraint firstItem="a31-Gc-qr7" firstAttribute="centerY" secondItem="Crf-Kr-Me8" secondAttribute="centerY" id="Auv-Fn-Q6N"/>
+                                <constraint firstItem="rSG-bQ-t2f" firstAttribute="centerY" secondItem="5rc-tB-v4M" secondAttribute="centerY" id="CcJ-IX-sE2"/>
+                                <constraint firstItem="5rc-tB-v4M" firstAttribute="leading" secondItem="z36-AR-y24" secondAttribute="leading" constant="8" id="DYH-2g-g26"/>
+                                <constraint firstAttribute="trailing" secondItem="rSG-bQ-t2f" secondAttribute="trailing" constant="8" id="EP4-Te-Hdc"/>
+                                <constraint firstItem="FJ1-0S-qRJ" firstAttribute="leading" secondItem="z36-AR-y24" secondAttribute="leading" constant="8" id="EXs-m6-3pS"/>
                                 <constraint firstItem="JuE-tI-FWK" firstAttribute="top" secondItem="z36-AR-y24" secondAttribute="top" id="Ehl-tl-32b"/>
-                                <constraint firstItem="CKC-nn-5eQ" firstAttribute="leading" secondItem="z36-AR-y24" secondAttribute="leading" id="J43-0I-olp"/>
-                                <constraint firstItem="9fp-J5-7xZ" firstAttribute="leading" secondItem="Tsh-u0-L7c" secondAttribute="trailing" constant="8" id="JTK-bc-UBh"/>
-                                <constraint firstItem="er3-I9-5A0" firstAttribute="leading" secondItem="z36-AR-y24" secondAttribute="leading" constant="9" id="JeU-Or-2kU"/>
-                                <constraint firstItem="cL8-4w-8F4" firstAttribute="top" secondItem="mpc-4J-e3A" secondAttribute="bottom" constant="8" id="LBQ-3t-kUj"/>
+                                <constraint firstItem="1tV-LQ-PTd" firstAttribute="width" secondItem="omp-tH-FLV" secondAttribute="width" id="FXE-dQ-Wws"/>
+                                <constraint firstItem="nCg-A5-6cm" firstAttribute="centerY" secondItem="5Ll-rg-pq2" secondAttribute="centerY" id="GDI-14-kue"/>
+                                <constraint firstItem="HSi-FT-QVZ" firstAttribute="leading" secondItem="z36-AR-y24" secondAttribute="leading" constant="8" id="Gdp-5y-qJy"/>
+                                <constraint firstItem="HSi-FT-QVZ" firstAttribute="top" secondItem="TWo-06-5uB" secondAttribute="bottom" constant="8" id="I8a-BM-X3E"/>
+                                <constraint firstItem="W8J-0S-TO0" firstAttribute="centerY" secondItem="omp-tH-FLV" secondAttribute="centerY" id="Ios-Ln-H3S"/>
+                                <constraint firstItem="W8J-0S-TO0" firstAttribute="trailing" secondItem="0wX-rf-WUZ" secondAttribute="trailing" id="JEk-xb-IY6"/>
+                                <constraint firstItem="to4-lv-L3Y" firstAttribute="width" secondItem="4QS-92-4oC" secondAttribute="width" id="K6P-hK-VCT"/>
+                                <constraint firstItem="yQ3-sw-N5a" firstAttribute="top" secondItem="to4-lv-L3Y" secondAttribute="bottom" constant="8" id="Kyh-uQ-2R5"/>
+                                <constraint firstItem="cKX-zF-gcu" firstAttribute="centerY" secondItem="4tl-fa-CPd" secondAttribute="centerY" id="LMD-x4-uLa"/>
+                                <constraint firstItem="TWo-06-5uB" firstAttribute="leading" secondItem="z36-AR-y24" secondAttribute="leading" id="LZ8-EW-vuR"/>
+                                <constraint firstItem="OU7-xq-gn6" firstAttribute="width" secondItem="Crf-Kr-Me8" secondAttribute="width" id="LiI-L0-Ao1"/>
+                                <constraint firstItem="zER-I4-CwW" firstAttribute="width" secondItem="FJ1-0S-qRJ" secondAttribute="width" id="Lv6-oj-pF5"/>
+                                <constraint firstItem="741-9K-wvT" firstAttribute="leading" secondItem="zER-I4-CwW" secondAttribute="trailing" constant="8" id="MHa-16-h57"/>
                                 <constraint firstAttribute="trailing" secondItem="JuE-tI-FWK" secondAttribute="trailing" id="Mxw-kb-Ozp"/>
-                                <constraint firstItem="9fp-J5-7xZ" firstAttribute="top" secondItem="DfR-Vg-Znp" secondAttribute="bottom" constant="8" id="Orh-cU-a58"/>
+                                <constraint firstAttribute="trailing" secondItem="cGH-NR-OrL" secondAttribute="trailing" constant="8" id="NOv-u0-Sir"/>
+                                <constraint firstItem="17c-Og-5Yy" firstAttribute="width" secondItem="HSi-FT-QVZ" secondAttribute="width" id="Pjx-Vo-RVc"/>
+                                <constraint firstItem="Joj-Lu-6S4" firstAttribute="top" secondItem="cGH-NR-OrL" secondAttribute="bottom" constant="8" id="Pq7-Kp-8pb"/>
                                 <constraint firstAttribute="trailing" secondItem="mpc-4J-e3A" secondAttribute="trailing" constant="8" id="QBT-cX-nLw"/>
-                                <constraint firstAttribute="trailing" secondItem="rpe-sG-gv7" secondAttribute="trailing" id="Qqq-iF-hdc"/>
-                                <constraint firstItem="OKG-Ug-USJ" firstAttribute="leading" secondItem="BdT-sc-EX7" secondAttribute="trailing" constant="8" id="Rrc-ls-Y7O"/>
+                                <constraint firstItem="to4-lv-L3Y" firstAttribute="leading" secondItem="JBI-je-eCl" secondAttribute="trailing" constant="8" id="QQG-fR-bbZ"/>
                                 <constraint firstItem="mpc-4J-e3A" firstAttribute="top" secondItem="ckI-r9-Gvd" secondAttribute="bottom" constant="8" id="S7t-yd-jIv"/>
-                                <constraint firstItem="Iyn-LY-qBf" firstAttribute="leading" secondItem="w3s-z6-mhj" secondAttribute="trailing" constant="8" id="SXB-dM-tcd"/>
-                                <constraint firstItem="w3s-z6-mhj" firstAttribute="top" secondItem="rpe-sG-gv7" secondAttribute="bottom" constant="8" id="TYi-24-nd3"/>
+                                <constraint firstItem="to4-lv-L3Y" firstAttribute="trailing" secondItem="MWo-I4-WXh" secondAttribute="trailing" id="SBx-XF-d3P"/>
+                                <constraint firstAttribute="trailing" secondItem="741-9K-wvT" secondAttribute="trailing" constant="8" id="SQQ-n6-lBE"/>
+                                <constraint firstItem="Kbg-X3-Tnr" firstAttribute="leading" secondItem="z36-AR-y24" secondAttribute="leading" id="TIt-ze-qql"/>
+                                <constraint firstItem="Joj-Lu-6S4" firstAttribute="top" secondItem="cGH-NR-OrL" secondAttribute="bottom" constant="8" id="TKB-Ng-e6q"/>
+                                <constraint firstItem="omp-tH-FLV" firstAttribute="leading" secondItem="4tl-fa-CPd" secondAttribute="leading" id="TtG-7S-pcs"/>
                                 <constraint firstItem="ckI-r9-Gvd" firstAttribute="top" secondItem="JuE-tI-FWK" secondAttribute="bottom" constant="8" id="UAE-Le-Oup"/>
-                                <constraint firstItem="JiX-ag-uNm" firstAttribute="leading" secondItem="Iyn-LY-qBf" secondAttribute="trailing" constant="8" id="VyK-Oc-eWB"/>
-                                <constraint firstItem="Tsh-u0-L7c" firstAttribute="leading" secondItem="z36-AR-y24" secondAttribute="leading" constant="9" id="aRG-vh-Y9W"/>
-                                <constraint firstItem="JiX-ag-uNm" firstAttribute="top" secondItem="rpe-sG-gv7" secondAttribute="bottom" constant="8" id="acK-d4-hzi"/>
-                                <constraint firstItem="txn-Zn-jGI" firstAttribute="leading" secondItem="DfR-Vg-Znp" secondAttribute="trailing" constant="8" id="au7-xC-2PM"/>
+                                <constraint firstItem="cKX-zF-gcu" firstAttribute="width" secondItem="4tl-fa-CPd" secondAttribute="width" id="VCE-0R-V3K"/>
+                                <constraint firstAttribute="trailing" secondItem="0wX-rf-WUZ" secondAttribute="trailing" constant="8" id="XaV-C5-xKz"/>
+                                <constraint firstItem="OU7-xq-gn6" firstAttribute="centerY" secondItem="Crf-Kr-Me8" secondAttribute="centerY" id="YIE-2C-t7n"/>
+                                <constraint firstItem="MWo-I4-WXh" firstAttribute="centerY" secondItem="HSi-FT-QVZ" secondAttribute="centerY" id="Yee-Q7-r6N"/>
+                                <constraint firstItem="yQ3-sw-N5a" firstAttribute="leading" secondItem="z36-AR-y24" secondAttribute="leading" id="Z7O-hT-adf"/>
+                                <constraint firstItem="cKX-zF-gcu" firstAttribute="leading" secondItem="4tl-fa-CPd" secondAttribute="trailing" constant="8" id="Zhy-nd-u6p"/>
+                                <constraint firstItem="TWo-06-5uB" firstAttribute="top" secondItem="W8J-0S-TO0" secondAttribute="bottom" constant="8" id="aE4-tj-DRx"/>
+                                <constraint firstItem="yQ3-sw-N5a" firstAttribute="top" secondItem="to4-lv-L3Y" secondAttribute="bottom" constant="8" id="bHQ-Hh-mKj"/>
+                                <constraint firstItem="Pwu-eq-K4d" firstAttribute="leading" secondItem="5rc-tB-v4M" secondAttribute="trailing" constant="8" id="bbB-od-V0e"/>
+                                <constraint firstItem="nCg-A5-6cm" firstAttribute="leading" secondItem="5Ll-rg-pq2" secondAttribute="trailing" constant="8" id="bjF-0V-pw4"/>
+                                <constraint firstAttribute="trailing" secondItem="Kbg-X3-Tnr" secondAttribute="trailing" id="by0-gK-g1e"/>
+                                <constraint firstItem="W8J-0S-TO0" firstAttribute="leading" secondItem="1tV-LQ-PTd" secondAttribute="trailing" constant="8" id="cCM-yB-LtH"/>
+                                <constraint firstItem="4QS-92-4oC" firstAttribute="leading" secondItem="HSi-FT-QVZ" secondAttribute="leading" id="cJ4-ON-EeK"/>
                                 <constraint firstItem="ckI-r9-Gvd" firstAttribute="leading" secondItem="z36-AR-y24" secondAttribute="leading" id="cLw-h8-uKy"/>
-                                <constraint firstItem="cL8-4w-8F4" firstAttribute="leading" secondItem="z36-AR-y24" secondAttribute="leading" id="cbv-vJ-EdN"/>
-                                <constraint firstItem="Tsh-u0-L7c" firstAttribute="top" secondItem="er3-I9-5A0" secondAttribute="bottom" constant="8" id="eNc-PK-nuN"/>
+                                <constraint firstItem="to4-lv-L3Y" firstAttribute="centerY" secondItem="4QS-92-4oC" secondAttribute="centerY" id="cWk-Zg-s0D"/>
+                                <constraint firstItem="1tV-LQ-PTd" firstAttribute="centerY" secondItem="omp-tH-FLV" secondAttribute="centerY" id="dxe-u0-Dm7"/>
+                                <constraint firstItem="OU7-xq-gn6" firstAttribute="leading" secondItem="a31-Gc-qr7" secondAttribute="trailing" constant="8" id="ef6-uD-Yhe"/>
+                                <constraint firstItem="Crf-Kr-Me8" firstAttribute="leading" secondItem="FJ1-0S-qRJ" secondAttribute="leading" id="emc-RQ-1ga"/>
+                                <constraint firstItem="wur-FX-sAH" firstAttribute="leading" secondItem="z36-AR-y24" secondAttribute="leading" id="f54-uJ-3aU"/>
+                                <constraint firstItem="Kbg-X3-Tnr" firstAttribute="top" secondItem="OU7-xq-gn6" secondAttribute="bottom" constant="8" id="f7m-TL-Z9M"/>
+                                <constraint firstItem="W8J-0S-TO0" firstAttribute="width" secondItem="omp-tH-FLV" secondAttribute="width" id="fYr-vU-jiG"/>
+                                <constraint firstItem="4tl-fa-CPd" firstAttribute="top" secondItem="wur-FX-sAH" secondAttribute="bottom" constant="8" id="gs8-kA-PfJ"/>
                                 <constraint firstItem="mpc-4J-e3A" firstAttribute="leading" secondItem="z36-AR-y24" secondAttribute="leading" constant="8" id="h57-gV-0n7"/>
-                                <constraint firstItem="uBL-xi-5zO" firstAttribute="leading" secondItem="9fp-J5-7xZ" secondAttribute="trailing" constant="8" id="ikG-K5-Tg4"/>
-                                <constraint firstItem="DfR-Vg-Znp" firstAttribute="top" secondItem="cL8-4w-8F4" secondAttribute="bottom" constant="8" id="jIP-lx-qTg"/>
-                                <constraint firstItem="uBL-xi-5zO" firstAttribute="top" secondItem="txn-Zn-jGI" secondAttribute="bottom" constant="8" id="jdZ-Tq-rLU"/>
-                                <constraint firstItem="txn-Zn-jGI" firstAttribute="leading" secondItem="DfR-Vg-Znp" secondAttribute="trailing" constant="8" id="jsY-R2-Iuq"/>
-                                <constraint firstItem="CKC-nn-5eQ" firstAttribute="top" secondItem="JiX-ag-uNm" secondAttribute="bottom" constant="8" id="mdu-vy-pnO"/>
-                                <constraint firstItem="w3s-z6-mhj" firstAttribute="leading" secondItem="z36-AR-y24" secondAttribute="leading" constant="8" id="nca-Vh-c96"/>
-                                <constraint firstItem="OKG-Ug-USJ" firstAttribute="top" secondItem="CKC-nn-5eQ" secondAttribute="bottom" constant="8" id="pVg-Rf-OK6"/>
-                                <constraint firstItem="BdT-sc-EX7" firstAttribute="top" secondItem="CKC-nn-5eQ" secondAttribute="bottom" constant="8" id="rqg-fd-47W"/>
-                                <constraint firstItem="BdT-sc-EX7" firstAttribute="leading" secondItem="z36-AR-y24" secondAttribute="leading" constant="8" id="rvu-Aa-YOP"/>
+                                <constraint firstItem="1tV-LQ-PTd" firstAttribute="leading" secondItem="omp-tH-FLV" secondAttribute="trailing" constant="8" id="j7m-ae-wHF"/>
+                                <constraint firstItem="741-9K-wvT" firstAttribute="width" secondItem="FJ1-0S-qRJ" secondAttribute="width" id="jPV-x6-dto"/>
+                                <constraint firstAttribute="trailing" secondItem="TWo-06-5uB" secondAttribute="trailing" id="kDk-GD-FOG"/>
+                                <constraint firstAttribute="trailing" secondItem="Joj-Lu-6S4" secondAttribute="trailing" id="lqp-Rl-2To"/>
+                                <constraint firstItem="zER-I4-CwW" firstAttribute="leading" secondItem="FJ1-0S-qRJ" secondAttribute="trailing" constant="8" id="m2s-ED-B7V"/>
+                                <constraint firstItem="cGH-NR-OrL" firstAttribute="width" secondItem="5Ll-rg-pq2" secondAttribute="width" id="mgb-6I-yTS"/>
+                                <constraint firstItem="MWo-I4-WXh" firstAttribute="width" secondItem="HSi-FT-QVZ" secondAttribute="width" id="p19-Jw-H0p"/>
+                                <constraint firstItem="Joj-Lu-6S4" firstAttribute="leading" secondItem="z36-AR-y24" secondAttribute="leading" id="p3R-HF-Snb"/>
+                                <constraint firstItem="17c-Og-5Yy" firstAttribute="leading" secondItem="HSi-FT-QVZ" secondAttribute="trailing" constant="8" id="pdc-p2-vZ4"/>
+                                <constraint firstItem="Kbg-X3-Tnr" firstAttribute="top" secondItem="OU7-xq-gn6" secondAttribute="bottom" constant="8" id="prH-uQ-JDB"/>
+                                <constraint firstItem="741-9K-wvT" firstAttribute="centerY" secondItem="FJ1-0S-qRJ" secondAttribute="centerY" id="q4c-Yx-Kj4"/>
+                                <constraint firstItem="a31-Gc-qr7" firstAttribute="leading" secondItem="Crf-Kr-Me8" secondAttribute="trailing" constant="8" id="qIj-ba-6FQ"/>
+                                <constraint firstItem="OU7-xq-gn6" firstAttribute="trailing" secondItem="741-9K-wvT" secondAttribute="trailing" id="rIu-c7-CLQ"/>
+                                <constraint firstItem="cGH-NR-OrL" firstAttribute="centerY" secondItem="5Ll-rg-pq2" secondAttribute="centerY" id="rSE-Ff-Y4y"/>
+                                <constraint firstItem="FJ1-0S-qRJ" firstAttribute="top" secondItem="yQ3-sw-N5a" secondAttribute="bottom" constant="8" id="rrU-Pb-DXU"/>
                                 <constraint firstItem="JuE-tI-FWK" firstAttribute="leading" secondItem="z36-AR-y24" secondAttribute="leading" id="s0c-VH-b8C"/>
-                                <constraint firstItem="rpe-sG-gv7" firstAttribute="leading" secondItem="z36-AR-y24" secondAttribute="leading" id="sA5-EI-870"/>
-                                <constraint firstAttribute="trailing" secondItem="cL8-4w-8F4" secondAttribute="trailing" id="uxi-Em-HvQ"/>
+                                <constraint firstAttribute="trailing" secondItem="yQ3-sw-N5a" secondAttribute="trailing" id="sSo-g8-NSE"/>
+                                <constraint firstItem="JBI-je-eCl" firstAttribute="width" secondItem="4QS-92-4oC" secondAttribute="width" id="sTX-2s-7Q8"/>
+                                <constraint firstItem="Crf-Kr-Me8" firstAttribute="top" secondItem="FJ1-0S-qRJ" secondAttribute="bottom" constant="8" id="se1-Xs-96E"/>
+                                <constraint firstAttribute="trailing" secondItem="MWo-I4-WXh" secondAttribute="trailing" constant="8" id="tfk-Ca-L9v"/>
+                                <constraint firstItem="MWo-I4-WXh" firstAttribute="leading" secondItem="17c-Og-5Yy" secondAttribute="trailing" constant="8" id="w0D-X1-seP"/>
+                                <constraint firstItem="JBI-je-eCl" firstAttribute="leading" secondItem="4QS-92-4oC" secondAttribute="trailing" constant="8" id="w6G-iQ-CA1"/>
+                                <constraint firstItem="cGH-NR-OrL" firstAttribute="leading" secondItem="nCg-A5-6cm" secondAttribute="trailing" constant="8" id="wDO-Td-XvX"/>
+                                <constraint firstItem="5Ll-rg-pq2" firstAttribute="top" secondItem="Kbg-X3-Tnr" secondAttribute="bottom" constant="8" id="wLs-VB-LxD"/>
+                                <constraint firstItem="omp-tH-FLV" firstAttribute="top" secondItem="4tl-fa-CPd" secondAttribute="bottom" constant="8" id="wmz-ht-JLm"/>
+                                <constraint firstItem="rSG-bQ-t2f" firstAttribute="leading" secondItem="Pwu-eq-K4d" secondAttribute="trailing" constant="8" id="x3B-p3-KEP"/>
+                                <constraint firstItem="Pwu-eq-K4d" firstAttribute="centerY" secondItem="5rc-tB-v4M" secondAttribute="centerY" id="y74-Yz-jOp"/>
+                                <constraint firstItem="5rc-tB-v4M" firstAttribute="top" secondItem="Joj-Lu-6S4" secondAttribute="bottom" constant="8" id="yZM-cM-qlS"/>
+                                <constraint firstItem="4QS-92-4oC" firstAttribute="top" secondItem="HSi-FT-QVZ" secondAttribute="bottom" constant="8" id="z9Q-05-ID1"/>
+                                <constraint firstItem="nCg-A5-6cm" firstAttribute="width" secondItem="5Ll-rg-pq2" secondAttribute="width" id="zIB-T5-6He"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -344,18 +600,13 @@
                 <constraint firstAttribute="bottom" secondItem="VP8-ay-IPS" secondAttribute="bottom" id="ehp-OK-Ecc"/>
                 <constraint firstItem="z36-AR-y24" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" priority="250" id="rfC-M2-9kl"/>
             </constraints>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="colorBlueBtn" destination="DfR-Vg-Znp" id="vTg-xR-WlL"/>
-                <outlet property="colorPinkBtn" destination="er3-I9-5A0" id="rdJ-aY-wop"/>
                 <outlet property="imageView" destination="JuE-tI-FWK" id="DgS-gL-5FK"/>
-                <outlet property="lengthLongBtn" destination="w3s-z6-mhj" id="No8-M8-u67"/>
-                <outlet property="lengthShortBtn" destination="Iyn-LY-qBf" id="edn-KH-IbW"/>
-                <outlet property="sceneDateBtn" destination="OKG-Ug-USJ" id="4No-hR-6X5"/>
-                <outlet property="sceneOfficeBtn" destination="BdT-sc-EX7" id="ACg-SM-612"/>
                 <outlet property="scrollView" destination="VP8-ay-IPS" id="J9V-gB-KHf"/>
                 <outlet property="textField" destination="mpc-4J-e3A" id="klj-X2-ryi"/>
             </connections>
+            <point key="canvasLocation" x="307" y="502"/>
         </view>
     </objects>
 </document>

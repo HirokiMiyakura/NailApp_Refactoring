@@ -93,6 +93,10 @@ class UploadImageVM: NSObject {
         objImage.setObject(param1["typeLength"]!, forKey: "typeLength")
         objImage.setObject(param1["typeColor"]!, forKey: "typeColor")
         objImage.setObject(param1["typeScene"]!, forKey: "typeScene")
+        objImage.setObject(param1["typeDesign"]!, forKey: "typeDesign")
+        objImage.setObject(param1["typeTaste"]!, forKey: "typeTaste")
+        objImage.setObject(param1["typeGenre"]!, forKey: "typeGenre")
+//        objImage.setObject(param1["typeScene"]!, forKey: "typeScene")
         //        objImage.save(&saveError)
         objImage.saveInBackgroundWithBlock { (error: NSError?) -> Void in
             if let e = error {

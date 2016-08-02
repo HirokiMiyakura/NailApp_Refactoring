@@ -124,9 +124,12 @@ class SwipeVC: UINavigationController,UIPageViewControllerDelegate,UIPageViewCon
             navigationView.addSubview(button)
             
             button.tag = i //%%% IMPORTANT: if you make your own custom buttons, you have to tag them appropriately
-            button.backgroundColor = UIColor(red: 0.80, green: 0.07, blue: 0.08, alpha: 1) //%%% buttoncolors
+//            button.backgroundColor = UIColor(red: 0.80, green: 0.07, blue: 0.08, alpha: 1) //%%% buttoncolors
+            button.backgroundColor = UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1) //%%% buttoncolors
             button.addTarget(self, action: "tapSegmentButtonAction:", forControlEvents: UIControlEvents.TouchUpInside)
             button.setTitle(buttonText[i], forState:UIControlState.Normal) //%%%buttontitle
+            button.setTitleColor(UIColor(red: 1.00, green: 0.20, blue: 0.83, alpha: 1), forState: UIControlState.Normal)
+            button.titleLabel!.font = UIFont(name: "HelveticaNeue-LightItalic",size: CGFloat(15))
         }
         
         pageController.navigationController?.navigationBar.topItem?.titleView = navigationView

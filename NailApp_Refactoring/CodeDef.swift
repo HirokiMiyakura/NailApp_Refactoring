@@ -31,4 +31,4 @@ let TAB_UPLOAD = 2
 let TAB_MYPAGE = 3
 
 var gblUserName: String?
-var gblParam = [:] as Dictionary<String, AnyObject>
+var gblParam = [:] as Dictionary<String, NSMutableArray>

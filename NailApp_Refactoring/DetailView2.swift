@@ -18,12 +18,13 @@ class DetailView2: UIView {
     @IBOutlet weak var clipImage: UIImageView!
     @IBOutlet weak var kawaiineCountLabel: UILabel!
     
-    override func layoutSubviews() {
-        //        super.layoutSubviews()
-        //        //全体のサイズ
-        //        scrollView.translatesAutoresizingMaskIntoConstraints = false
-        //        scrollView.frame = CGRect(x: 0,y: 0,width: screenWidth,height: screenWidth)
-//        scrollView.contentSize = CGSizeMake(screenWidth, 1200)  //横幅は画面に合わせ、縦幅は1200とする。
-        
-    }
+    @IBOutlet weak var userImage: UIImageView!
+//    override func layoutSubviews() {
+//        //        super.layoutSubviews()
+//        //        //全体のサイズ
+//        //        scrollView.translatesAutoresizingMaskIntoConstraints = false
+//        //        scrollView.frame = CGRect(x: 0,y: 0,width: screenWidth,height: screenWidth)
+////        scrollView.contentSize = CGSizeMake(screenWidth, 1200)  //横幅は画面に合わせ、縦幅は1200とする。
+//        
+//    }
 }

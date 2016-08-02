@@ -1020,7 +1020,6 @@
         <!--Detail Users ProfileVC-->
         <scene sceneID="hQD-yg-vN7">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Nib-6F-7mY" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="detailUsersProfileVC" id="jML-zd-eOf" customClass="DetailUsersProfileVC" customModule="NailApp_Refactoring" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NrA-WT-kD3"/>
@@ -1657,6 +1656,7 @@
                         <outlet property="urlLabel" destination="mfU-km-V7a" id="Fnl-sJ-fgy"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nib-6F-7mY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3441" y="1840"/>
         </scene>
@@ -2441,7 +2441,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wpT-bI-mhb" customClass="CustomButton" customModule="NailApp_Refactoring" customModuleProvider="target">
                                                 <rect key="frame" x="139" y="482" width="136" height="30"/>
-                                                <color key="backgroundColor" red="0.87058823529411766" green="0.21176470588235294" blue="0.82745098039215681" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="1" green="0.11193644780000001" blue="0.83293095380000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="検索">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                 </state>
@@ -3338,7 +3338,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5TX-9K-snP" customClass="CustomButton" customModule="NailApp_Refactoring" customModuleProvider="target">
                                                 <rect key="frame" x="125" y="743" width="165" height="30"/>
-                                                <color key="backgroundColor" red="1" green="0.11193644780000001" blue="0.83293095380000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="0.87058823529999996" green="0.21176470589999999" blue="0.82745098039999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="この内容でアップロード">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                 </state>
